@@ -22,6 +22,9 @@ const Navbar: React.FC = () => {
 
 
     <nav className="flex items-center justify-between p-4 h-24 max-w-7xl mx-auto">
+
+    <CommonWrapper>    
+    <nav className="flex items-center justify-between p-4 h-24">
       {/* Logo Section */}
       <div className="text-4xl font-serif font-bold text-gray-900 cursor-pointer w-[84px]">
         <img src={Column} alt="logo" />
@@ -60,6 +63,7 @@ const Navbar: React.FC = () => {
       </div>
     </nav>
           </CommonWrapper>
+    </CommonWrapper>
   );
 };
 
