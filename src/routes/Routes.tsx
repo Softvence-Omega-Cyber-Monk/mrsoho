@@ -9,7 +9,10 @@ import AdminDashboard from "@/pages/Admin/AdminDashboard";
 import Login from "@/pages/Login";
 import Signup from "@/pages/Signup";
 import Form from "@/pages/Form";
-import Services from "@/pages/Services";
+import Services from "../pages/Services";
+import HowItWorks from "../pages/HowItWorks";
+import Concrete from "../pages/Concrete";
+import ServiceAreas from "../pages/ServiceAreas";
 
 const routes = createBrowserRouter([
   {
@@ -31,6 +34,18 @@ const routes = createBrowserRouter([
       {
         path: "/services",
         element: <Services />,
+      },
+      {
+        path: "/how-it-works",
+        element: <HowItWorks />,
+      },
+      {
+        path: "/concrete",
+        element: <Concrete />,
+      },
+      {
+        path: "/service-areas",
+        element: <ServiceAreas />,
       },
       {
         path: "/form",
