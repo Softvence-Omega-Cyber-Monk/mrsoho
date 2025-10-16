@@ -17,6 +17,12 @@ const navItems: NavItem[] = [
 
 const Navbar: React.FC = () => {
   return (
+
+    <CommonWrapper>
+
+
+    <nav className="flex items-center justify-between p-4 h-24 max-w-7xl mx-auto">
+
     <CommonWrapper>    
     <nav className="flex items-center justify-between p-4 h-24">
       {/* Logo Section */}
@@ -30,9 +36,9 @@ const Navbar: React.FC = () => {
         <div className="hidden md:flex items-center space-x-6">
           {navItems.map((item) => (
             <Link
-              key={item.label}
-              to={item.href}
-              className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
+            key={item.label}
+            to={item.href}
+            className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
             >
               {item.label}
             </Link>
@@ -43,7 +49,7 @@ const Navbar: React.FC = () => {
         <Link
           to="/contact"
           className="text-sm font-bold text-[#FEDA42] transition-colors hidden md:block"
-        >
+          >
           CONTACT
         </Link>
 
@@ -51,11 +57,12 @@ const Navbar: React.FC = () => {
         <button
           onClick={() => { /* Handle click event, e.g., navigate to calculator page */ }}
           className="px-6 py-3 bg-[#FEDA42] text-gray-900 font-bold uppercase text-sm rounded-lg shadow-md outline-none"
-        >
+          >
           CONCRETE CALCULATOR
         </button>
       </div>
     </nav>
+          </CommonWrapper>
     </CommonWrapper>
   );
 };
