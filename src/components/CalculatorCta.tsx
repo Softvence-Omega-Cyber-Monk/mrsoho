@@ -1,7 +1,7 @@
 // src/components/CalculatorCta.jsx
 
 // import { Calculator } from 'lucide-react'; // Using Lucide for the calculator icon
-import ConcreteTruck from '../assets/images/tructImg.png'; // Assuming you have an image for the truck
+import ConcreteTruck from '@/assets/Placeholder Image.png'; // Assuming you have an image for the truck
 import CommonWrapper from '@/common/CommonWrapper';
 
 const CalculatorCta = () => {

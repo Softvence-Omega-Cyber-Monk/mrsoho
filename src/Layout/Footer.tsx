@@ -1,9 +1,11 @@
+import CommonWrapper from "@/common/CommonWrapper";
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
+    <CommonWrapper>
     <footer className="bg-white border-t border-gray-200 text-gray-500 py-3">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0 text-xs">
                     <div className="flex flex-wrap items-center space-x-4">
             <div className="text-gray-500 whitespace-nowrap">
@@ -49,6 +51,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
+    </CommonWrapper>
   );
 };
 
