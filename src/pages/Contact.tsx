@@ -1,5 +1,5 @@
 import Banner from "@/components/Banner";
-import BannerImg from "../assets/images/contact-us.jpg";
+import BannerImg from "@/assets/Placeholder Image.png";
 import ContactForm from "@/components/ContactForm";
 import CalculatorCta from "@/components/CalculatorCta";
 

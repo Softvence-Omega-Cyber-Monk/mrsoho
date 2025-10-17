@@ -10,7 +10,6 @@ interface NavItem {
 
 // Define the navigation items data
 const navItems: NavItem[] = [
-  { label: 'HOW IT WORKS', href: '/how-it-works' },
   { label: 'CONCRETE', href: '/concrete' },
   { label: 'SERVICE AREAS', href: '/service-areas' },
 ];
@@ -21,9 +20,11 @@ const Navbar: React.FC = () => {
     <CommonWrapper>
     <nav className="flex items-center justify-between p-4 h-24">
       {/* Logo Section */}
+      <Link to="/">
       <div className="text-4xl font-serif font-bold text-gray-900 cursor-pointer w-[84px]">
         <img src={Column} alt="logo" />
       </div>
+      </Link>
 
       {/* Navigation Links and Buttons Section */}
       <div className="flex items-center space-x-8">
@@ -49,12 +50,13 @@ const Navbar: React.FC = () => {
         </Link>
 
         {/* CONCRETE CALCULATOR Button (Primary CTA) */}
-        <button
-          onClick={() => { /* Handle click event, e.g., navigate to calculator page */ }}
-          className="px-6 py-3 bg-[#FEDA42] text-gray-900 font-bold uppercase text-sm rounded-lg shadow-md outline-none"
-          >
-          CONCRETE CALCULATOR
-        </button>
+        <Link to="/concrete">
+          <button
+            className="px-6 py-3 bg-[#FEDA42] text-gray-900 font-bold uppercase text-sm rounded-lg shadow-md outline-none"
+            >
+            CONCRETE CALCULATOR
+          </button>
+        </Link>
       </div>
     </nav>
     </CommonWrapper>
