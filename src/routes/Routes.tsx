@@ -10,7 +10,7 @@ import Login from "@/pages/Login";
 import Signup from "@/pages/Signup";
 import Form from "@/pages/Form";
 import Services from "../pages/Services";
-import HowItWorks from "../pages/HowItWorks";
+import HowItWorks from "../components/home/HowItWorks";
 import Concrete from "../pages/Concrete";
 import ServiceAreas from "../pages/ServiceAreas";
 
