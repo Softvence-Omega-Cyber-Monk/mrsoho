@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PrimaryBtn from "./PrimaryBtn";
+import CloudflareLogo from "./CloudflareLogo";
 
 interface FormData {
   name: string;
@@ -146,6 +147,8 @@ const ContactForm: React.FC = () => {
           className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:ring-2 focus:ring-yellow-400 outline-none resize-none"
         />
       </div>
+
+      <CloudflareLogo />
 
       {/* Dropdown */}
       <div>
