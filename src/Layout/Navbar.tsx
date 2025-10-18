@@ -50,7 +50,7 @@ const Navbar: React.FC = () => {
         </Link>
 
         {/* CONCRETE CALCULATOR Button (Primary CTA) */}
-        <Link to="/concrete">
+        <Link to="/concrete-calculator">
           <button
             className="px-6 py-3 bg-[#FEDA42] text-gray-900 font-bold uppercase text-sm rounded-lg shadow-md outline-none"
             >
