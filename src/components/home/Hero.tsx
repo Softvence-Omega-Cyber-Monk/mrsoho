@@ -1,5 +1,6 @@
 import { useState, ChangeEvent, FormEvent } from 'react';
 import ImageContainer from '../../assets/Image_container.png';
+import CloudflareLogo from '@/components/CloudflareLogo';
 
 // Define the type for form data for better type safety in TypeScript
 interface FormData {
@@ -236,20 +237,9 @@ const Hero = () => {
 
               {/* --- Success & Cloudflare --- */}
               <div className="flex items-center justify-between py-2">
-                <div className="flex items-center text-green-600 text-xs">
-                  <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                  <span className="font-semibold">Success!</span>
-                </div>
 
                 <div className="flex items-center space-x-1">
-                  {/* Placeholder for Cloudflare logo or a simplified logo look */}
-                  <span className="text-orange-500 text-lg leading-none align-middle" aria-hidden="true">
-                    &#9729;
-                  </span>
-                  <span className="text-xs font-semibold text-gray-700 tracking-wider">CLOUDFLARE</span>
-                  <span className="text-xs text-gray-500 ml-1">
-                    <a href="#" className="hover:underline">Privacy</a> • <a href="#" className="hover:underline">Terms</a>
-                  </span>
+                  <CloudflareLogo />
                 </div>
               </div>
 
