@@ -13,6 +13,7 @@ import Services from "../pages/Services";
 import HowItWorks from "../components/home/HowItWorks";
 import Concrete from "../pages/Concrete";
 import ServiceAreas from "../pages/ServiceAreas";
+import ConcreteCalculator from "../pages/Cncretecalculator";   // <-- new import
 
 const routes = createBrowserRouter([
   {
@@ -58,6 +59,10 @@ const routes = createBrowserRouter([
       {
         path: "/signup",
         element: <Signup />,
+      },
+      {
+        path: "/concrete-calculator",
+        element: <ConcreteCalculator />,
       },
       {
         path: "/admin",
