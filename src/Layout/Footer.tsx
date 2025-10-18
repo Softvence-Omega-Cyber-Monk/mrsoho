@@ -1,116 +1,57 @@
-import React from "react";
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
+import CommonWrapper from "@/common/CommonWrapper";
+const Footer = () => {
+  const currentYear = new Date().getFullYear();
 
-const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#212a31] text-white py-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* About Section */}
-          <div>
-            <h3 className="text-lg font-bold mb-4">About Us</h3>
-            <p className="text-sm">
-              We are a team of passionate developers building amazing web
-              applications with modern technologies.
-            </p>
-          </div>
-
-          {/* Quick Links Section */}
-          <div>
-            <h3 className="text-lg font-bold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
-              <li>
-                <a href="/" className="hover:text-gray-300">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="/about" className="hover:text-gray-300">
-                  About
-                </a>
-              </li>
-              <li>
-                <a href="/services" className="hover:text-gray-300">
-                  Services
-                </a>
-              </li>
-              <li>
-                <a href="/contact" className="hover:text-gray-300">
-                  Contact
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Social Media Section */}
-          <div>
-            <h3 className="text-lg font-bold mb-4">Follow Us</h3>
-            <div className="flex space-x-4">
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-gray-300"
+    <CommonWrapper>
+    <footer className="bg-white border-t border-gray-200 text-gray-500 py-3">
+      <div className="sm:px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0 text-xs">
+                    <div className="flex flex-wrap items-center space-x-4">
+            <div className="text-gray-500 whitespace-nowrap">
+              ©{currentYear}
+            </div>
+                        <div className="flex flex-wrap space-x-4">
+              <a 
+                href="/privacy-policy" 
+                className="text-gray-700 hover:text-gray-900 transition-colors duration-200"
               >
-                <FaFacebook size={24} />
+                Privacy Policy
               </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-gray-300"
+              <a 
+                href="/terms-of-service" 
+                className="text-gray-700 hover:text-gray-900 transition-colors duration-200"
               >
-                <FaTwitter size={24} />
+                Terms of Service
               </a>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-gray-300"
+              <a 
+                href="/cookies-settings" 
+                className="text-gray-700 hover:text-gray-900 transition-colors duration-200"
               >
-                <FaInstagram size={24} />
-              </a>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-gray-300"
-              >
-                <FaLinkedin size={24} />
+                Cookies Settings
               </a>
             </div>
           </div>
-
-          {/* Newsletter Section */}
-          <div>
-            <h3 className="text-lg font-bold mb-4">Newsletter</h3>
-            <p className="text-sm mb-4">
-              Subscribe to our newsletter to get the latest updates.
-            </p>
-            <form className="flex">
-              <input
-                type="email"
-                placeholder="Your email"
-                className="p-2 mr-2 rounded-md border-1 border-white  text-white focus:outline-none"
-              />
-              <button
-                type="submit"
-                className="bg-[#124e66] text-[#d3d9d4] px-4 rounded-md hover:bg-[#124e66]/50"
-              >
-                Subscribe
-              </button>
-            </form>
-          </div>
-        </div>
-
-        {/* Copyright Section */}
-        <div className="border-t border-gray-700 mt-8 pt-8 text-center">
-          <p className="text-sm">
-            &copy; {new Date().getFullYear()} Sazzad Mahim. All rights reserved.
-          </p>
+          <a 
+            href="https://linkedin.com/company/gatomix" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-white bg-yellow-500 p-1 rounded-sm hover:bg-yellow-600 transition-colors duration-200"
+            aria-label="LinkedIn"
+          >
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              className="h-4 w-4" 
+              viewBox="0 0 24 24" 
+              fill="currentColor"
+            >
+              <text x="50%" y="75%" dominant-baseline="middle" text-anchor="middle" font-size="20" fill="white" font-weight="bold">in</text>
+            </svg>
+          </a>
         </div>
       </div>
     </footer>
+    </CommonWrapper>
   );
 };
 
