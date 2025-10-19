@@ -52,7 +52,7 @@ const Hero = () => {
 
         {/* Left Content (Text/Features) */}
         <div className="lg:w-1/2 z-10 py-8">
-          <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6 w-[485px] text-[#FEDA42] ">
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6 w-[304px] text-[#FEDA42] ">
             Ready Mix Concrete
             by GATORMIX
           </h1>
