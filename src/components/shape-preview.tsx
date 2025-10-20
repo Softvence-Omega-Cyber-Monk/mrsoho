@@ -1,6 +1,6 @@
 "use client"
 
-type ShapeType = "slab" | "footing" | "gutter" | "circular" | "column"
+import { ShapeType } from "../types";
 
 interface ShapePreviewProps {
   shape: ShapeType
@@ -76,6 +76,14 @@ export default function ShapePreview({ shape }: ShapePreviewProps) {
               stroke="#4b5563"
               strokeWidth="2"
             />
+          </svg>
+        )
+      case "steps":
+        return (
+          <svg viewBox="0 0 200 150" className="w-full h-auto">
+            <rect x="50" y="100" width="100" height="20" fill="#9ca3af" stroke="#4b5563" strokeWidth="2" />
+            <rect x="60" y="80" width="80" height="20" fill="#9ca3af" stroke="#4b5563" strokeWidth="2" />
+            <rect x="70" y="60" width="60" height="20" fill="#9ca3af" stroke="#4b5563" strokeWidth="2" />
           </svg>
         )
     }

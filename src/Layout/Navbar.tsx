@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Column from '../assets/Column.png';
+import GATORMIX from '../assets/GATORMIX.png';
 import CommonWrapper from '@/common/CommonWrapper';
 
 // Define the type for a single navigation item
@@ -29,7 +29,7 @@ const Navbar: React.FC = () => {
         <Link to="/" className="flex-shrink-0">
           <div className="text-4xl font-serif font-bold text-gray-900 cursor-pointer w-16 md:w-20 lg:w-24">
             <img 
-              src={Column} 
+              src={GATORMIX} 
               alt="logo" 
               className="w-full h-auto"
             />

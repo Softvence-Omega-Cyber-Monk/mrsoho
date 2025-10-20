@@ -1,12 +1,9 @@
-"use client"
-
-import { Square, Hammer, Zap, Circle, Columns3 } from "lucide-react"
-
-type ShapeType = "slab" | "footing" | "gutter" | "circular" | "column"
+import { Square, Hammer, Zap, Circle, Columns3 } from "lucide-react";
+import { ShapeType } from "../types";
 
 interface ShapeSelectorProps {
-  selectedShape: ShapeType
-  onShapeChange: (shape: ShapeType) => void
+  selectedShape: ShapeType;
+  onShapeChange: (shape: ShapeType) => void;
 }
 
 const SHAPES = [
@@ -15,14 +12,14 @@ const SHAPES = [
   { id: "gutter", label: "Cutters & Gutters", icon: Zap },
   { id: "circular", label: "Circular Slabs", icon: Circle },
   { id: "column", label: "Columns & Piers", icon: Columns3 },
-]
+];
 
 export default function ShapeSelector({ selectedShape, onShapeChange }: ShapeSelectorProps) {
   return (
     <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
       {SHAPES.map((shape) => {
-        const Icon = shape.icon
-        const isSelected = selectedShape === shape.id
+        const Icon = shape.icon;
+        const isSelected = selectedShape === shape.id;
 
         return (
           <button
@@ -37,8 +34,8 @@ export default function ShapeSelector({ selectedShape, onShapeChange }: ShapeSel
             <Icon size={24} />
             <span className="text-sm font-medium text-center">{shape.label}</span>
           </button>
-        )
+        );
       })}
     </div>
-  )
+  );
 }

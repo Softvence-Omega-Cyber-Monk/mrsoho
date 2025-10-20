@@ -1,97 +1,99 @@
-// src/components/DimensionInput.tsx
-import { Dimensions, Unit } from "@/typs";
-import React from "react";
-import PrimaryBtn from "./PrimaryBtn";
+"use client"
 
-interface DimensionInputProps {
-  unit: Unit;
-  setUnit: (unit: Unit) => void;
-  dimensions: Dimensions;
-  onDimensionChange: (key: keyof Dimensions, value: string) => void;
+interface DimensionFormProps {
+  selectedMaterial: string
+  dimensions: Record<string, string>
+  onDimensionsChange: (dimensions: Record<string, string>) => void
+  unit: "meters" | "feet"
+  onUnitChange: (unit: "meters" | "feet") => void
+  onCalculate: () => void
 }
 
-const DimensionInput: React.FC<DimensionInputProps> = ({
-  unit,
-  setUnit,
+export default function DimensionForm({
+  selectedMaterial,
   dimensions,
-  onDimensionChange,
-}) => {
-  const dimensionKeys: { label: string; keyName: keyof Dimensions }[] = [
-    { label: "Length", keyName: "length" },
-    { label: "Width", keyName: "width" },
-    { label: "Thickness", keyName: "thickness" },
-    { label: "Quantity", keyName: "quantity" },
-  ];
+  onDimensionsChange,
+  unit,
+  onUnitChange,
+  onCalculate,
+}: DimensionFormProps) {
+  const handleInputChange = (key: string, value: string) => {
+    onDimensionsChange({ ...dimensions, [key]: value })
+  }
 
-  const unitSymbol = unit === "Meters" ? "m" : "ft";
+  const getFields = () => {
+    switch (selectedMaterial) {
+      case "slabs-walls":
+        return ["length", "width", "thickness"]
+      case "footings":
+        return ["length", "width", "height"]
+      case "curbs-gutters":
+        return ["length", "height", "thickness"]
+      case "circular-slab":
+        return ["width", "thickness"]
+      case "columns-piers":
+        return ["width", "height", "quantity"]
+      default:
+        return []
+    }
+  }
 
-  const InputField: React.FC<{ label: string; keyName: keyof Dimensions }> = ({
-    label,
-    keyName,
-  }) => (
-    <div className="flex flex-col mb-4">
-      <label className="text-sm font-medium text-gray-700 mb-1">{label}</label>
-      <div className="relative">
-        <input
-          type="number"
-          step="any"
-          min="0"
-          placeholder="0"
-          value={dimensions[keyName] === 0 ? "" : dimensions[keyName]}
-          onChange={(e) => onDimensionChange(keyName, e.target.value)}
-          className="w-full p-3 border border-gray-300 rounded-lg focus:ring-yellow-500 focus:border-yellow-500 transition duration-150 pr-10"
-        />
-        {keyName !== "quantity" && (
-          <span className="absolute right-0 top-0 h-full flex items-center pr-3 text-gray-400 text-sm">
-            {unitSymbol}
-          </span>
-        )}
-      </div>
-    </div>
-  );
+  const fields = getFields()
+  const fieldLabels: Record<string, string> = {
+    length: "Length",
+    width: "Width",
+    height: "Height",
+    thickness: "Thickness",
+    quantity: "Quantity",
+  }
 
   return (
-    <div className=" p-6 bg-[#F9FAFB] rounded-lg shadow-md max-w-[614px]">
-      {/* Unit Toggle Buttons */}
-      <div className="flex justify-end">
-        <div className="flex md:w-[356px] space-x-2 mb-6 p-1 bg-gray-100 rounded-lg">
-          <button
-            className={`flex-1 p-2 rounded-lg font-semibold transition-colors duration-200 ${
-              unit === "Meters"
-                ? "bg-black text-yellow-500 shadow-md"
-                : "text-gray-600 hover:bg-gray-200"
-            }`}
-            onClick={() => setUnit("Meters")}
-          >
-            Meters
-          </button>
-          <button
-            className={`flex-1 p-2 rounded-lg font-semibold transition-colors duration-200 ${
-              unit === "Feet"
-                ? "bg-black text-yellow-500 shadow-md"
-                : "text-gray-600 hover:bg-gray-200"
-            }`}
-            onClick={() => setUnit("Feet")}
-          >
-            Feet
-          </button>
-        </div>
+    <div className="bg-white rounded-lg shadow-sm p-6">
+      <h2 className="text-sm font-semibold text-gray-700 mb-4">2. Enter Dimensions</h2>
+
+      {/* Unit Toggle */}
+      <div className="flex gap-2 mb-6">
+        <button
+          onClick={() => onUnitChange("meters")}
+          className={`flex-1 py-2 px-3 rounded-lg font-medium text-sm transition-all ${
+            unit === "meters" ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+          }`}
+        >
+          Meters
+        </button>
+        <button
+          onClick={() => onUnitChange("feet")}
+          className={`flex-1 py-2 px-3 rounded-lg font-medium text-sm transition-all ${
+            unit === "feet" ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+          }`}
+        >
+          Feet
+        </button>
       </div>
 
-      {/* Input Fields Grid */}
-      <div className="grid md:grid-cols-2 gap-x-4">
-        {dimensionKeys.map((item) => (
-          <InputField
-            key={item.keyName}
-            label={item.label}
-            keyName={item.keyName}
-          />
+      {/* Input Fields */}
+      <div className="space-y-3 mb-6">
+        {fields.map((field) => (
+          <div key={field}>
+            <label className="block text-xs font-medium text-gray-600 mb-1">{fieldLabels[field]}</label>
+            <input
+              type="number"
+              value={dimensions[field]}
+              onChange={(e) => handleInputChange(field, e.target.value)}
+              placeholder="--"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400"
+            />
+          </div>
         ))}
       </div>
 
-      <PrimaryBtn btnText="Get Started for free" />
+      {/* Calculate Button */}
+      <button
+        onClick={onCalculate}
+        className="w-full bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-3 px-4 rounded-lg transition-all"
+      >
+        Get Started for free
+      </button>
     </div>
-  );
-};
-
-export default DimensionInput;
+  )
+}

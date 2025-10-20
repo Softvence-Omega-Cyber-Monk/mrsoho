@@ -1,13 +1,11 @@
-"use client"
-
-import { Trash2 } from "lucide-react"
+import { Trash2 } from "lucide-react";
 
 interface ResultsPanelProps {
-  volume: number
-  totalCost: number
-  additionalCost: number
-  onAdditionalCostChange: (cost: number) => void
-  onClearAll: () => void
+  volume: number;
+  totalCost: number;
+  additionalCost: number;
+  onAdditionalCostChange: (cost: number) => void;
+  onClearAll: () => void;
 }
 
 export default function ResultsPanel({
@@ -61,6 +59,5 @@ export default function ResultsPanel({
         </button>
       </div>
     </div>
-  )
+  );
 }
-
