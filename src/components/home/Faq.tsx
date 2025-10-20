@@ -12,7 +12,7 @@ const faqData: FaqItemData[] = [
     id: 1,
     question: "How much concrete should I order?",
     answer:
-      "The volume depends on the size and type of project. Use our Concrete Calculator to estimate. Always add about 10% extra for uneven ground or spillage.",
+      "The volume of concrete you should order depends on the size and type of project. If you know the width (diameter for round applications), depth and length of the concrete pour, you can use our Concrete Calculator to find out how much concrete you need.",
   },
   {
     id: 2,
@@ -93,9 +93,6 @@ const Faq = () => {
           <h1 className="text-4xl sm:text-5xl font-extrabold text-yellow-500 tracking-tight">
             FAQs
           </h1>
-          <p className="text-gray-400 mt-3 text-base sm:text-lg leading-relaxed">
-            Find answers to common questions about concrete and materials.
-          </p>
         </div>
 
         {/* Right column */}

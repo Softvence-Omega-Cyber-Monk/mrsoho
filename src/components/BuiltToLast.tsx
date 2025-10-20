@@ -42,7 +42,7 @@ const FeatureCard: React.FC<Feature> = ({ Icon, title, description }) => (
       <Icon className="w-12 h-12 text-yellow-500 stroke-1.5" />
     </div>
     
-    <h3 className="text-2xl font-semibold mb-3 text-white text-center leading-snug">
+    <h3 className="text-2xl font-semibold mb-3 text-yellow-500 text-center leading-snug">
       {title}
     </h3>
     
@@ -75,8 +75,8 @@ const BuiltToLast: React.FC = () => {
           <h1 className="text-4xl md:text-5xl font-extrabold text-stone-900 leading-tight">
             Built to Last
           </h1>
-          <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto md:mx-0">
-            Our concrete provides the essential qualities every successful project demands: 
+          <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto md:mx-0">
+           Our concrete provides the essential qualities every successful project demands:
             versatility, durability, and low maintenance.
           </p>
         </div>

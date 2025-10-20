@@ -1,17 +1,19 @@
-"use client"
-
 interface ConcreteMix {
-  name: string
-  price: number
+  name: string;
+  price: number;
 }
 
 interface ConcreteMixSelectorProps {
-  mixes: ConcreteMix[]
-  selectedMix: ConcreteMix | null
-  onMixChange: (mix: ConcreteMix | null) => void
+  mixes: ConcreteMix[];
+  selectedMix: ConcreteMix | null;
+  onMixChange: (mix: ConcreteMix | null) => void;
 }
 
-export default function ConcreteMixSelector({ mixes, selectedMix, onMixChange }: ConcreteMixSelectorProps) {
+export default function ConcreteMixSelector({
+  mixes,
+  selectedMix,
+  onMixChange,
+}: ConcreteMixSelectorProps) {
   return (
     <div className="grid grid-cols-2 gap-3">
       {mixes.map((mix) => (
@@ -29,5 +31,5 @@ export default function ConcreteMixSelector({ mixes, selectedMix, onMixChange }:
         </button>
       ))}
     </div>
-  )
+  );
 }

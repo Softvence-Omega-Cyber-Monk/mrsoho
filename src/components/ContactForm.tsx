@@ -44,7 +44,7 @@ const ContactForm: React.FC = () => {
     >
       {/* Title */}
       <div className="text-center">
-        <h2 className="text-sm font-semibold text-gray-800">
+        <h2 className="text-sm font-semibold text-green-800">
           NEED CONCRETE delivered by GATORMIX concrete
         </h2>
         <p className="text-gray-500 text-sm">Schedule a delivery today.</p>

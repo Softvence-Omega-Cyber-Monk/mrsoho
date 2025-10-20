@@ -1,14 +1,16 @@
+import dfjvgfrgvlabar from "../../assets/dfjvgfrgvlabar.jpg";
+import dfjvgfrgvsale from "../../assets/dfjvgfrgvsale.jpg";
+import dfjvgfrgvcar3 from "../../assets/dfjvgfrgvcar3.jpg";
 const HowItWorks = () => {
   return (
-    <section className="py-16 px-4">
+    <section className="py-16 px-4 pb-64">
       {/* Section Header */}
-      <div className="max-w-3xl mx-auto text-center mb-10">
+      <div className="max-w-3xl mb-10">
         <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-3">
           How It Works
         </h2>
         <p className="text-gray-600 text-sm sm:text-base">
-          Whether you're pouring a small pad, a foundation, or a large industrial slab,
-          we'll help you find the right mix, save cost, and get the performance you need.
+          Whether you're pouring a small pad, a foundation, or a large industrial slab, we'll help you find the right mix, in cost and performance.
         </p>
       </div>
 
@@ -20,68 +22,58 @@ const HowItWorks = () => {
             <img
               alt="Construction Worker"
               className="w-full h-56 sm:h-64 object-cover rounded-t-xl"
-              src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600"
-              onError={(e) => {
-                e.currentTarget.onerror = null;
-                e.currentTarget.src =
-                  "https://placehold.co/600x300/a855f7/ffffff?text=Project+Setup";
-              }}
+              src={dfjvgfrgvlabar}
             />
             <div className="p-6">
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">
+              <h3 className="text-3xl font-semibold text-green-600 mb-2">
                 Tell Us About Your Project
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Provide details of the project including dimensions, required
-                volume, and special mix instructions.
+              Provide details of the project including the dimension and volume required, the concrete mix, and any special input.
               </p>
             </div>
           </div>
         </div>
 
         {/* Card 2 */}
-        <div className="flex flex-col justify-center md:translate-y-8">
+        <div className="flex flex-col justify-center md:translate-y-18">
           <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-200">
             <div className="w-full h-56 sm:h-64 bg-gray-100 flex items-center justify-center rounded-t-xl">
               <div className="text-center">
-                <div className="text-6xl mb-2">📋</div>
-                <div className="text-xs text-gray-500 uppercase tracking-wide">
-                  Quote
+                <div className="text-6xl mb-2">
+                  <img
+              alt="Construction Worker"
+              className="w-full h-56 sm:h-64 object-cover rounded-t-xl"
+              src={dfjvgfrgvsale}
+            />
                 </div>
               </div>
             </div>
             <div className="p-6">
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">
+              <h3 className="text-3xl font-semibold text-green-600 mb-2">
                 Get Your Quote & Cost
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Our Concrete Calculator helps determine the exact cost for your
-                required mix and delivery.
+              Our Concrete Calculator allows us to get the exact cost of the concrete you need, delivered to your site.
               </p>
             </div>
           </div>
         </div>
 
         {/* Card 3 */}
-        <div className="flex flex-col justify-end md:translate-y-16">
+        <div className="flex flex-col justify-end md:translate-y-36">
           <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-200">
             <img
               alt="Concrete Mixer Truck"
               className="w-full h-56 sm:h-64 object-cover rounded-t-xl"
-              src="https://images.unsplash.com/photo-1615840287214-7ff58936c4cf?w=600"
-              onError={(e) => {
-                e.currentTarget.onerror = null;
-                e.currentTarget.src =
-                  "https://placehold.co/600x300/10b981/ffffff?text=Delivery+Truck";
-              }}
+              src={dfjvgfrgvcar3}
             />
             <div className="p-6">
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">
+              <h3 className="text-3xl font-semibold text-green-600 mb-2">
                 Get Concrete Mixed On-Site
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Once ready, our team mixes on-site and delivers directly for
-                stronger, fresher results.
+               Your concrete will be ready to order. Our team will mix and prepare it for delivery for YOU our valued customer!
               </p>
             </div>
           </div>

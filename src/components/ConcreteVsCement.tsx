@@ -1,7 +1,6 @@
 import React from 'react';
 
 // --- Icon Components (Inline SVG) ---
-// Using inline SVGs to adhere to the single-file mandate and replicate the look.
 const CementIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
   <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-amber-500 fill-amber-500/10">
     <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
@@ -47,12 +46,14 @@ const contentData: ContentItem[] = [
 // --- Card Component ---
 const ComparisonCard: React.FC<{ item: ContentItem }> = ({ item }) => {
   return (
-    <div className="flex-1 min-w-full md:min-w-0 bg-black p-6 rounded-xl shadow-lg transition duration-300 hover:shadow-2xl hover:scale-[1.01] relative bottom-5">
+    <div className={`flex-1 min-w-full md:min-w-0 bg-black p-6 rounded-xl shadow-lg transition duration-300 hover:shadow-2xl hover:scale-[1.01] relative ${
+      item.title === 'Concrete' ? 'md:top-5' : 'bottom-5'
+    }`}>
       <div className="flex items-center space-x-3 mb-2">
         <item.Icon className="w-8 h-8" />
-        <h2 className="text-2xl font-bold text-gray-100">{item.title}</h2>
+        <h2 className="text-2xl font-bold text-yellow-500">{item.title}</h2>
       </div>
-      <p className="text-amber-500 text-sm font-semibold mb-4 tracking-wide">{item.subtitle}</p>
+      <p className="text-gray-300 text-sm font-semibold mb-4 tracking-wide pl-9">{item.subtitle}</p>
       <p className="text-gray-300 leading-relaxed">{item.description}</p>
     </div>
   );
@@ -61,16 +62,14 @@ const ComparisonCard: React.FC<{ item: ContentItem }> = ({ item }) => {
 // --- Main Component ---
 const ConcreteVsCement: React.FC = () => {
   return (
-    // Set up global font and background for the entire view
-    <div className="bg-white font-['Inter'] antialiased py-12 px-4 sm:px-6 lg:px-8">
+    <div className="bg-white font-sans antialiased py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl">
-        
         {/* Header Section */}
         <header className="mb-12">
-          <h1 className="text-5xl font-['Inter'] font-extrabold text-gray-900 mb-4">
+          <h1 className="text-5xl font-semibold text-gray-900 mb-4">
             Concrete vs. Cement
           </h1>
-          <p className="text-lg font-['Inter'] text-gray-600 max-w-2xl">
+          <p className="text-lg font-semibold text-gray-400 max-w-2xl">
             It's a common misconception to use these terms interchangeably. Understanding the difference is key to understanding the final product.
           </p>
         </header>
@@ -81,10 +80,10 @@ const ConcreteVsCement: React.FC = () => {
             <ComparisonCard key={item.title} item={item} />
           ))}
         </section>
-        
-        {/* Simple footer for visual separation */}
+
+        {/* Footer for visual separation */}
         <footer className="mt-20 pt-8 border-t border-gray-100">
-            <div className="h-4"></div> 
+          <div className="h-4"></div>
         </footer>
       </div>
     </div>
