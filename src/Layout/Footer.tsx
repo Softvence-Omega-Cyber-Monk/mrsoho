@@ -9,24 +9,24 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0 text-xs">
                     <div className="flex flex-wrap items-center space-x-4">
             <div className="text-gray-500 whitespace-nowrap">
-              ©{currentYear}
+              ©{currentYear} GATORMIX. All Rights Reserved.
             </div>
                         <div className="flex flex-wrap space-x-4">
               <a 
                 href="/privacy-policy" 
-                className="text-gray-700 hover:text-gray-900 transition-colors duration-200"
+                className="text-gray-500  transition-colors duration-200"
               >
                 Privacy Policy
               </a>
               <a 
                 href="/terms-of-service" 
-                className="text-gray-700 hover:text-gray-900 transition-colors duration-200"
+                className="text-gray-500  transition-colors duration-200"
               >
                 Terms of Service
               </a>
               <a 
                 href="/cookies-settings" 
-                className="text-gray-700 hover:text-gray-900 transition-colors duration-200"
+                className="text-gray-500  transition-colors duration-200"
               >
                 Cookies Settings
               </a>

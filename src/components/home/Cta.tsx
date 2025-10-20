@@ -1,22 +1,20 @@
 import { FaCalculator } from "react-icons/fa";
+import dfjvgfrgvcar from "../../assets/dfjvgfrgvcar.jpg";
 
 const Cta = () => {
   return (
-    <section className="relative w-full flex items-center justify-center min-h-[450px] sm:min-h-[500px] md:min-h-[600px] p-4 overflow-hidden bg-gray-100">
+    <section className="relative w-full flex items-center justify-start min-h-[450px] sm:min-h-[500px] md:min-h-[600px] p-4 overflow-hidden bg-gray-100">
       {/* Background image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: 'url("https://i.imgur.com/k2H8jP7.png")',
-          backgroundColor: "#3b82f6",
-        }}
-        aria-hidden="true"
-      >
+      <div>
+      <img
+        className="absolute object-cover w-full h-full top-0 left-0 z-0"
+        src={dfjvgfrgvcar}
+      />
         <div className="absolute inset-0 bg-black/60"></div>
       </div>
 
       {/* Foreground content */}
-      <div className="relative z-10 max-w-2xl text-center bg-black/40 backdrop-blur-sm p-6 sm:p-10 rounded-lg">
+      <div className="relative z-10 max-w-2xl bg-black/40 backdrop-blur-sm p-6 sm:p-10 rounded-lg">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-yellow-400 leading-tight mb-4">
           How Much Concrete Do You Need?
         </h1>

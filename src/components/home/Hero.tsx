@@ -44,7 +44,7 @@ const Hero = () => {
         className="absolute inset-0 bg-cover bg-center rounded-md"
         style={{ backgroundImage: `url(${ImageContainer})` }}
       >
-        <div className="absolute inset-0 bg-black opacity-75"></div>
+        <div className="absolute inset-0  opacity-75"></div>
       </div>
 
       {/* Content Container: FIX APPLIED HERE - Removed h-[552px] to allow form to expand */}
@@ -138,7 +138,7 @@ const Hero = () => {
         </div>
 
         {/* Right Content (Form) */}
-        <div className="w-full lg:w-1/2 z-10 mx-auto">
+        <div className="w-full lg:w-1/2 z-10 mx-auto mb-24">
           <div className="bg-white p-8 rounded-lg shadow-xl">
 
             {/* --- Header --- */}

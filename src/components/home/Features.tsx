@@ -1,6 +1,10 @@
 import React from "react";
 import { Droplet, Truck, Clock, DollarSign, Loader2 } from "lucide-react";
-
+import GATORMIXDelivers from "../../assets/GATORMIXDelivers.jpg";
+import time from "../../assets/time.jpg";
+import handcement from "../../assets/handcement.jpg";
+import PlaceholderImage from "../../assets/PlaceholderImage.png";
+import moreflex from "../../assets/moreflex.jpg";
 interface Feature {
   id: number;
   icon: React.ElementType;
@@ -16,40 +20,40 @@ const featuresData: Feature[] = [
     icon: Droplet,
     title: "The Perfect Mix – Every Time",
     description:
-      "Concrete delivered and mixed using volumetric technology at your site ensures optimal strength and consistency without last-minute adjustments.",
-    image: "https://placehold.co/800x600/1e293b/d9f99d?text=Concrete+Pour",
+      "Concrete delivered and mixed using volumetric technology in our mixer trucks at your site reduces the need to add water or materials at the last minute, so you get the strongest, best performing concrete possible.",
+    image: time,
   },
   {
     id: 2,
     icon: Truck,
     title: "GATORMIX Delivers",
     description:
-      "We deliver concrete and additives tailored to your needs, mixed on-site to precise specifications for superior results.",
-    image: "https://placehold.co/800x600/1e293b/d9f99d?text=Worker+Mixing",
+      "GATORMIX delivers concrete and concrete additives you require, and mixes them to the ideal specifications for your application - so you get ideal results..",
+    image: GATORMIXDelivers,
   },
   {
     id: 3,
     icon: Clock,
     title: "Longer Finishing Time",
     description:
-      "On-site mixing maximizes your finishing window compared to off-site mixed concrete, which starts curing in transit.",
-    image: "https://placehold.co/400x300/1e293b/d9f99d?text=Time+Icon",
+      "By having your concrete mixed and poured on-site, you maximize the finishing time versus concrete that is mixed off-site and has started curing while being delivered.",
+    image: handcement,
   },
   {
     id: 4,
     icon: DollarSign,
     title: "Lower Costs",
     description:
-      "Pay only for the concrete you use. Avoid waste, shortages, and extra charges from traditional batch plants.",
-    image: "https://placehold.co/400x300/1e293b/d9f99d?text=Cost+Saving",
+      "By paying only for the concrete you use, you eliminate the significant cost of overages and shortages associated with standard concrete mixed off-site at a batch plant.",
+    image: PlaceholderImage,
   },
   {
     id: 5,
     icon: Loader2,
     title: "More Mix Flexibility",
     description:
-      "Adjust your mix on-site without delays or waste. Pour multiple mixes with a single truck for maximum flexibility.",
-    image: "https://placehold.co/800x600/1e293b/d9f99d?text=Crane+and+Mix",
+      "With concrete mixed just before application you can adjust your mix as needed, without any job delays or wastage, which is virtually impossible with off-site batch mixing. You also get the ability to pour TWO or MORE mixes with the SAME TRUCK.",
+    image:moreflex,
     span: "md:col-span-2 lg:col-span-2",
   },
 ];
@@ -91,13 +95,12 @@ const Features = () => {
   return (
     <section className="bg-gray-900 text-white px-4 sm:px-6 lg:px-12 py-12 sm:py-20">
       {/* Header */}
-      <div className="max-w-4xl mx-auto text-center mb-12">
+      <div className="max-w-4xl mb-12">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-yellow-400 mb-4">
           Why Choose GATORMIX
         </h2>
         <p className="text-base sm:text-lg text-gray-300 leading-relaxed">
-          Choose GATORMIX for reliable on-site concrete mixing, cost efficiency, and unmatched flexibility on every job.
-        </p>
+          When your choose GATORMIX, your get your OWN on-site concrete mixing plant, and all the advantages thats come with it        </p>
       </div>
 
       {/* Feature Grid */}
