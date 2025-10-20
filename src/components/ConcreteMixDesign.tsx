@@ -2,23 +2,6 @@ import React from 'react';
 
 // --- Icon Components (Inline SVG) ---
 
-// Icon for the "Concrete vs. Cement" section (kept for data integrity, but unused in render)
-const CementIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
-  <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-amber-500 fill-amber-500/10">
-    <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-    <path d="M9 18V6l3 3m3-3v12" />
-  </svg>
-);
-
-const ConcreteIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
-  <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-amber-500 fill-amber-500/10">
-    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-    <polyline points="14 2 14 8 20 8" />
-    <line x1="8" y1="13" x2="16" y2="13" />
-    <line x1="8" y1="17" x2="16" y2="17" />
-  </svg>
-);
-
 // Icons for the "Concrete Mix Design" section
 const PortlandCementIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
   <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-blue-600">
@@ -64,25 +47,6 @@ interface ContentItem {
 }
 
 // --- Data ---
-// Kept comparisonData array for completeness, but it is no longer rendered.
-const comparisonData: ContentItem[] = [
-  {
-    title: 'Cement',
-    subtitle: 'The Binding Agent',
-    description:
-      'Cement is a binding agent, a fine powder that is never used alone. It\'s a key ingredient that, when mixed with water, forms a paste that binds the other components of concrete together.',
-    Icon: CementIcon,
-    style: 'dark',
-  },
-  {
-    title: 'Concrete',
-    subtitle: 'The Composite Material',
-    description:
-      'Concrete is the final composite material. It is a mixture of cement, water, and aggregates (like sand and gravel). When combined, they form the strong, durable material used for construction.',
-    Icon: ConcreteIcon,
-    style: 'dark',
-  },
-];
 
 const mixDesignData: ContentItem[] = [
   {

@@ -3,7 +3,6 @@ import Banner from "@/components/Banner";
 import CalculatorCta from "@/components/CalculatorCta";
 import ContactForm from "@/components/ContactForm";
 import BannerImg from '@/assets/Placeholder Image.png';
-import Basemap from '@/assets/Basemap.png';
 const ServiceAreas: React.FC = () => {
   return (
     <>
