@@ -2,6 +2,11 @@ import React from 'react';
 
 // --- Icon Components (Inline SVG) ---
 
+<<<<<<< HEAD
+=======
+// removed unused CementIcon and ConcreteIcon to satisfy TS unused variable warnings
+
+>>>>>>> 0a94f35f8816aa4486c440c475cec528eb547063
 // Icons for the "Concrete Mix Design" section
 const PortlandCementIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
   <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-blue-600">
@@ -40,13 +45,17 @@ const AdmixturesIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
 // --- Component Interface ---
 interface ContentItem {
   title: string;
-  subtitle?: string; 
+  subtitle?: string;
   description: string;
   Icon: React.FC<React.SVGProps<SVGSVGElement>>;
   style?: 'dark' | 'light';
 }
 
 // --- Data ---
+<<<<<<< HEAD
+=======
+// removed unused comparisonData to avoid TS6133 warning
+>>>>>>> 0a94f35f8816aa4486c440c475cec528eb547063
 
 const mixDesignData: ContentItem[] = [
   {
@@ -111,7 +120,7 @@ const ConcreteMixDesign: React.FC = () => {
     // Set up global font and background for the entire view
     <div className="bg-gray-50 font-['Inter'] antialiased py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        
+
         {/* === Section: Concrete Mix Design (Now the primary section) === */}
         <header className="mb-12">
           <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-4">
@@ -132,7 +141,7 @@ const ConcreteMixDesign: React.FC = () => {
 
         {/* Simple footer for visual separation */}
         <footer className="mt-20 pt-8 border-t border-gray-100">
-            <div className="h-4"></div> 
+          <div className="h-4"></div>
         </footer>
       </div>
     </div>
