@@ -1,12 +1,11 @@
 import { useState } from "react";
 import CommonWrapper from "@/common/CommonWrapper";
-import trackhang from "@/assets/trackhang.jpg";
-import PlaceholderjhbImage from "@/assets/PlaceholderjhbImage.png";
-import Cta from "@/components/home/Cta";
+import landingpages from "@/assets/landingpages.jpg";
 import CloudflareLogo from "@/components/CloudflareLogo.tsx";
 import Faq from "@/components/home/Faq";
-import CalculatorCta from "@/components/CalculatorCta";
-
+import Banner from "@/components/Banner";
+import putzmeister from "@/assets/putzmeister.jpg";
+import nobgslish from '@/assets/nobgslish.png'; 
 const Landingpages = () => {
     const [formData, setFormData] = useState({
         name: "",
@@ -33,67 +32,14 @@ const Landingpages = () => {
         <>
             <CommonWrapper>
                 {/* ---- Section 1: Hero Image ---- */}
-                <div className="mx-auto flex justify-center">
-                    <img 
-                        src={trackhang} 
-                        alt="trackhang" 
-                        className="w-full max-w-[1920px] h-auto object-cover" 
-                    />
-                </div>
+                <Banner imageUrl={landingpages} title="The Smarter Way to Order Concrete" subtitle="Calculate your exact needs, schedule delivery, and get fresh concrete mixed right on-site. No waste, no hassle, just the perfect pour every time." />
 
-                {/* ---- Section 2: Text & Button ---- */}
-                <div className="bg-[#212121] py-12 lg:py-20">
-                    <div className="container mx-auto px-4">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-                            <div className="px-4 lg:px-6">
-                                <h1 className="text-3xl sm:text-4xl lg:text-[42px] text-[#FEDA42] font-semibold leading-tight">
-                                    The Smarter Way to Order Concrete
-                                </h1>
-                            </div>
-                            <div className="px-4 lg:px-6 space-y-6 lg:space-y-8">
-                                <p className="text-[#EFEEEE] text-base lg:text-lg max-w-full lg:max-w-[592px] leading-relaxed">
-                                    Calculate your exact needs, schedule delivery, and get fresh concrete mixed right on-site. No waste, no hassle, just the perfect pour every time.
-                                </p>
-                                <button className="px-6 py-3 lg:px-8 lg:py-4 bg-[#FEDA42] text-gray-900 font-bold uppercase text-sm lg:text-base rounded-lg shadow-md outline-none hover:bg-[#fed130] transition-colors whitespace-nowrap w-full sm:w-auto">
-                                    CONCRETE CALCULATOR
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {/* ---- Section 3: Info + Image ---- */}
-                <div className="py-12 lg:py-20 bg-[#F5F5F5]">
-                    <div className="container mx-auto px-4">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-                            <div className="flex flex-col justify-center gap-4 lg:gap-6">
-                                <h2 className="text-2xl sm:text-3xl lg:text-[44px] font-semibold leading-tight">
-                                    Ready Mix Concrete by GATORMIX
-                                </h2>
-                                <p className="text-base lg:text-[16px] max-w-full lg:max-w-[442px] leading-relaxed">
-                                    MIXED ON-SITE READY MIX CONCRETE FOR ALL RESIDENTIAL,
-                                    COMMERCIAL & INDUSTRIAL CONSTRUCTION PROJECTS
-                                </p>
-                            </div>
-                            <div className="flex justify-center lg:justify-end">
-                                <img 
-                                    src={PlaceholderjhbImage} 
-                                    alt="placeholder" 
-                                    className="w-full max-w-[500px] lg:max-w-full h-auto object-cover rounded-lg"
-                                />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {/* ---- Section 5: CTA ---- */}
-                <Cta />
 
                 {/* ---- Section 4: Contact Form ---- */}
                 <div className="w-full max-w-4xl mx-auto mb-16 lg:mb-24 mt-16 lg:mt-24 px-4">
                     <div className="bg-white p-6 lg:p-8 rounded-lg shadow-xl">
-                        <h2 className="text-gray-800 text-sm font-bold mb-2 uppercase tracking-wider text-center">
-                            NEED CONCRETE DELIVERED FROM GATORMIX?
+                        <h2 className="text-green-800 text-sm font-bold mb-2 uppercase tracking-wider text-center">
+                            NEED CONCRETE delivered by GATORMIX concrete
                         </h2>
                         <p className="text-sm text-gray-500 mb-6 text-center">
                             Schedule a delivery today.
@@ -197,12 +143,45 @@ const Landingpages = () => {
                     </div>
                 </div>
 
+
+
+
+                <section className="relative w-full flex items-center justify-start min-h-[450px] sm:min-h-[500px] md:min-h-[600px] p-4 overflow-hidden bg-gray-100">
+                    {/* Background image */}
+                    <div>
+                        <img
+                            className="absolute object-cover w-full h-full top-0 left-0 z-0"
+                            src={putzmeister}
+                        />
+                        <div className="absolute inset-0 bg-black/60"></div>
+                    </div>
+
+                    {/* Foreground content */}
+                    <div className="relative z-10 max-w-2xl bg-black/40 backdrop-blur-sm p-6 sm:p-10 rounded-lg">
+                        <h1 className="text-3xl sm:text-4xl font-extrabold text-yellow-400 leading-tight mb-4">
+                            DO YOU NEED A CONCRETE PUMP
+                        </h1>
+
+                        <p className="text-[15px] sm:text-lg md:text-[15px] text-gray-100 mb-8">
+                            Access to state of the art concrete pumping equipment and fully trained operators,
+                        </p>
+
+                        <button
+                            className="inline-flex items-center gap-2 px-6 py-3 text-base sm:text-lg font-bold rounded-md
+                     bg-yellow-400 text-gray-900 hover:bg-yellow-500 transition duration-300
+                     shadow-lg shadow-yellow-500/40"
+                        >
+                            <span>Get In Touch </span>
+                        </button>
+                    </div>
+                </section>
+
                 {/* ---- Testimonials Section ---- */}
                 <section className="py-12 lg:py-20 bg-gray-50">
                     <div className="container mx-auto px-4">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
                             <div className="text-center lg:text-left">
-                                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 max-w-full lg:max-w-[392px] mx-auto lg:mx-0">
+                                <h2 className="text-3xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 max-w-full lg:max-w-[449px] mx-auto lg:mx-0">
                                     Trusted by Builders and Homeowners
                                 </h2>
                                 <p className="mt-4 text-base lg:text-[16px] text-gray-600 max-w-full lg:max-w-[652px] mx-auto lg:mx-0 leading-relaxed">
@@ -279,8 +258,32 @@ const Landingpages = () => {
                 </section>
 
                 <Faq />
-                <div className="mb-6 px-4">
-                    <CalculatorCta />
+
+
+                <div className="relative bg-gray-100 py-16 overflow-hidden md:py-24">
+                    <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+                        <div className="w-full md:w-1/2 text-center md:text-left mb-12 md:mb-0 z-10">
+                            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight mb-4">
+                                Have any questions for us?
+                            </h2>
+                            <p className="text-base sm:text-lg text-gray-700 max-w-lg mx-auto md:mx-0 mb-8">
+                                Concrete can be confusing, but it doesn't have to be.  Reach out to us with any questions you may have, and we will respond within 24 hours.
+                            </p>
+                            <div className="relative inline-flex items-center">
+                                <button className="flex items-center px-8 py-4 bg-yellow-400 text-black font-extrabold rounded-lg text-lg shadow-lg hover:bg-yellow-600 transition duration-300 transform hover:-translate-y-1">
+                                   Get In Touch 
+                                </button>
+                            </div>
+                        </div>
+                        <div className="w-full md:w-1/2 flex justify-center md:justify-end opacity-20 md:opacity-100 z-0">
+                            <img
+                                src={nobgslish}
+                                alt="Concrete Truck"
+                                className="max-w-full h-auto"
+                                style={{ filter: 'blur(1px) grayscale(80%)' }}
+                            />
+                        </div>
+                    </div>
                 </div>
             </CommonWrapper>
         </>

@@ -10,26 +10,22 @@ const ServiceAreas: React.FC = () => {
       <CommonWrapper>
         <Banner imageUrl={servicesanalysers} title="Service Areas" subtitle="Get concrete for your building project delivered and mixed on-site across SOUTH WEST FLORIDA" />
         <div className="flex justify-center my-6">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4420.211473088812!2d-81.76443551297656!3d26.53187701674403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88db133fbf250581%3A0xfc189f0e4f154e46!2sSouthwest%20Florida%20International%20Airport!5e1!3m2!1sen!2sbd!4v1760775956838!5m2!1sen!2sbd"
-            width="100%"
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4489524.445870186!2d-82.6741234571419!3d27.44950179786062!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88c1766591562abf%3A0xf72e13d35bc74ed0!2sFlorida%2C%20USA!5e1!3m2!1sen!2sbd!4v1761127295558!5m2!1sen!2sbd"
+            width="1500"
             height="450"
-            style={{ border: 0 }}
-            allowFullScreen={true}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
+            loading="lazy">
+          </iframe>
         </div>
         <div className=" flex justify-center my-6">
           <ContactForm />
         </div>
 
         <div>
-              <CalculatorCta />
+          <CalculatorCta />
         </div>
         <div>
-      
-        <Banner imageUrl={puttk} title='DO YOU NEED A CONCRETE PUMP' btnText='Get In Touch' showButton />
+
+          <Banner imageUrl={puttk} title='DO YOU NEED A CONCRETE PUMP' btnText='Get In Touch' showButton />
 
         </div>
       </CommonWrapper>

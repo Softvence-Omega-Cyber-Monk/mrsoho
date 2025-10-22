@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import GATORMIX from '../assets/GATORMIX.png';
+import logo from '@/assets/logo.png';
 import CommonWrapper from '@/common/CommonWrapper';
 
 interface NavItem {
@@ -25,8 +25,8 @@ const Navbar: React.FC = () => {
         <nav className="flex items-center justify-between p-4 h-16 md:h-20 lg:h-24 relative">
           {/* Logo */}
           <Link to="/" className="flex-shrink-0">
-            <div className="w-16 md:w-20 lg:w-24">
-              <img src={GATORMIX} alt="logo" className="w-full h-auto" />
+            <div className="w-16 md:w-20 lg:w-24 scale-158">
+              <img src={logo} alt="logo" className="w-full h-auto" />
             </div>
           </Link>
 
@@ -68,7 +68,7 @@ const Navbar: React.FC = () => {
             {/* CONTACT link - white by default, yellow on hover */}
             <Link
               to="/contact"
-              className="text-xs lg:text-sm font-bold text-white hover:text-[#FEDA42] transition-colors duration-300 whitespace-nowrap"
+              className="text-xs lg:text-sm text-white hover:text-[#FEDA42] transition-colors duration-300 whitespace-nowrap"
             >
               CONTACT
             </Link>
