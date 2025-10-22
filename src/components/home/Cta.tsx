@@ -1,5 +1,5 @@
 import { FaCalculator } from "react-icons/fa";
-import dfjvgfrgvcar from "../../assets/dfjvgfrgvcar.jpg";
+import dfjvgfrgvcar3 from "../../assets/dfjvgfrgvcar3.jpg";
 
 const Cta = () => {
   return (
@@ -8,7 +8,7 @@ const Cta = () => {
       <div>
       <img
         className="absolute object-cover w-full h-full top-0 left-0 z-0"
-        src={dfjvgfrgvcar}
+        src={dfjvgfrgvcar3}
       />
         <div className="absolute inset-0 bg-black/60"></div>
       </div>
