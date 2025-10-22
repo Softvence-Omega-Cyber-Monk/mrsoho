@@ -57,7 +57,8 @@ const Hero = () => {
             by GATORMIX
           </h1>
           <p className="text-base sm:text-lg font-semibold mb-4 uppercase tracking-wide text-gray-300">
-            Mixed On-Site Ready Mix Concrete for all Residential, Commercial & Industrial Construction Projects
+GATORMIX READY MIX CONCRETE FOR ALL RESIDENTIAL,
+COMMERCIAL & INDUSTRIAL CONSTRUCTION PROJECTS
           </p>
           <p className="text-sm sm:text-base text-gray-300 mb-8 leading-relaxed">
             A wide range of fresh, high quality concretes, including specialty concretes mixed on site and miles at your job site, according to your specifications.

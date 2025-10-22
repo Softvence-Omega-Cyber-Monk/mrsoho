@@ -123,7 +123,7 @@ const ConcreteServicesSection: React.FC = () => {
                   </defs>
                 </svg>
               </span>
-              Commercial & IndustrialBuilding Projects
+              Commercial & Industrial Building Projects
             </h3>
             <p className="text-gray-600 text-sm max-w-full">
               {commercialProjectsDescription}

@@ -5,7 +5,7 @@ import CloudflareLogo from "@/components/CloudflareLogo.tsx";
 import Faq from "@/components/home/Faq";
 import Banner from "@/components/Banner";
 import putzmeister from "@/assets/putzmeister.jpg";
-import nobgslish from '@/assets/nobgslish.png'; 
+import nobgslish from '@/assets/nobgslish.png';
 const Landingpages = () => {
     const [formData, setFormData] = useState({
         name: "",
@@ -38,9 +38,9 @@ const Landingpages = () => {
                 {/* ---- Section 4: Contact Form ---- */}
                 <div className="w-full max-w-4xl mx-auto mb-16 lg:mb-24 mt-16 lg:mt-24 px-4">
                     <div className="bg-white p-6 lg:p-8 rounded-lg shadow-xl">
-                        <h2 className="text-green-800 text-sm font-bold mb-2 uppercase tracking-wider text-center">
-                            NEED CONCRETE delivered by GATORMIX concrete
-                        </h2>
+                        <h2 className="text-green-500 text-sm font-bold mb-2  tracking-wider text-center">
+NEED CONCRETE delivered by GATORMIX concrete           
+             </h2>
                         <p className="text-sm text-gray-500 mb-6 text-center">
                             Schedule a delivery today.
                         </p>
@@ -271,7 +271,7 @@ const Landingpages = () => {
                             </p>
                             <div className="relative inline-flex items-center">
                                 <button className="flex items-center px-8 py-4 bg-yellow-400 text-black font-extrabold rounded-lg text-lg shadow-lg hover:bg-yellow-600 transition duration-300 transform hover:-translate-y-1">
-                                   Get In Touch 
+                                    Get In Touch
                                 </button>
                             </div>
                         </div>
