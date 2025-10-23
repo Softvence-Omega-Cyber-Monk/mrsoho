@@ -30,17 +30,15 @@ const Landingpages = () => {
 
     return (
         <>
-            <CommonWrapper>
-                {/* ---- Section 1: Hero Image ---- */}
+            <CommonWrapper className="">
                 <Banner imageUrl={landingpages} title="The Smarter Way to Order Concrete" subtitle="Calculate your exact needs, schedule delivery, and get fresh concrete mixed right on-site. No waste, no hassle, just the perfect pour every time." />
-
-
-                {/* ---- Section 4: Contact Form ---- */}
+            </CommonWrapper  >
+            <CommonWrapper className="">
                 <div className="w-full max-w-4xl mx-auto mb-16 lg:mb-24 mt-16 lg:mt-24 px-4">
-                    <div className="bg-white p-6 lg:p-8 rounded-lg shadow-xl">
+                    <div className="bg-[#F9FAFB] p-6 lg:p-8 rounded-lg shadow-xl mt-[112px]">
                         <h2 className="text-green-500 text-sm font-bold mb-2  tracking-wider text-center">
-NEED CONCRETE delivered by GATORMIX concrete           
-             </h2>
+                            NEED CONCRETE delivered by GATORMIX concrete
+                        </h2>
                         <p className="text-sm text-gray-500 mb-6 text-center">
                             Schedule a delivery today.
                         </p>
@@ -146,35 +144,42 @@ NEED CONCRETE delivered by GATORMIX concrete
 
 
 
-                <section className="relative w-full flex items-center justify-start min-h-[450px] sm:min-h-[500px] md:min-h-[600px] p-4 overflow-hidden bg-gray-100">
-                    {/* Background image */}
-                    <div>
-                        <img
-                            className="absolute object-cover w-full h-full top-0 left-0 z-0"
-                            src={putzmeister}
-                        />
-                        <div className="absolute inset-0 bg-black/60"></div>
-                    </div>
+ 
 
-                    {/* Foreground content */}
-                    <div className="relative z-10 max-w-2xl bg-black/40 backdrop-blur-sm p-6 sm:p-10 rounded-lg">
-                        <h1 className="text-3xl sm:text-4xl font-extrabold text-yellow-400 leading-tight mb-4">
-                            DO YOU NEED A CONCRETE PUMP
-                        </h1>
 
-                        <p className="text-[15px] sm:text-lg md:text-[15px] text-gray-100 mb-8">
-                            Access to state of the art concrete pumping equipment and fully trained operators,
-                        </p>
 
-                        <button
-                            className="inline-flex items-center gap-2 px-6 py-3 text-base sm:text-lg font-bold rounded-md
+<section className="bg-black/40" style={{
+      backgroundImage: `url("${putzmeister}")`,
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
+    }}>
+      <CommonWrapper className="max-w-[1440px]">
+        <div
+          className="relative w-full h-[640px] overflow-hidden flex items-center">
+          <div className="absolute inset-0 "></div>
+
+          {/* Left-aligned blurred text box */}
+          <div className="relative z-10 max-w-3xl p-6 bg-black/40  rounded-lg text-white">
+            <h1 className="text-4xl md:text-5xl font-bold text-[#FEDA42] mb-3">
+               DO YOU NEED A CONCRETE PUMP
+            </h1>
+             
+              <p className="text-base md:text-lg leading-relaxed"> Access to state of the art concrete pumping equipment and fully trained operators,</p>
+        
+            {/* Conditional Button */}
+            <button
+                                className="inline-flex items-center gap-2 px-6 py-3 text-base sm:text-lg font-bold rounded-md
                      bg-yellow-400 text-gray-900 hover:bg-yellow-500 transition duration-300
                      shadow-lg shadow-yellow-500/40"
-                        >
-                            <span>Get In Touch </span>
-                        </button>
-                    </div>
-                </section>
+                            >
+                                <span>Get In Touch </span>
+                            </button>
+          </div>
+        </div>
+      </CommonWrapper>
+    </section>
+
 
                 {/* ---- Testimonials Section ---- */}
                 <section className="py-12 lg:py-20 bg-gray-50">
@@ -257,11 +262,17 @@ NEED CONCRETE delivered by GATORMIX concrete
                     </div>
                 </section>
 
-                <Faq />
+         <CommonWrapper className=" bg-[#212121]">
 
+
+       <div className="max-w-[1440px] mx-auto">
+                    <Faq />
+       </div>
+
+         </CommonWrapper>
 
                 <div className="relative bg-gray-100 py-16 overflow-hidden md:py-24">
-                    <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+                    <div className="container mx-auto px-12 flex flex-col md:flex-row items-center justify-between">
                         <div className="w-full md:w-1/2 text-center md:text-left mb-12 md:mb-0 z-10">
                             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight mb-4">
                                 Have any questions for us?

@@ -20,13 +20,14 @@ const Navbar: React.FC = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <div className="bg-gray-900">
-      <CommonWrapper>
+    <div className="bg-[#212121]">
+      <CommonWrapper className='max-w-[1440px]'>
         <nav className="flex items-center justify-between p-4 h-16 md:h-20 lg:h-24 relative">
           {/* Logo */}
           <Link to="/" className="flex-shrink-0">
-            <div className="w-16 md:w-20 lg:w-24 scale-158">
-              <img src={logo} alt="logo" className="w-full h-auto" />
+            <div>
+            {/* <div className="w-16 md:w-20 lg:w-24 scale-158"> */}
+              <img src={logo} alt="logo" className="w-[322px] h-[62px]" />
             </div>
           </Link>
 

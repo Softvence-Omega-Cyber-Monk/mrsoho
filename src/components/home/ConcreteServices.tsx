@@ -47,7 +47,7 @@ const ConcreteServicesSection: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col items-center py-16 px-4">
       {/* Top Heading Section */}
-      <div className="text-center mb-12">
+      <div className="text-center mt-[112px] mb-[112px]">
         <h1 className="text-4xl md:text-5xl font-extrabold text-gray-800 leading-tight">
           Need Concrete Delivered and Mixed<br />
           On-Site in SOUTH WEST FLORIDA?</h1>
@@ -60,24 +60,18 @@ const ConcreteServicesSection: React.FC = () => {
       </div>
 
       {/* Main Project Types Section */}
-      <div className="w-full max-w-6xl text-center relative pt-16">
-        {/* Background Image/Overlay Mimic */}
-        <div className="absolute inset-0 z-0 opacity-10 bg-center bg-cover"
-          style={{ backgroundImage: "url('/path-to-your-concrete-truck-background-image.png')" }}>
-        </div>
-
+      <div className="w-full max-w-6xl text-center relative pt-16 mt-[112px]">
         <div className="relative z-10">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 tracking-wider">
+          <h2 className="text-[44px] md:text-3xl font-bold text-[#212121]">
             Types of Concrete Projects
           </h2>
-          <p className="text-3xl md:text-4xl font-extrabold text-gray-500 mt-2 leading-snug">
+          <p className="text-[44px] md:text-4xl font-extrabold text-[#475569] mt-2 leading-snug">
             On-Time Concrete Delivery Near You in SOUTH WEST FLORIDA
           </p>
           <p className="text-gray-600 text-sm mt-4 mb-10 max-w-3xl mx-auto">
             Gator delivers concrete best suited for all types of residential, commercial and industrial building projects.
           </p>
 
-          {/* Gator Mix Delivers Section - Using Flex for columns */}
           <div className="bg-white p-8 rounded-xl shadow-2xl">
             <h3 className="text-xl font-bold text-green-500 mb-4 flex items-center">
               <span className="mr-2 text-2xl">

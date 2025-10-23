@@ -47,7 +47,7 @@ const FAQItem: React.FC<FAQItemProps> = ({ item, isOpen, toggleItem }) => {
 
   return (
     <div
-      className={`mb-4 w-full cursor-pointer rounded-lg overflow-hidden transition-all duration-300 ${activeClasses}`}
+      className={`mb-4  w-[616px] cursor-pointer rounded-lg overflow-hidden transition-all duration-300 ${activeClasses}`}
       onClick={() => toggleItem(item.id)}
     >
       {/* Header */}
@@ -86,17 +86,17 @@ const Faq = () => {
   };
 
   return (
-    <section className="bg-gray-900 px-4 py-12 sm:px-6 md:px-12 lg:px-20 flex justify-center">
-      <div className="w-full max-w-6xl flex flex-col md:flex-row gap-10 md:gap-16">
+    <section className="  py-12    w-full mx-auto  ">
+      <div className="flex   md:flex-row justify-between">
         {/* Left column */}
-        <div className="md:w-1/3 text-center md:text-left">
+        <div className="flex-1 text-center md:text-left">
           <h1 className="text-4xl sm:text-5xl font-extrabold text-yellow-500 tracking-tight">
             FAQs
           </h1>
         </div>
 
         {/* Right column */}
-        <div className="md:w-2/3">
+        <div className="">
           {faqData.map((item) => (
             <FAQItem
               key={item.id}
