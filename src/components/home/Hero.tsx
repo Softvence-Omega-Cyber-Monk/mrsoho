@@ -41,23 +41,24 @@ const Hero = () => {
     <div className="relative min-h-screen flex items-center justify-center">
       {/* Background Image/Overlay for the left side */}
       <div
-        className="absolute inset-0 bg-cover bg-center rounded-md"
+        className="absolute inset-0 bg-cover bg-center rounded-md w-[1462px] h-[698px] mx-auto"
         style={{ backgroundImage: `url(${ImageContainer})` }}
       >
         <div className="absolute inset-0  opacity-75"></div>
       </div>
 
       {/* Content Container: FIX APPLIED HERE - Removed h-[552px] to allow form to expand */}
-      <div className="relative max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 p-6 md:p-8 lg:p-12">
+      <div className="relative max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 mt-9">
 
         {/* Left Content (Text/Features) */}
-        <div className="lg:w-1/2 z-10 py-8">
+        <div className="pt-16 z-10">
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6 max-w-full text-[#FEDA42] ">
             Ready Mix Concrete
             by GATORMIX
           </h1>
           <p className="text-base sm:text-lg font-semibold mb-4 uppercase tracking-wide text-gray-300">
-            Mixed On-Site Ready Mix Concrete for all Residential, Commercial & Industrial Construction Projects
+GATORMIX READY MIX CONCRETE FOR ALL RESIDENTIAL,
+COMMERCIAL & INDUSTRIAL CONSTRUCTION PROJECTS
           </p>
           <p className="text-sm sm:text-base text-gray-300 mb-8 leading-relaxed">
             A wide range of fresh, high quality concretes, including specialty concretes mixed on site and miles at your job site, according to your specifications.
@@ -138,7 +139,7 @@ const Hero = () => {
         </div>
 
         {/* Right Content (Form) */}
-        <div className="w-full lg:w-1/2 z-10 mx-auto mb-24">
+        <div className="w-full z-10 mx-auto mb-24">
           <div className="bg-white p-8 rounded-lg shadow-xl">
 
             {/* --- Header --- */}
