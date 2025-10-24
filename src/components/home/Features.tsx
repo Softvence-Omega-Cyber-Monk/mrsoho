@@ -1,89 +1,107 @@
-import { Droplet, Truck, Clock, DollarSign, Loader2 } from 'lucide-react';
+import React from "react";
+// Corrected Lucide Icons import: MixerHorizontal is replaced with Construction
+// import { DollarSign, Loader2 } from "lucide-react";
+
+// Image Imports (Adjust paths as needed for your project structure)
+import GATORMIXDelivers from "../../assets/GATORMIXDelivers.jpg";
+import time from "../../assets/time.jpg";
+import handcement from "../../assets/handcement.jpg";
+import PlaceholderImage from "../../assets/PlaceholderImage.png";
+import timer from "../../assets/timer.png";
+import Delivers from "../../assets/Delivers.png";
+import finishingtime from "../../assets/finishingtime.png";
+import moreflex from "../../assets/moreflex.jpg";
+import lowercost from "../../assets/lowercost.png";
+import MixFlexibility from "../../assets/MixFlexibility.png";
+
+// Placeholder for a CommonWrapper component (replace with your actual component or a simple div)
+const CommonWrapper: React.FC<React.PropsWithChildren<{ className?: string }>> = ({ children, className }) => (
+  <div className={className}>{children}</div>
+);
+
+// --- Interface and Data ---
 
 interface Feature {
   id: number;
-  icon: React.ElementType; // Icon component from lucide-react
+  icon: string;
   title: string;
   description: string;
-  image: string; // Placeholder for background image URL
-  span?: string; // Tailwind class for column spanning (e.g., 'md:col-span-2')
+  image: string;
+  span?: string;
+  className?: string;
 }
 
-// Data for the feature cards, loosely matching the provided screenshot
 const featuresData: Feature[] = [
   {
     id: 1,
-    icon: Droplet,
-    title: 'The Perfect Mix - Every time',
+    icon: timer,
+    title: "The Perfect Mix – Every Time",
     description:
-      'Concrete delivered and mixed using volumetric technology in our mixer trucks at your site reduces the need to add water or materials at the last minute, so you get the strongest, best performing concrete possible.',
-    image: 'https://placehold.co/800x600/1e293b/d9f99d?text=Concrete+Pour',
-    span: 'md:col-span-1 lg:col-span-1', // Default spanning
+      "Concrete delivered and mixed using volumetric technology in our mixer trucks at your site reduces the need to add water or materials at the last minute, so you get the strongest, best performing concrete possible.",
+    image: time,
+    span: "lg:col-span-7",
   },
   {
     id: 2,
-    icon: Truck,
-    title: 'GATORMIX Delivers',
+    icon: Delivers,
+    title: "GATORMIX Delivers",
     description:
-      'GATORMIX delivers concrete and additives you require, and mixes them to the ideal specifications for your application - so you get ideal results.',
-    image: 'https://placehold.co/800x600/1e293b/d9f99d?text=Worker+Mixing',
-    span: 'md:col-span-1 lg:col-span-1', // Default spanning
+      "GATORMIX delivers concrete and concrete additives you require, and mixes them to the ideal specifications for your application - so you get ideal results.",
+    image: GATORMIXDelivers,
+    span: "lg:col-span-5",
   },
   {
     id: 3,
-    icon: Clock,
-    title: 'Longer Finishing Time',
+    icon: finishingtime,
+    title: "Longer Finishing Time",
     description:
-      'By having your concrete mixed and poured on-site, you maximize the finishing time versus concrete that is mixed off-site and has started curing while being delivered.',
-    image: 'https://placehold.co/400x300/1e293b/d9f99d?text=Time+Icon',
+      "By having your concrete mixed and poured on-site, you maximize the finishing time versus concrete that is mixed off-site and has started curing while being delivered.",
+    image: handcement,
+    span: "lg:col-span-3",
   },
   {
     id: 4,
-    icon: DollarSign,
-    title: 'Lower Costs',
+    icon: lowercost,
+    title: "Lower Costs",
     description:
-      'By paying only for the concrete you use, you eliminate the significant cost of overages and shortages associated with standard concrete mixed off-site at a batch plant.',
-    image: 'https://placehold.co/400x300/1e293b/d9f99d?text=Cost+Saving',
+      "By paying only for the concrete you use, you eliminate the significant cost of overages and shortages associated with standard concrete mixed off-site at a batch plant.",
+    image: PlaceholderImage,
+    span: "lg:col-span-3",
   },
   {
     id: 5,
-    icon: Loader2,
-    title: 'More Mix Flexibility',
+    icon: MixFlexibility,
+    title: "More Mix Flexibility",
     description:
-      'With concrete mixed just before application you can adjust your mix as needed, without any job delays or wastage, which is virtually impossible with off-site batch mixing. You also get the ability to pour TWO OR MORE mixes with the SAME TRUCK.',
-    image: 'https://placehold.co/800x600/1e293b/d9f99d?text=Crane+and+Mix',
-    span: 'md:col-span-2 lg:col-span-2', // This card spans two columns
+      "With concrete mixed just before application you can adjust your mix as needed, without any job delays or wastage, which is virtually impossible with off-site batch mixing. You also get the ability to pour TWO or MORE mixes with the SAME TRUCK.",
+    image: moreflex,
+    span: "lg:col-span-6",
   },
 ];
 
 const FeatureCard: React.FC<{ feature: Feature }> = ({ feature }) => {
-  const IconComponent = feature.icon;
-
   return (
-    <div 
-      className={`relative rounded-xl overflow-hidden shadow-2xl transition duration-500 hover:shadow-yellow-500/30 ${feature.span || 'md:col-span-1'}`}
-      style={{ minHeight: feature.span ? '350px' : '250px' }} // Adjust height for spanning cards
+    <div
+      className={`col-span-12 relative group rounded-xl overflow-hidden shadow-xl hover:shadow-yellow-400/30 transition-all duration-500 ${feature.span || ""}`}
     >
-      {/* Background Image Container */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+      <div
+        className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500"
         style={{ backgroundImage: `url(${feature.image})` }}
+        role="img"
+        aria-label={feature.title}
       >
-        {/* Dark Overlay with Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/70 to-gray-900/50"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/95 via-gray-900/75 to-gray-800/40"></div>
       </div>
 
-      {/* Content */}
-      <div className="relative p-6 sm:p-8 flex flex-col justify-end h-full text-white">
-        {/* Icon (positioned near the top left of the content area) */}
-        <div className="absolute top-6 left-6 sm:top-8 sm:left-8 bg-yellow-400 p-3 rounded-full text-gray-900 shadow-lg">
-          <IconComponent className="w-6 h-6" />
+      <div className="relative p-6 sm:p-8 flex flex-col justify-end h-full min-h-[300px] text-white">
+        <div className="absolute top-5 left-5 sm:top-8 sm:left-8 p-3 rounded-full shadow-md">
+          <img src={feature.icon} alt={feature.title} className="w-6 h-6 text-gray-900" />
         </div>
 
-        <h3 className="text-2xl sm:text-3xl font-bold mt-16 mb-2 leading-snug">
+        <h3 className="text-xl sm:text-2xl font-bold mt-14 mb-2 text-amber-300">
           {feature.title}
         </h3>
-        <p className="text-base font-medium text-gray-200">
+        <p className="text-sm sm:text-base text-gray-200 leading-relaxed">
           {feature.description}
         </p>
       </div>
@@ -93,27 +111,24 @@ const FeatureCard: React.FC<{ feature: Feature }> = ({ feature }) => {
 
 const Features = () => {
   return (
-    <div className="min-h-screen bg-gray-900 font-sans p-4 sm:p-8">
-      {/* Header Section */}
-      <div className="max-w-4xl mx-auto mb-12 md:mb-20 pt-10">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-yellow-400 mb-4">
-          Why Choose GATORMIX
-        </h2>
-        <p className="text-lg md:text-xl text-gray-300">
-          When you choose GATORMIX, your reliable on-site concrete mixing plant, and all the advantages that come with it.
-        </p>
-      </div>
+    <section className="bg-[#212121] text-white px-4 sm:px-6 lg:px-12 py-12 sm:py-20">
+      <CommonWrapper className="max-w-[1440px] mx-auto">
+        <div className="mb-12">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-yellow-400 mb-4">
+            Why Choose GATORMIX
+          </h2>
+          <p className="text-base sm:text-lg text-gray-300 leading-relaxed max-w-4xl">
+            When you choose GATORMIX, you get your OWN on-site concrete mixing plant, and all the advantages that come with it.
+          </p>
+        </div>
 
-      {/* Features Grid */}
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {featuresData.map((feature) => (
-          <FeatureCard key={feature.id} feature={feature} />
-        ))}
-      </div>
-
-      {/* Footer/Spacing */}
-      <div className="py-10"></div>
-    </div>
+        <div className="grid grid-cols-12 gap-8">
+          {featuresData.map((feature) => (
+            <FeatureCard key={feature.id} feature={feature} />
+          ))}
+        </div>
+      </CommonWrapper>
+    </section>
   );
 };
 

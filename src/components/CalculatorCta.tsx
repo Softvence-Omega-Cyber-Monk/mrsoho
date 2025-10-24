@@ -1,7 +1,7 @@
 // src/components/CalculatorCta.jsx
 
 // import { Calculator } from 'lucide-react'; // Using Lucide for the calculator icon
-import ConcreteTruck from '@/assets/Placeholder Image.png'; // Assuming you have an image for the truck
+import nobgslish from '@/assets/nobgslish.png'; // Assuming you have an image for the truck
 import CommonWrapper from '@/common/CommonWrapper';
 
 const CalculatorCta = () => {
@@ -17,8 +17,8 @@ const CalculatorCta = () => {
             How Much Concrete Do You Need?
           </h2>
           <p className="text-base sm:text-lg text-gray-700 max-w-lg mx-auto md:mx-0 mb-8">
-            The easy-to-use Concrete Calculator tells you the type and volume 
-            of concrete you need for your project, and how much it will cost.
+            The easy-to-use Concrete Calculator tells you the type and volume
+of concrete you need for your project, and how much it will cost.
           </p>
           
           {/* Button and Overlapping Avatars */}
@@ -34,7 +34,7 @@ const CalculatorCta = () => {
         <div className="w-full md:w-1/2 flex justify-center md:justify-end opacity-20 md:opacity-100 z-0">
           {/* Assuming you have a concrete truck image. Adjust path if needed. */}
           <img 
-            src={ConcreteTruck} 
+            src={nobgslish} 
             alt="Concrete Truck" 
             className="max-w-full h-auto" 
             style={{ filter: 'blur(1px) grayscale(80%)'  }} // To make it faded/white

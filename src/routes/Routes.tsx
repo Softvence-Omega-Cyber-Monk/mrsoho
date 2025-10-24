@@ -14,6 +14,7 @@ import HowItWorks from "../components/home/HowItWorks";
 import Concrete from "../pages/Concrete";
 import ServiceAreas from "../pages/ServiceAreas";
 import ConcreteCalculator from "../pages/Cncretecalculator";   // <-- new import
+import Landingpages from "@/pages/Landingpages";
 
 const routes = createBrowserRouter([
   {
@@ -21,7 +22,7 @@ const routes = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: "/",
+        path: "/HOW-IT-WORKS",
         element: <Home />,
       },
       {
@@ -47,6 +48,10 @@ const routes = createBrowserRouter([
       {
         path: "/service-areas",
         element: <ServiceAreas />,
+      },
+      {
+        path: "/",
+        element: <Landingpages />,
       },
       {
         path: "/form",

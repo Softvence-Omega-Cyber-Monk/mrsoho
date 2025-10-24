@@ -1,22 +1,14 @@
-import { useState } from "react"
-import ShapeSelector from "@/components/shape-selector"
-import DimensionInput from "@/components/dimension-input"
-import ConcreteMixSelector from "@/components/concrete-mix-selector"
-import ResultsPanel from "@/components/results-panel"
-import ShapePreview from "@/components/shape-preview"
-
-type ShapeType = "slab" | "footing" | "gutter" | "circular" | "column"
-
-interface Dimensions {
-  length: number
-  width: number
-  thickness: number
-  quantity: number
-}
+import { useState } from "react";
+import ShapeSelector from "@/components/shape-selector";
+import DimensionInput from "@/components/dimension-input";
+import ConcreteMixSelector from "@/components/concrete-mix-selector";
+import ResultsPanel from "@/components/results-panel";
+import ShapePreview from "@/components/shape-preview";
+import { ShapeType, Dimensions } from "../types";
 
 interface ConcreteMix {
-  name: string
-  price: number
+  name: string;
+  price: number;
 }
 
 const CONCRETE_MIXES: ConcreteMix[] = [
@@ -24,60 +16,71 @@ const CONCRETE_MIXES: ConcreteMix[] = [
   { name: "25 MPa Concrete", price: 255 },
   { name: "32 MPa Concrete", price: 265 },
   { name: ".04 UFILL", price: 245 },
-]
+];
 
 export default function Home() {
-  const [selectedShape, setSelectedShape] = useState<ShapeType>("slab")
-  const [dimensions, setDimensions] = useState<Dimensions>({
-    length: 0,
-    width: 0,
-    thickness: 0,
-    quantity: 1,
-  })
-  const [selectedMix, setSelectedMix] = useState<ConcreteMix | null>(null)
-  const [additionalCost, setAdditionalCost] = useState(0)
+  const [selectedShape, setSelectedShape] = useState<ShapeType>("slab");
+  const [dimensions, setDimensions] = useState<Dimensions | null>(null);
+  const [selectedMix, setSelectedMix] = useState<ConcreteMix | null>(null);
+  const [additionalCost, setAdditionalCost] = useState(0);
 
   // Calculate volume in cubic yards
   const calculateVolume = (): number => {
-    let volumeCubicMeters = 0
+    if (!dimensions) return 0;
+
+    const length = parseFloat(dimensions.length as string) || 0;
+    const width = parseFloat(dimensions.width as string) || 0;
+    const thickness = parseFloat(dimensions.thickness as string) || 0;
+    const quantity = dimensions.quantity || 0;
+    const rise = parseFloat(dimensions.rise as string) || 0;
+    const run = parseFloat(dimensions.run as string) || 0;
+
+    let volumeCubicMeters = 0;
 
     switch (selectedShape) {
       case "slab":
       case "footing":
-        volumeCubicMeters = (dimensions.length * dimensions.width * dimensions.thickness) / 1000000
-        break
+        volumeCubicMeters = length * width * thickness;
+        break;
       case "circular":
-        const radius = dimensions.length / 2
-        volumeCubicMeters = (Math.PI * radius * radius * dimensions.thickness) / 1000000
-        break
+        const radius = length / 2;
+        volumeCubicMeters = Math.PI * radius * radius * thickness;
+        break;
       case "column":
-        volumeCubicMeters = (dimensions.length * dimensions.width * dimensions.thickness) / 1000000
-        break
+        volumeCubicMeters = length * width * thickness;
+        break;
+      case "steps":
+        volumeCubicMeters = rise * run * thickness; // Placeholder calculation for steps
+        break;
       case "gutter":
-        volumeCubicMeters = (dimensions.length * dimensions.width * dimensions.thickness) / 1000000
-        break
+        volumeCubicMeters = length * width * thickness;
+        break;
     }
 
     // Convert cubic meters to cubic yards (1 cubic meter = 1.308 cubic yards)
-    const volumeCubicYards = volumeCubicMeters * 1.308 * dimensions.quantity
-    return Math.max(0, volumeCubicYards)
-  }
+    const volumeCubicYards = volumeCubicMeters * 1.308 * quantity;
+    return Math.max(0, volumeCubicYards);
+  };
 
-  const volume = calculateVolume()
-  const mixCost = selectedMix ? selectedMix.price * volume : 0
-  const totalCost = mixCost + additionalCost
+  const volume = calculateVolume();
+  const mixCost = selectedMix ? selectedMix.price * volume : 0;
+  const totalCost = mixCost + additionalCost;
 
   const handleClearAll = () => {
-    setDimensions({ length: 0, width: 0, thickness: 0, quantity: 1 })
-    setSelectedMix(null)
-    setAdditionalCost(0)
-  }
+    setDimensions(null);
+    setSelectedMix(null);
+    setAdditionalCost(0);
+  };
 
   return (
     <main className="min-h-screen bg-white p-4 md:p-8">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl font-bold text-slate-900 mb-2 text-center">Concrete Calculator</h1>
-        <p className="text-slate-600 text-center mb-8">Calculate your concrete needs with precision</p>
+        <h1 className="text-4xl font-bold text-slate-900 mb-2 text-center">
+          Concrete Calculator
+        </h1>
+        <p className="text-slate-600 text-center mb-8">
+          Calculate your concrete needs with precision
+        </p>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Left Panel - Inputs */}
@@ -91,7 +94,11 @@ export default function Home() {
             {/* Dimensions */}
             <div className="bg-slate-50 rounded-lg p-6 border border-slate-200">
               <h2 className="text-xl font-semibold text-slate-900 mb-4">2. Enter Dimensions</h2>
-              <DimensionInput dimensions={dimensions} onDimensionsChange={setDimensions} shape={selectedShape} />
+              <DimensionInput
+                dimensions={dimensions || { length: "", width: "", thickness: "", quantity: 1, rise: "", run: "" }}
+                onDimensionsChange={(dims) => setDimensions(dims)}
+                shape={selectedShape}
+              />
             </div>
 
             {/* Concrete Mix Selection */}
@@ -125,5 +132,5 @@ export default function Home() {
         </div>
       </div>
     </main>
-  )
+  );
 }

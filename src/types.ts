@@ -18,18 +18,20 @@ export interface User {
   export type Unit = "meters" | "feet";
 
   export interface Dimensions {
-    length: number;
-    width: number;
-    thickness: number;
+    length: number | string;
+    width: number | string;
+    thickness: number | string;
     quantity: number;
+    rise: number | string;
+    run: number | string;
   }
 
-  export type Shape = "slab" | "footing" | "gutter" | "circular" | "column";
+  export type ShapeType = "slab" | "footing" | "gutter" | "circular" | "column" | "steps";
 
-  export type ShapeType = "Slabs & Walls" | "Footings" | "Curbs & Gutters" | "Columns & Piers" | "Circular Slabs";
+  export type ShapeDisplayName = "Slabs & Walls" | "Footings" | "Curbs & Gutters" | "Columns & Piers" | "Circular Slabs";
 
   export interface ShapeOption {
-    id: ShapeType;
+    id: ShapeDisplayName;
     name: string;
     icon: string; // Assuming you'll use an icon
   }
@@ -43,8 +45,8 @@ export interface User {
   ];
 
   export interface ShapeSelectorProps {
-    selectedShape: ShapeType;
-    onShapeChange: (shape: ShapeType) => void;
+    selectedShape: ShapeDisplayName;
+    onShapeChange: (shape: ShapeDisplayName) => void;
   }
 
   export interface ResultsPanelProps {

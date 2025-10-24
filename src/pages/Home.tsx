@@ -11,8 +11,8 @@ const GatorMixComplete = () => {
     <CommonWrapper>
       <Hero />
       <HowItWorks />
-      <Features />
       <Cta />
+      <Features />
       <ConcreteServicesSection />
       <Faq />
     </CommonWrapper>
