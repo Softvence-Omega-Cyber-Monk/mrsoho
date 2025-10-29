@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import logo from '@/assets/logo.png';
 import CommonWrapper from '@/common/CommonWrapper';
 
@@ -16,17 +16,19 @@ const navItems: NavItem[] = [
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const location = useLocation();  // Get the current location (URL)
+  
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+  const isActive = (path: string) => location.pathname === path;
 
   return (
     <div className="bg-[#212121]">
-      <CommonWrapper className='max-w-[1440px]'>
+      <CommonWrapper className="max-w-[1440px]">
         <nav className="flex items-center justify-between p-4 h-16 md:h-20 lg:h-24 relative">
           {/* Logo */}
           <Link to="/" className="flex-shrink-0">
             <div>
-            {/* <div className="w-16 md:w-20 lg:w-24 scale-158"> */}
               <img src={logo} alt="logo" className="w-[322px] h-[62px]" />
             </div>
           </Link>
@@ -60,7 +62,8 @@ const Navbar: React.FC = () => {
               <Link
                 key={item.label}
                 to={item.href}
-                className="text-xs lg:text-sm font-medium text-white hover:text-[#FEDA42] transition-colors duration-300 whitespace-nowrap"
+                className={`text-xs lg:text-sm font-medium transition-colors duration-300 whitespace-nowrap 
+                  ${isActive(item.href) ? 'text-[#FEDA42]' : 'text-white hover:text-[#FEDA42]'}`}
               >
                 {item.label}
               </Link>
@@ -69,7 +72,8 @@ const Navbar: React.FC = () => {
             {/* CONTACT link - white by default, yellow on hover */}
             <Link
               to="/contact"
-              className="text-xs lg:text-sm text-white hover:text-[#FEDA42] transition-colors duration-300 whitespace-nowrap"
+              className={`text-xs lg:text-sm font-medium transition-colors duration-300 whitespace-nowrap 
+                ${isActive('/contact') ? 'text-[#FEDA42]' : 'text-white hover:text-[#FEDA42]'}`}
             >
               CONTACT
             </Link>
@@ -90,17 +94,19 @@ const Navbar: React.FC = () => {
                   <Link
                     key={item.label}
                     to={item.href}
-                    className="block text-base font-medium text-gray-700 hover:text-[#FEDA42] transition-colors py-2"
+                    className={`block text-base font-medium transition-colors py-2 
+                      ${isActive(item.href) ? 'text-[#FEDA42]' : 'text-gray-700 hover:text-[#FEDA42]'}`}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.label}
                   </Link>
                 ))}
 
-                {/* CONTACT link - white text not visible on white bg, so keep gray default */}
+                {/* CONTACT link */}
                 <Link
                   to="/contact"
-                  className="block text-base font-bold text-gray-700 hover:text-[#FEDA42] transition-colors py-2"
+                  className={`block text-base font-bold transition-colors py-2 
+                    ${isActive('/contact') ? 'text-[#FEDA42]' : 'text-gray-700 hover:text-[#FEDA42]'}`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   CONTACT

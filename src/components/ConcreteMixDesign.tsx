@@ -126,7 +126,7 @@ const ComparisonCard: React.FC<{ item: ContentItem }> = ({ item }) => {
 const ConcreteMixDesign: React.FC = () => {
   return (
     <div className="bg-gray-50 antialiased py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-[1440px] mx-auto">
         <header className="mb-12">
           <h1 className="text-4xl sm:text-5xl font-samibold text-gray-900 mb-4">
             Concrete Mix Design

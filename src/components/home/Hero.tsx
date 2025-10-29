@@ -48,7 +48,7 @@ const Hero = () => {
       </div>
 
       {/* Content Container: FIX APPLIED HERE - Removed h-[552px] to allow form to expand */}
-      <div className="relative max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 mt-9">
+      <div className="relative max-w-[1440px] mx-auto flex flex-col lg:flex-row gap-8 mt-9">
 
         {/* Left Content (Text/Features) */}
         <div className="pt-16 z-10">

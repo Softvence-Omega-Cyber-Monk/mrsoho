@@ -140,45 +140,37 @@ const Landingpages = () => {
                         </form>
                     </div>
                 </div>
+                <section className="bg-black/40" style={{
+                    backgroundImage: `url("${putzmeister}")`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat",
+                }}>
+                    <CommonWrapper className="max-w-[1440px]">
+                        <div
+                            className="relative w-full h-[640px] overflow-hidden flex items-center">
+                            <div className="absolute inset-0 "></div>
 
+                            {/* Left-aligned blurred text box */}
+                            <div className="relative z-10 max-w-3xl p-6 bg-black/40  rounded-lg text-white">
+                                <h1 className="text-4xl md:text-5xl font-bold text-[#FEDA42] mb-3">
+                                    DO YOU NEED A CONCRETE PUMP
+                                </h1>
 
+                                <p className="text-base md:text-lg leading-relaxed"> Access to state of the art concrete pumping equipment and fully trained operators,</p>
 
-
- 
-
-
-
-<section className="bg-black/40" style={{
-      backgroundImage: `url("${putzmeister}")`,
-      backgroundSize: "cover",
-      backgroundPosition: "center",
-      backgroundRepeat: "no-repeat",
-    }}>
-      <CommonWrapper className="max-w-[1440px]">
-        <div
-          className="relative w-full h-[640px] overflow-hidden flex items-center">
-          <div className="absolute inset-0 "></div>
-
-          {/* Left-aligned blurred text box */}
-          <div className="relative z-10 max-w-3xl p-6 bg-black/40  rounded-lg text-white">
-            <h1 className="text-4xl md:text-5xl font-bold text-[#FEDA42] mb-3">
-               DO YOU NEED A CONCRETE PUMP
-            </h1>
-             
-              <p className="text-base md:text-lg leading-relaxed"> Access to state of the art concrete pumping equipment and fully trained operators,</p>
-        
-            {/* Conditional Button */}
-            <button
-                                className="inline-flex items-center gap-2 px-6 py-3 text-base sm:text-lg font-bold rounded-md
+                                {/* Conditional Button */}
+                                <button
+                                    className="inline-flex items-center gap-2 px-6 py-3 text-base sm:text-lg font-bold rounded-md
                      bg-yellow-400 text-gray-900 hover:bg-yellow-500 transition duration-300
                      shadow-lg shadow-yellow-500/40"
-                            >
-                                <span>Get In Touch </span>
-                            </button>
-          </div>
-        </div>
-      </CommonWrapper>
-    </section>
+                                >
+                                    <span>Get In Touch </span>
+                                </button>
+                            </div>
+                        </div>
+                    </CommonWrapper>
+                </section>
 
 
                 {/* ---- Testimonials Section ---- */}
@@ -262,14 +254,14 @@ const Landingpages = () => {
                     </div>
                 </section>
 
-         <CommonWrapper className=" bg-[#212121]">
+                <CommonWrapper className=" bg-[#212121]">
 
 
-       <div className="max-w-[1440px] mx-auto">
-                    <Faq />
-       </div>
+                    <div className="max-w-[1440px] mx-auto">
+                        <Faq />
+                    </div>
 
-         </CommonWrapper>
+                </CommonWrapper>
 
                 <div className="relative bg-gray-100 py-16 overflow-hidden md:py-24">
                     <div className="container mx-auto px-12 flex flex-col md:flex-row items-center justify-between">

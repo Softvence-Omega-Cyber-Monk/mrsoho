@@ -24,6 +24,8 @@ const Banner: React.FC<BannerProps> = ({
       backgroundSize: "cover",
       backgroundPosition: "center",
       backgroundRepeat: "no-repeat",
+      height: "640px",
+      width: "100%"
     }}>
       <CommonWrapper className="max-w-[1440px]">
         <div

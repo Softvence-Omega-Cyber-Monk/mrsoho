@@ -1,4 +1,4 @@
-import { FaCalculator } from "react-icons/fa";
+import { Calculator } from 'lucide-react'; // Assuming you're using Lucide icons for the calculator
 import dfjvgfrgvcar3 from "../../assets/dfjvgfrgvcar3.jpg";
 import CommonWrapper from "@/common/CommonWrapper";
 
@@ -14,29 +14,17 @@ const Cta = () => {
         <div className="absolute inset-0 bg-black/60"></div>
       </div>
       <CommonWrapper>
-  {/* Foreground content */}
-  <div className="relative z-10 max-w-2xl bg-black/40 backdrop-blur-sm p-6 sm:p-10 rounded-lg -ml-179">
-    <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-yellow-400 leading-tight mb-4">
-      How Much Concrete Do You Need?
-    </h1>
-
-    <p className="text-base sm:text-lg md:text-xl text-gray-100 font-medium mb-8">
-      The easy-to-use <strong>Concrete Calculator</strong> tells you the type
-      and volume of concrete your project requires and how much it will cost.
-    </p>
-
-    <button
-      onClick={() => console.log("Try the Concrete Calculator clicked")}
-      className="inline-flex items-center gap-2 px-6 py-3 text-base sm:text-lg font-bold rounded-full
-        bg-yellow-400 text-gray-900 hover:bg-yellow-500 transition duration-300
-        shadow-lg shadow-yellow-500/40"
-    >
-      <FaCalculator className="w-5 h-5" />
-      <span>Try the Concrete Calculator</span>
-    </button>
-  </div>
-</CommonWrapper>
-
+        <div className="relative z-10 max-w-3xl p-6 bg-black/40 rounded-lg text-white -ml-164">
+          <h1 className="text-4xl md:text-5xl font-bold text-[#FEDA42] mb-3">How Much Concrete Do You Need?</h1>
+          <p className="text-base md:text-lg leading-relaxed mb-3">
+            The easy-to-use Concrete Calculator tells you the type and volume of concrete you need for your project, and how much it will cost.
+          </p>
+          <button className="inline-flex items-center gap-2 px-6 py-3 text-base sm:text-lg font-bold rounded-md bg-yellow-400 text-gray-900 hover:bg-yellow-500 transition duration-300 shadow-lg shadow-yellow-500/40">
+            <Calculator className="w-6 h-6" /> {/* Calculator icon */}
+            <span>Try the Concrete Calculator</span>
+          </button>
+        </div>
+      </CommonWrapper>
     </section>
   );
 };
