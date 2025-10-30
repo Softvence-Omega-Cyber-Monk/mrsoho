@@ -4,14 +4,16 @@ import CommonWrapper from "@/common/CommonWrapper";
 
 interface BannerProps {
   title: string;
+  secondTitle?: string;
   subtitle?: string;
   imageUrl: string;
   btnText?: string;
-  showButton?: boolean; // controls button visibility
+  showButton?: boolean;
 }
 
 const Banner: React.FC<BannerProps> = ({
   title,
+  secondTitle,
   subtitle,
   imageUrl,
   btnText = "Learn More",
@@ -25,26 +27,31 @@ const Banner: React.FC<BannerProps> = ({
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-        height: "740px",
-        width: "100%",
       }}
     >
-      {/* Overlay with opacity */}
+      {/* Overlay */}
       <div className="absolute inset-0 bg-black/40 z-0"></div>
 
-      <CommonWrapper className="max-w-[1440px] relative z-10">
-        <div className="relative w-full h-[640px] overflow-hidden flex items-center">
+      <CommonWrapper className="relative z-10 max-w-[1440px]">
+        <div className="relative w-full flex items-center justify-start 
+                        h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] xl:h-[740px]">
           {/* Left-aligned blurred text box */}
-          <div className="relative z-10 max-w-3xl p-6 bg-black/40 rounded-lg text-white">
-            <h1 className="text-4xl md:text-5xl font-bold text-[#FEDA42] mb-3">
+          <div className="relative z-10 max-w-3xl p-4 sm:p-6 md:p-8 lg:p-10 bg-black/40 rounded-lg text-white">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#FEDA42] mb-2 sm:mb-3">
               {title}
             </h1>
             {subtitle && (
-              <p className="text-base md:text-lg leading-relaxed">{subtitle}</p>
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed">
+                {subtitle}
+              </p>
             )}
-            {/* Conditional Button */}
+            {secondTitle && (
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed mt-2 sm:mt-3">
+                {secondTitle}
+              </p>
+            )}
             {showButton && btnText && (
-              <div className="mt-6 max-w-xs">
+              <div className="mt-4 sm:mt-6 max-w-xs">
                 <PrimaryBtn btnText={btnText} />
               </div>
             )}

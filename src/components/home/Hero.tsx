@@ -23,7 +23,7 @@ const Hero = () => {
     address: '',
     subject: '',
     message: '',
-    source: 'Google Search' // Defaulting to the value shown in the screenshot
+    source: 'Google Search'
   });
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -49,7 +49,7 @@ const Hero = () => {
         <div className="pt-16 z-10">
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6 max-w-full text-[#FEDA42] ">
             Ready Mix Concrete
-            by GATORMIX
+            by GATORMIX 
           </h1>
           <p className="text-base sm:text-lg font-semibold mb-4 uppercase tracking-wide text-gray-300">
             GATORMIX READY MIX CONCRETE FOR ALL RESIDENTIAL,

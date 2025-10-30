@@ -15,7 +15,7 @@ const CONCRETE = () => {
         <img
           src={ALIGNMENT}
           alt="Concrete Bag"
-          className="w-full h-[771px] mb-8 rounded-lg shadow-lg object-cover"
+          className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] xl:h-[771px] mb-8 rounded-lg shadow-lg object-cover"
         />
         <BuiltToLast />
         <ConcreteVsCement />
