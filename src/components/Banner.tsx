@@ -7,7 +7,7 @@ interface BannerProps {
   subtitle?: string;
   imageUrl: string;
   btnText?: string;
-  showButton?: boolean; // 👈 controls button visibility
+  showButton?: boolean; // controls button visibility
 }
 
 const Banner: React.FC<BannerProps> = ({
@@ -18,22 +18,24 @@ const Banner: React.FC<BannerProps> = ({
   showButton = false,
 }) => {
   return (
+    <section
+      className="relative w-full"
+      style={{
+        backgroundImage: `url("${imageUrl}")`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        height: "740px",
+        width: "100%",
+      }}
+    >
+      {/* Overlay with opacity */}
+      <div className="absolute inset-0 bg-black/40 z-0"></div>
 
-    <section className="bg-black/40" style={{
-      backgroundImage: `url("${imageUrl}")`,
-      backgroundSize: "cover",
-      backgroundPosition: "center",
-      backgroundRepeat: "no-repeat",
-      height: "640px",
-      width: "100%"
-    }}>
-      <CommonWrapper className="max-w-[1440px]">
-        <div
-          className="relative w-full h-[640px] overflow-hidden flex items-center">
-          <div className="absolute inset-0 "></div>
-
+      <CommonWrapper className="max-w-[1440px] relative z-10">
+        <div className="relative w-full h-[640px] overflow-hidden flex items-center">
           {/* Left-aligned blurred text box */}
-          <div className="relative z-10 max-w-3xl p-6 bg-black/40  rounded-lg text-white">
+          <div className="relative z-10 max-w-3xl p-6 bg-black/40 rounded-lg text-white">
             <h1 className="text-4xl md:text-5xl font-bold text-[#FEDA42] mb-3">
               {title}
             </h1>
@@ -50,7 +52,6 @@ const Banner: React.FC<BannerProps> = ({
         </div>
       </CommonWrapper>
     </section>
-
   );
 };
 

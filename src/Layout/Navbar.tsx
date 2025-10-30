@@ -16,20 +16,30 @@ const navItems: NavItem[] = [
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const location = useLocation();  // Get the current location (URL)
-  
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const location = useLocation(); // current path
 
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const isActive = (path: string) => location.pathname === path;
 
   return (
     <div className="bg-[#212121]">
       <CommonWrapper className="max-w-[1440px]">
         <nav className="flex items-center justify-between p-4 h-16 md:h-20 lg:h-24 relative">
-          {/* Logo */}
+          {/* ✅ Responsive Logo */}
           <Link to="/" className="flex-shrink-0">
-            <div>
-              <img src={logo} alt="logo" className="w-[322px] h-[62px]" />
+            <div className="flex items-center">
+              <img
+                src={logo}
+                alt="logo"
+                className="
+                  w-32                /* mobile */
+                  sm:w-40             /* small devices */
+                  md:w-56             /* tablets */
+                  lg:w-[322px]        /* desktops */
+                  h-auto              /* keeps aspect ratio */
+                  object-contain
+                "
+              />
             </div>
           </Link>
 
@@ -63,17 +73,21 @@ const Navbar: React.FC = () => {
                 key={item.label}
                 to={item.href}
                 className={`text-xs lg:text-sm font-medium transition-colors duration-300 whitespace-nowrap 
-                  ${isActive(item.href) ? 'text-[#FEDA42]' : 'text-white hover:text-[#FEDA42]'}`}
+                  ${isActive(item.href)
+                    ? 'text-[#FEDA42]'
+                    : 'text-white hover:text-[#FEDA42]'}`}
               >
                 {item.label}
               </Link>
             ))}
 
-            {/* CONTACT link - white by default, yellow on hover */}
+            {/* CONTACT link */}
             <Link
               to="/contact"
               className={`text-xs lg:text-sm font-medium transition-colors duration-300 whitespace-nowrap 
-                ${isActive('/contact') ? 'text-[#FEDA42]' : 'text-white hover:text-[#FEDA42]'}`}
+                ${isActive('/contact')
+                  ? 'text-[#FEDA42]'
+                  : 'text-white hover:text-[#FEDA42]'}`}
             >
               CONTACT
             </Link>
@@ -95,7 +109,9 @@ const Navbar: React.FC = () => {
                     key={item.label}
                     to={item.href}
                     className={`block text-base font-medium transition-colors py-2 
-                      ${isActive(item.href) ? 'text-[#FEDA42]' : 'text-gray-700 hover:text-[#FEDA42]'}`}
+                      ${isActive(item.href)
+                        ? 'text-[#FEDA42]'
+                        : 'text-gray-700 hover:text-[#FEDA42]'}`}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.label}
@@ -106,7 +122,9 @@ const Navbar: React.FC = () => {
                 <Link
                   to="/contact"
                   className={`block text-base font-bold transition-colors py-2 
-                    ${isActive('/contact') ? 'text-[#FEDA42]' : 'text-gray-700 hover:text-[#FEDA42]'}`}
+                    ${isActive('/contact')
+                      ? 'text-[#FEDA42]'
+                      : 'text-gray-700 hover:text-[#FEDA42]'}`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   CONTACT

@@ -1,6 +1,6 @@
 import CommonWrapper from "@/common/CommonWrapper"
-import fjvnfgjfvbknfjnfg from '@/assets/fjvnfgjfvbknfjnfg.png';
-import concritebag from '@/assets/concritebag.jpg';
+import traktor from '@/assets/traktor.jpg';
+import ALIGNMENT from '@/assets/ALIGNMENT.jpg';
 import Banner from "@/components/Banner";
 import BuiltToLast from "@/components/BuiltToLast";
 import ConcreteVsCement from "@/components/ConcreteVsCement";
@@ -12,14 +12,18 @@ const CONCRETE = () => {
   return (
     <>
       <CommonWrapper>
-        <img src={concritebag} alt="Concrete Bag" className="w-full h-auto mb-8 rounded-lg shadow-lg" />
+        <img
+          src={ALIGNMENT}
+          alt="Concrete Bag"
+          className="w-full h-[771px] mb-8 rounded-lg shadow-lg object-cover"
+        />
         <BuiltToLast />
         <ConcreteVsCement />
         <ConcreteMixDesign />
         <PerfectConcreteMix />
-          <Cta />
+        <Cta />
         <CalculatorCta />
-        <Banner imageUrl={fjvnfgjfvbknfjnfg} title='DO YOU NEED A CONCRETE PUMP' btnText='Get In Touch' showButton />
+        <Banner imageUrl={traktor} title='DO YOU NEED A CONCRETE PUMP' subtitle="The easy-to-use Concrete Calculator tells you the type and volume of concrete you need for your project, and how much it will cost." btnText='Get In Touch' showButton />
       </CommonWrapper>
     </>
   )
