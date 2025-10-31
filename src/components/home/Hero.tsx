@@ -37,30 +37,43 @@ const Hero = () => {
   };
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center">
+    <div className="relative min-h-screen   flex items-center justify-center">
       <div
-        className="absolute inset-0 bg-cover bg-center rounded-md w-[1462px] h-[698px] mx-auto"
+        className="
+    absolute inset-0 
+    bg-cover bg-center rounded-md 
+    w-full h-[600px] 
+    sm:h-[400px] 
+    md:h-[500px] 
+    lg:h-[600px] 
+    xl:h-[700px] 
+    mx-auto
+  "
         style={{ backgroundImage: `url(${pillerlighthousecar})` }}
       >
+
         <div className="absolute inset-50 opacity-100"></div>
       </div>
 
       <div className="relative max-w-[1440px] mx-auto flex flex-col lg:flex-row gap-8 mt-9">
-        <div className="pt-16 z-10">
-          <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6 max-w-full text-[#FEDA42] ">
-            Ready Mix Concrete
-            by GATORMIX 
-          </h1>
-          <p className="text-base sm:text-lg font-semibold mb-4 uppercase tracking-wide text-gray-300">
-            GATORMIX READY MIX CONCRETE FOR ALL RESIDENTIAL,
-            COMMERCIAL & INDUSTRIAL CONSTRUCTION PROJECTS
-          </p>
-          <p className="text-sm sm:text-base text-gray-300 mb-8 leading-relaxed">
-            A wide range of fresh, high quality concretes, including specialty concretes mixed on site and miles at your job site, according to your specifications.
-          </p>
+        <div className="  z-10">
+          <div className="text-center md:text-left px-4 sm:px-6 lg:px-8">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 sm:mb-6 text-[#FEDA42]">
+              Ready Mix Concrete <br className="hidden sm:block" /> by GATORMIX
+            </h1>
 
-          <div className="space-y-4 text-sm">
-            <div className="flex items-start">
+            <p className="text-sm sm:text-base md:text-lg font-semibold mb-3 sm:mb-4 uppercase tracking-wide text-gray-300">
+              GATORMIX READY MIX CONCRETE FOR ALL RESIDENTIAL, COMMERCIAL & INDUSTRIAL CONSTRUCTION PROJECTS
+            </p>
+
+            <p className="text-xs sm:text-sm md:text-base text-gray-300 mb-6 sm:mb-8 leading-relaxed max-w-2xl mx-auto md:mx-0">
+              A wide range of fresh, high-quality concretes, including specialty concretes mixed on-site and miles at your job site, according to your specifications.
+            </p>
+          </div>
+
+
+          <div className="space-y-4 pl-6 text-sm  md:mb-10 lg:mb-0">
+            <div className="flex items-start sm:mx-auto md:mx-[12px]">
               <span className="text-yellow-400 mr-3 mt-1">
                 {/* SVG for Batching Software */}
                 <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -130,6 +143,7 @@ const Hero = () => {
               <span className="text-gray-200">Rely on stronger, more consistent concrete from on-site mixing</span>
             </div>
           </div>
+          
         </div>
 
         {/* Right Content (Form) */}

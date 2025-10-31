@@ -24,7 +24,6 @@ export default function Home() {
   const [selectedMix, setSelectedMix] = useState<ConcreteMix | null>(null);
   const [additionalCost, setAdditionalCost] = useState(0);
 
-  // Calculate volume in cubic yards
   const calculateVolume = (): number => {
     if (!dimensions) return 0;
 
@@ -50,14 +49,13 @@ export default function Home() {
         volumeCubicMeters = length * width * thickness;
         break;
       case "steps":
-        volumeCubicMeters = rise * run * thickness; // Placeholder calculation for steps
+        volumeCubicMeters = rise * run * thickness;
         break;
       case "gutter":
         volumeCubicMeters = length * width * thickness;
         break;
     }
 
-    // Convert cubic meters to cubic yards (1 cubic meter = 1.308 cubic yards)
     const volumeCubicYards = volumeCubicMeters * 1.308 * quantity;
     return Math.max(0, volumeCubicYards);
   };
@@ -73,27 +71,35 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-white p-4 md:p-8">
+    <main className="min-h-screen bg-white px-4 sm:px-6 md:px-8 py-8">
       <div className="max-w-[1440px] mx-auto">
-        <h1 className="text-4xl font-bold text-slate-900 mb-2 text-center">
-          Concrete Calculator
-        </h1>
-        <p className="text-slate-600 text-center mb-8">
-          Calculate your concrete needs with precision
-        </p>
+        {/* HEADER */}
+        <div className="text-center mb-10">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-3">
+            Concrete Calculator
+          </h1>
+          <p className="text-sm sm:text-base md:text-lg text-slate-600">
+            Calculate your concrete needs with precision
+          </p>
+        </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Left Panel - Inputs */}
+        {/* GRID LAYOUT */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
+          {/* LEFT SIDE (Inputs) */}
           <div className="lg:col-span-2 space-y-6">
-            {/* Shape Selection */}
-            <div className="bg-slate-50 rounded-lg p-6 border border-slate-200">
-              <h2 className="text-xl font-semibold text-slate-900 mb-4">1. Select Shape</h2>
+            {/* 1. Shape Selector */}
+            <div className="bg-slate-50 rounded-xl p-5 md:p-6 border border-slate-200 shadow-sm">
+              <h2 className="text-lg sm:text-xl font-semibold text-slate-900 mb-4">
+                1. Select Shape
+              </h2>
               <ShapeSelector selectedShape={selectedShape} onShapeChange={setSelectedShape} />
             </div>
 
-            {/* Dimensions */}
-            <div className="bg-slate-50 rounded-lg p-6 border border-slate-200">
-              <h2 className="text-xl font-semibold text-slate-900 mb-4">2. Enter Dimensions</h2>
+            {/* 2. Dimension Input */}
+            <div className="bg-slate-50 rounded-xl p-5 md:p-6 border border-slate-200 shadow-sm">
+              <h2 className="text-lg sm:text-xl font-semibold text-slate-900 mb-4">
+                2. Enter Dimensions
+              </h2>
               <DimensionInput
                 dimensions={dimensions || { length: "", width: "", thickness: "", quantity: 1, rise: "", run: "" }}
                 onDimensionsChange={(dims) => setDimensions(dims)}
@@ -101,26 +107,25 @@ export default function Home() {
               />
             </div>
 
-            {/* Concrete Mix Selection */}
-            <div className="bg-slate-50 rounded-lg p-6 border border-slate-200">
-              <h2 className="text-xl font-semibold text-slate-900 mb-4">3. Select a Concrete Mix (Optional)</h2>
+            {/* 3. Concrete Mix Selector */}
+            <div className="bg-slate-50 rounded-xl p-5 md:p-6 border border-slate-200 shadow-sm">
+              <h2 className="text-lg sm:text-xl font-semibold text-slate-900 mb-4">
+                3. Select a Concrete Mix (Optional)
+              </h2>
               <ConcreteMixSelector mixes={CONCRETE_MIXES} selectedMix={selectedMix} onMixChange={setSelectedMix} />
             </div>
 
-            {/* Get Started Button */}
-            <button className="w-full bg-yellow-400 hover:bg-yellow-500 text-slate-900 font-bold py-3 px-6 rounded-lg transition-colors">
-              Get Started for free
+            {/* CTA Button */}
+            <button className="w-full bg-yellow-400 hover:bg-yellow-500 text-slate-900 font-bold py-3 md:py-4 px-6 rounded-lg transition-colors">
+              Get Started for Free
             </button>
           </div>
 
-          {/* Right Panel - Preview & Results */}
+          {/* RIGHT SIDE (Preview & Results) */}
           <div className="space-y-6">
-            {/* Shape Preview */}
-            <div className="bg-slate-50 rounded-lg p-6 border border-slate-200">
+            <div className="bg-slate-50 rounded-xl p-5 md:p-6 border border-slate-200 shadow-sm">
               <ShapePreview shape={selectedShape} />
             </div>
-
-            {/* Results */}
             <ResultsPanel
               volume={volume}
               totalCost={totalCost}
