@@ -22,7 +22,7 @@ const Cta = () => {
         <div className="absolute inset-0 bg-black/60"></div>
       </div>
 
-      <CommonWrapper>
+      <CommonWrapper className="mx-auto md:ml-[365px]">
         <div
           className="
             relative z-10 
