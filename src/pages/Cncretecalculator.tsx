@@ -12,11 +12,13 @@ interface ConcreteMix {
 }
 
 const CONCRETE_MIXES: ConcreteMix[] = [
-  { name: "15 MPa Concrete", price: 245 },
-  { name: "25 MPa Concrete", price: 255 },
-  { name: "32 MPa Concrete", price: 265 },
-  { name: ".04 UFILL", price: 245 },
+  { name: "3000 PSI concrete", price: 245.00 },
+  { name: "4000 PSI concrete", price: 255.00 },
+  { name: "5000 PSI concrete", price: 265.00 },
+  { name: "Flowable FILL", price: 245.00 },
+  { name: "ULTRA BASE", price: 245.00 },
 ];
+
 
 export default function Home() {
   const [selectedShape, setSelectedShape] = useState<ShapeType>("slab");

@@ -1,7 +1,4 @@
-// src/components/CalculatorCta.jsx
-
-// import { Calculator } from 'lucide-react'; // Using Lucide for the calculator icon
-import nobgslish from '@/assets/nobgslish.png'; // Assuming you have an image for the truck
+import nobgslish from '@/assets/nobgslish.png';
 import CommonWrapper from '@/common/CommonWrapper';
 
 const CalculatorCta = () => {
