@@ -22,7 +22,7 @@ const Navbar: React.FC = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <div className="bg-[#212121]">
+    <div className="sticky top-0 z-50 w-full bg-[#212121]">
       <CommonWrapper className="max-w-[1440px]">
         <nav className="flex items-center justify-between p-4 h-16 md:h-20 lg:h-24 relative">
           {/* ✅ Responsive Logo */}
@@ -143,6 +143,8 @@ const Navbar: React.FC = () => {
           )}
         </nav>
       </CommonWrapper>
+      {/* spacer to prevent content from being hidden under the sticky navbar */}
+      <div className="h-3 md:h-3 lg:h-3" aria-hidden="true" />
     </div>
   );
 };
