@@ -15,7 +15,7 @@ export default function ConcreteMixSelector({
   onMixChange,
 }: ConcreteMixSelectorProps) {
   return (
-    <div className="grid grid-cols-2 gap-3">
+<div className="flex flex-wrap gap-5 justify-center md:justify-start">
       {mixes.map((mix) => (
         <button
           key={mix.name}
@@ -23,11 +23,11 @@ export default function ConcreteMixSelector({
           className={`p-4 rounded-lg border-2 transition-all text-left ${
             selectedMix?.name === mix.name
               ? "bg-yellow-400 border-yellow-500 text-slate-900"
-              : "bg-slate-700 border-slate-600 text-slate-300 hover:border-slate-500"
+              : "bg-[#fff] border-gray-200 text-slate-300 hover:border-slate-500"
           }`}
         >
-          <div className="font-semibold">{mix.name}</div>
-          <div className="text-sm mt-1">${mix.price.toFixed(2)}</div>
+          <div className="font-bold text-black">{mix.name}</div>
+          <div className="text-sm mt-1 text-[#009444] font-semibold">${mix.price.toFixed(2)}</div>
         </button>
       ))}
     </div>

@@ -5,6 +5,7 @@ import CommonWrapper from "@/common/CommonWrapper";
 interface BannerProps {
   title: string;
   secondTitle?: string;
+  secondTitleClassName?: string;
   subtitle?: string;
   imageUrl: string;
   btnText?: string;
@@ -14,6 +15,7 @@ interface BannerProps {
 const Banner: React.FC<BannerProps> = ({
   title,
   secondTitle,
+  secondTitleClassName,
   subtitle,
   imageUrl,
   btnText = "Learn More",
@@ -46,7 +48,11 @@ const Banner: React.FC<BannerProps> = ({
               </p>
             )}
             {secondTitle && (
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed mt-2 sm:mt-3">
+              <p className={
+                `text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed mt-2 sm:mt-3 ${
+                  secondTitleClassName ? secondTitleClassName : ""
+                }`
+              }>
                 {secondTitle}
               </p>
             )}

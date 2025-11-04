@@ -2,10 +2,11 @@ import React from 'react';
 import threeroot from '../assets/threeroot.png';
 import shearwhiteme from '../assets/shearwhiteme.png';
 import Funtions from '../assets/Funtions.png';
+import buildanlast from '../assets/buildanlast.png';
 
 interface Feature {
   id: number;
-  Icon: string; // Updated to accept string for image paths
+  Icon: string;
   title: string;
   description: string;
 }
@@ -20,14 +21,14 @@ const featuresData: Feature[] = [
   },
   {
     id: 2,
-    Icon: shearwhiteme,
+    Icon: Funtions,
     title: 'Low Maintenance',
     description:
       'Once cured and sealed, concrete requires minimal upkeep. It resists mold, mildew, and weather, making it a reliable choice.',
   },
   {
     id: 3,
-    Icon: Funtions,
+    Icon: shearwhiteme,
     title: 'Superior Durability',
     description:
       'Built to last for decades, our concrete withstands heavy loads and harsh environmental conditions with superior compressive strength.',
@@ -56,14 +57,14 @@ const BuiltToLast: React.FC = () => {
       <div className="relative px-4 sm:px-6 lg:px-8">
         <div className="absolute inset-x-0 bottom-0 h-1/2 overflow-hidden">
           <div 
-            className="absolute -bottom-20 left-0 w-[400px] h-[200px] bg-yellow-200 opacity-10 rounded-3xl transform rotate-12"
+            className="absolute -bottom-20 left-0 w-[400px] h-[200px] opacity-10 rounded-3xl transform rotate-12"
           ></div>
           <div 
-            className="absolute -bottom-10 right-1/4 w-[500px] h-[150px] bg-yellow-300 opacity-10 rounded-3xl transform -rotate-6"
+            className="absolute -bottom-10 right-1/4 w-[500px] h-[150px] opacity-10 rounded-3xl transform -rotate-6"
           ></div>
         </div>
         <div className="mx-auto mb-16 text-center md:text-left relative z-10">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-stone-900 leading-tight">
+          <h1 className="text-4xl md:text-5xl font-semibold text-stone-900 leading-tight">
             Built to Last
           </h1>
           <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto md:mx-0">
@@ -75,6 +76,10 @@ const BuiltToLast: React.FC = () => {
           {featuresData.map((feature) => (
             <FeatureCard key={feature.id} {...feature} />
           ))}
+        </div>
+
+        <div className='relative bottom-70'>
+          <img src={buildanlast} alt="buildanlast........."/>
         </div>
       </div>
     </div>
