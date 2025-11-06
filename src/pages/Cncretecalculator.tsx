@@ -14,7 +14,7 @@ interface ConcreteMix {
 const CONCRETE_MIXES: ConcreteMix[] = [
   { name: "3000 PSI concrete", price: 275.00 },
   { name: "4000 PSI concrete", price: 295.00 },
-  { name: "5000 PSI concrete", price: 315.00 },
+  { name: "5000 PSI concrete", price: 325.00 },
   { name: "Flowable FILL", price: 235.00 },
   { name: "ULTRA BASE", price: 235.00 },
 ];
@@ -157,21 +157,22 @@ export default function Home() {
   };
 
   const volume = calculateVolume();
-
-  useEffect(() => {
-    const volumeInCubicYards = volume * 1.308; // Convert cubic meters to cubic yards
-    let newAdditionalCost = 0;
-    if (volumeInCubicYards > 0) { // Only apply additional cost if there's actual volume
-      if (volumeInCubicYards <= 2.5) {
-        newAdditionalCost = 300;
-      } else if (volumeInCubicYards <= 4) {
-        newAdditionalCost = 250;
-      } else if (volumeInCubicYards <= 6) {
-        newAdditionalCost = 200;
-      }
+useEffect(() => {
+  const volumeInCubicYards = volume * 1.308;
+  let newAdditionalCost = 0;
+    if (volumeInCubicYards > 0) {
+    if (volumeInCubicYards <= 2.5) {
+      newAdditionalCost = 300; 
+    } else if (volumeInCubicYards >= 3 && volumeInCubicYards <= 4) {
+      newAdditionalCost = 250;
+    } else if (volumeInCubicYards >= 4.5 && volumeInCubicYards <= 6) {
+      newAdditionalCost = 200;
     }
-    setAdditionalCost(newAdditionalCost);
-  }, [volume]); // Recalculate when volume changes
+    // For volumes between 2.5-3, 4-4.5, and over 6 yards, no additional cost
+  }
+  
+  setAdditionalCost(newAdditionalCost);
+}, [volume]);
 
   const mixCost = selectedMix ? selectedMix.price * volume : 0;
   const totalCost = mixCost + additionalCost;
