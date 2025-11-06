@@ -9,7 +9,7 @@ interface ShapeSelectorProps {
 const SHAPES = [
   { id: "slab", label: "Slabs & Walls", icon: Square },
   { id: "footing", label: "Footings", icon: Hammer },
-  { id: "gutter", label: "Cutters & Gutters", icon: Zap },
+  { id: "gutter", label: "Curbs & Gutters", icon: Zap },
   { id: "circular", label: "Circular Slabs", icon: Circle },
   { id: "column", label: "Columns & Piers", icon: Columns3 },
 ];

@@ -12,7 +12,7 @@ const faqData: FaqItemData[] = [
     id: 1,
     question: "How much concrete should I order?",
     answer:
-      "The volume of concrete you should order depends on the size and type of project. If you know the width (diameter for round applications), depth and length of the concrete pour, you can use our Concrete Calculator to find out how much concrete you need.",
+      "The volume of concrete you should order depends on the size and type of project. If you know the width (diameter for round applications), depth and length of the concrete pour, you can use our Concrete Calculator to find out how much concrete you need.",
   },
   {
     id: 2,
@@ -47,14 +47,15 @@ const FAQItem: React.FC<FAQItemProps> = ({ item, isOpen, toggleItem }) => {
 
   return (
     <div
-      className={`mb-4  w-[616px] cursor-pointer rounded-lg overflow-hidden transition-all duration-300 ${activeClasses}`}
+      className={`mb-4 w-full max-w-[616px] sm:w-[90%] md:w-[500px] lg:w-[600px] xl:w-[616px] cursor-pointer rounded-lg overflow-hidden transition-all duration-300 ${activeClasses}`}
       onClick={() => toggleItem(item.id)}
     >
       {/* Header */}
-      <div className="flex justify-between items-center p-5 bg-slate-700 hover:bg-slate-600">
+      <div className="flex justify-between items-center p-4 sm:p-5 bg-slate-700 hover:bg-slate-600">
         <h3
-          className={`text-base sm:text-lg transition-colors ${isOpen ? "text-yellow-400 font-semibold" : "text-gray-200"
-            }`}
+          className={`text-sm sm:text-base md:text-lg transition-colors ${
+            isOpen ? "text-yellow-400 font-semibold" : "text-gray-200"
+          }`}
         >
           {item.question}
         </h3>
@@ -67,8 +68,11 @@ const FAQItem: React.FC<FAQItemProps> = ({ item, isOpen, toggleItem }) => {
 
       {/* Answer */}
       <div
-        className={`bg-slate-700/80 transition-[max-height,padding] duration-500 overflow-hidden ${isOpen ? "max-h-96 pt-4 pb-6 px-5" : "max-h-0 p-0"
-          }`}
+        className={`bg-slate-700/80 transition-all duration-500 ease-in-out overflow-hidden ${
+          isOpen
+            ? "max-h-[400px] pt-4 pb-6 px-4 sm:px-5 opacity-100"
+            : "max-h-0 pt-0 pb-0 px-4 sm:px-5 opacity-0"
+        }`}
       >
         <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
           {item.answer}
@@ -86,17 +90,21 @@ const Faq = () => {
   };
 
   return (
-    <section className="  py-12    w-full mx-auto  ">
-      <div className="flex   md:flex-row justify-between">
+    <section className="py-12 w-full mx-auto px-4 sm:px-6 lg:px-12">
+      <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8">
         {/* Left column */}
         <div className="flex-1 text-center md:text-left">
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-yellow-500 tracking-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-yellow-500 tracking-tight">
             FAQs
           </h1>
+          <p className="text-gray-400 mt-3 text-sm sm:text-base md:max-w-md">
+            Find answers to the most commonly asked questions about our services
+            and concrete solutions.
+          </p>
         </div>
 
         {/* Right column */}
-        <div className="">
+        <div className="flex flex-col items-center md:items-start w-full md:w-auto">
           {faqData.map((item) => (
             <FAQItem
               key={item.id}

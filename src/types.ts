@@ -20,10 +20,12 @@ export interface User {
   export interface Dimensions {
     length: number | string;
     width: number | string;
-    thickness: number | string;
+    depth: number | string;
     quantity: number;
     rise: number | string;
     run: number | string;
+    height?: number | string;
+    curbDepth?: number | string;
   }
 
   export type ShapeType = "slab" | "footing" | "gutter" | "circular" | "column" | "steps";

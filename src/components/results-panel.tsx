@@ -39,13 +39,13 @@ export default function ResultsPanel({
         <div className="bg-slate-800 rounded p-4 border border-slate-700">
           <p className="text-slate-400 text-sm mb-1">Total Volume</p>
           <p className="text-2xl font-bold text-white">
-            {volume.toFixed(2)} <span className="text-sm text-slate-400">yards³</span>
+            {Math.round(volume)} <span className="text-sm text-slate-400">m³</span>
           </p>
         </div>
 
         {/* Estimated Cost */}
         <div className="bg-yellow-400 rounded p-4">
-          <p className="text-slate-900 text-sm mb-1 font-medium">Estimated Cost</p>
+          <p className="text-slate-900 text-sm mb-1 font-medium">Estimated costs depending on delivery location</p>
           <p className="text-3xl font-bold text-slate-900">${totalCost.toFixed(2)}</p>
         </div>
 

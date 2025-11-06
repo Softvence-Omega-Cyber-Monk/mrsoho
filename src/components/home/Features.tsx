@@ -3,14 +3,14 @@ import React from "react";
 // import { DollarSign, Loader2 } from "lucide-react";
 
 // Image Imports (Adjust paths as needed for your project structure)
-import GATORMIXDelivers from "../../assets/GATORMIXDelivers.jpg";
-import time from "../../assets/time.jpg";
-import handcement from "../../assets/handcement.jpg";
-import PlaceholderImage from "../../assets/PlaceholderImage.png";
+import wearelabour from "../../assets/wearelabour.jpg";
+import seekhamba from "../../assets/seekhamba.jpg";
+import pillerlighthousecar from "../../assets/pillerlighthousecar.jpg";
+import humanwork from "../../assets/humanwork.jpg";
 import timer from "../../assets/timer.png";
 import Delivers from "../../assets/Delivers.png";
 import finishingtime from "../../assets/finishingtime.png";
-import moreflex from "../../assets/moreflex.jpg";
+import moremixfix from "../../assets/moremixfix.jpg";
 import lowercost from "../../assets/lowercost.png";
 import MixFlexibility from "../../assets/MixFlexibility.png";
 
@@ -38,8 +38,8 @@ const featuresData: Feature[] = [
     title: "The Perfect Mix – Every Time",
     description:
       "Concrete delivered and mixed using volumetric technology in our mixer trucks at your site reduces the need to add water or materials at the last minute, so you get the strongest, best performing concrete possible.",
-    image: time,
-    span: "lg:col-span-7",
+    image: seekhamba,
+    span: "lg:col-span-7"
   },
   {
     id: 2,
@@ -47,7 +47,7 @@ const featuresData: Feature[] = [
     title: "GATORMIX Delivers",
     description:
       "GATORMIX delivers concrete and concrete additives you require, and mixes them to the ideal specifications for your application - so you get ideal results.",
-    image: GATORMIXDelivers,
+    image: wearelabour,
     span: "lg:col-span-5",
   },
   {
@@ -56,7 +56,7 @@ const featuresData: Feature[] = [
     title: "Longer Finishing Time",
     description:
       "By having your concrete mixed and poured on-site, you maximize the finishing time versus concrete that is mixed off-site and has started curing while being delivered.",
-    image: handcement,
+    image: pillerlighthousecar,
     span: "lg:col-span-3",
   },
   {
@@ -65,7 +65,7 @@ const featuresData: Feature[] = [
     title: "Lower Costs",
     description:
       "By paying only for the concrete you use, you eliminate the significant cost of overages and shortages associated with standard concrete mixed off-site at a batch plant.",
-    image: PlaceholderImage,
+    image: humanwork,
     span: "lg:col-span-3",
   },
   {
@@ -74,7 +74,7 @@ const featuresData: Feature[] = [
     title: "More Mix Flexibility",
     description:
       "With concrete mixed just before application you can adjust your mix as needed, without any job delays or wastage, which is virtually impossible with off-site batch mixing. You also get the ability to pour TWO or MORE mixes with the SAME TRUCK.",
-    image: moreflex,
+    image: moremixfix,
     span: "lg:col-span-6",
   },
 ];

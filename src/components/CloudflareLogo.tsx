@@ -37,26 +37,24 @@ const CloudflareLogo: React.FC = () => (
 
 const App: React.FC = () => {
   return (
-    <div className="flex items-center justify-center mx-auto p-4"> {/* Center content horizontally and add padding */}
-      <div className="w-full max-w-md bg-white rounded-2xl shadow-xl p-6 sm:p-8 border border-gray-200 gap-6"> {/* Reduced height with smaller padding and increased gap */}
+    <div className="flex items-center justify-center mx-auto p-4"> 
+      <div className="w-full max-w-md bg-white rounded-2xl shadow-xl p-6 sm:p-8 border border-gray-200 gap-6"> 
 
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-6"> {/* Increased gap between blocks */}
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
           
-          {/* Left Block: Success Message */}
-          <div className="flex items-center space-x-2 mb-4 sm:mb-0"> {/* Adjusted space between icon and text */}
+        
+          <div className="flex items-center space-x-2 mb-4 sm:mb-0">
             <SuccessCheckmark />
             <h1 className="text-[21px] font-bold text-gray-900">
               Success!
             </h1>
           </div>
 
-          {/* Right Block: Cloudflare Branding and Links */}
           <div className="flex flex-col items-start sm:items-end gap-2">
             <div className="mb-2">
               <CloudflareLogo />
             </div>
 
-            {/* Privacy and Terms Links */}
             <div className="text-sm text-gray-500 flex items-center space-x-1">
               <button 
                 className="hover:text-blue-600 hover:underline transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300 rounded-sm"

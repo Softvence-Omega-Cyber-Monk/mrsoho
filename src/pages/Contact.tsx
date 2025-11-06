@@ -7,18 +7,18 @@ import CalculatorCta from "@/components/CalculatorCta";
 const Contact = () => {
   return (
     <>
-      <Banner imageUrl={contact} title="" subtitle="" />
+      <img src={contact} alt="contact" className="w-[100%]" />
 
       <div className=" flex justify-center my-6">
         <ContactForm />
       </div>
 
-    <div>
-      <Banner imageUrl={puttk} title='DO YOU NEED A CONCRETE PUMP' btnText='Get In Touch' showButton />
-    </div>
-    <div>
-      <CalculatorCta />
-    </div>
+      <div>
+        <Banner imageUrl={puttk} title='DO YOU NEED A CONCRETE PUMP' showTitle btnText='Get In Touch' showButton />
+      </div>
+      <div>
+        <CalculatorCta />
+      </div>
     </>
   );
 };

@@ -4,14 +4,14 @@ import { Truck, Droplet, Clock, DollarSign, Loader2 } from 'lucide-react';
 // Define the structure for a Feature Card
 interface Feature {
   id: number;
-  icon: React.ElementType; // Icon component from lucide-react
+  icon: React.ElementType;
   title: string;
   description: string;
-  image: string; // Placeholder for background image URL
-  span?: string; // Tailwind class for column spanning (e.g., 'md:col-span-2')
+  image: string;
+  span?: string;
 }
 
-// Data for the feature cards, loosely matching the provided screenshot
+
 const featuresData: Feature[] = [
   {
     id: 1,

@@ -13,7 +13,7 @@ import Services from "../pages/Services";
 import HowItWorks from "../components/home/HowItWorks";
 import Concrete from "../pages/Concrete";
 import ServiceAreas from "../pages/ServiceAreas";
-import ConcreteCalculator from "../pages/Cncretecalculator";   // <-- new import
+import ConcreteCalculator from "../pages/Cncretecalculator"; 
 import Landingpages from "@/pages/Landingpages";
 
 const routes = createBrowserRouter([

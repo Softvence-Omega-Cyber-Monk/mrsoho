@@ -62,7 +62,7 @@ const ComparisonCard: React.FC<{ item: ContentItem }> = ({ item }) => {
 // --- Main Component ---
 const ConcreteVsCement: React.FC = () => {
   return (
-    <div className="bg-white font-sans antialiased py-12 px-4 sm:px-6 lg:px-8">
+    <div className="max-w-[1440px] mx-auto bg-white font-sans antialiased py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl">
         {/* Header Section */}
         <header className="mb-12">
