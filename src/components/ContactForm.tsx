@@ -171,6 +171,10 @@ const ContactForm: React.FC = () => {
 
       {/* Submit button */}
     <PrimaryBtn btnText="Get Started for free" />
+
+    <div className="text-center text-[#848D9B] text-[16px]">
+      <h2>Contact Us: (239)309-7779</h2>
+    </div>
     </form>
   );
 };

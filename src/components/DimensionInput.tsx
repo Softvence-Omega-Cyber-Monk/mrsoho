@@ -43,7 +43,7 @@ export default function DimensionForm({
     length: "Length",
     width: "Width",
     height: "Height",
-    thickness: "Thickness",
+    thickness: "thickness",
     quantity: "Quantity",
   }
 

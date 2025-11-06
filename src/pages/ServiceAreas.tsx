@@ -16,10 +16,11 @@ const ServiceAreas: React.FC = () => {
           secondTitleClassName="text-[#FEDA42]"
         />
         <div className="flex justify-center my-6">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4489524.445870186!2d-82.6741234571419!3d27.44950179786062!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88c1766591562abf%3A0xf72e13d35bc74ed0!2sFlorida%2C%20USA!5e1!3m2!1sen!2sbd!4v1761127295558!5m2!1sen!2sbd"
-            width="1500"
+          <iframe
+            width="100%"
             height="450"
-            loading="lazy">
+            loading="lazy"
+            src="https://www.google.com/maps?q=26.35,-81.83&z=10&output=embed">
           </iframe>
         </div>
         <div className=" flex justify-center my-6">
