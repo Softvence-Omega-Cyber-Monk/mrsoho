@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import ShapeSelector from "@/components/shape-selector";
 import DimensionInput from "@/components/dimension-input";
 import ConcreteMixSelector from "@/components/concrete-mix-selector";
@@ -24,7 +24,6 @@ export default function Home() {
   const [selectedShape, setSelectedShape] = useState<ShapeType>("slab");
   const [dimensions, setDimensions] = useState<Dimensions | null>(null);
   const [selectedMix, setSelectedMix] = useState<ConcreteMix | null>(null);
-  const [additionalCost, setAdditionalCost] = useState(0);
 
   const calculateVolume = (): number => {
     if (!dimensions) return 0;
@@ -157,22 +156,22 @@ export default function Home() {
   };
 
   const volume = calculateVolume();
-useEffect(() => {
-  const volumeInCubicYards = volume * 1.308;
-  let newAdditionalCost = 0;
+  const [additionalCost, setAdditionalCost] = useState(0);
+
+  useEffect(() => {
+    const volumeInCubicYards = volume;
+    let newAdditionalCost = 0;
     if (volumeInCubicYards > 0) {
-    if (volumeInCubicYards <= 2.5) {
-      newAdditionalCost = 300; 
-    } else if (volumeInCubicYards >= 3 && volumeInCubicYards <= 4) {
-      newAdditionalCost = 250;
-    } else if (volumeInCubicYards >= 4.5 && volumeInCubicYards <= 6) {
-      newAdditionalCost = 200;
+      if (volumeInCubicYards <= 2.5) {
+        newAdditionalCost = 300;
+      } else if (volumeInCubicYards >= 3 && volumeInCubicYards <= 4) {
+        newAdditionalCost = 250;
+      } else if (volumeInCubicYards >= 4.5 && volumeInCubicYards <= 6) {
+        newAdditionalCost = 200;
+      }
     }
-    // For volumes between 2.5-3, 4-4.5, and over 6 yards, no additional cost
-  }
-  
-  setAdditionalCost(newAdditionalCost);
-}, [volume]);
+    setAdditionalCost(newAdditionalCost);
+  }, [volume]);
 
   const mixCost = selectedMix ? selectedMix.price * volume : 0;
   const totalCost = mixCost + additionalCost;
@@ -242,8 +241,6 @@ useEffect(() => {
             <ResultsPanel
               volume={volume}
               totalCost={totalCost}
-              additionalCost={additionalCost}
-              onAdditionalCostChange={setAdditionalCost}
               onClearAll={handleClearAll}
             />
           </div>

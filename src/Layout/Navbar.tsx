@@ -32,12 +32,11 @@ const Navbar: React.FC = () => {
                 src={logo}
                 alt="logo"
                 className="
-                  w-32                /* mobile */
-                  sm:w-40             /* small devices */
-                  md:w-56             /* tablets */
-                  lg:w-[322px]        /* desktops */
-                  h-auto              /* keeps aspect ratio */
-                  object-contain
+                  h-12                /* mobile */
+                  sm:h-16             /* small devices */
+                  md:h-20             /* tablets */
+                  lg:h-24             /* desktops */
+                  w-auto              /* keeps aspect ratio */
                 "
               />
             </div>
