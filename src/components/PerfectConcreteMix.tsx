@@ -83,7 +83,7 @@ const PerfectConcreteMix: React.FC = () => {
   return (
     // Changed overall background to a light green shade, header text to dark green
     <div className="font-sans antialiased py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-[1440px] mx-auto relative z-10">
 
         {/* Header Section */}
         <header className="mb-12">

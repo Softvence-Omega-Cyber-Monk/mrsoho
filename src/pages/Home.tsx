@@ -14,7 +14,12 @@ const GatorMixComplete = () => {
       <Cta />
       <Features />
       <ConcreteServicesSection />
-      <Faq />
+      <div className='bg-[#212121]'>
+        <div className="max-w-[1490px] mx-auto">
+          <Faq />
+        </div>
+      </div>
+
     </CommonWrapper>
   );
 };

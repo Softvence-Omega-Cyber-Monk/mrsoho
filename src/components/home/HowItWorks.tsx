@@ -7,16 +7,16 @@ const HowItWorks = () => {
     <CommonWrapper className="max-w-[1440px]">  
     <section className="">
       {/* Section Header */}
-      <div className="mb-10">
+      <div className="mb-4 relative bottom-67">
         <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-3">
           How It Works
         </h2>
-        <p className="text-gray-600 text-sm sm:text-base">
+        <p className="text-gray-600 text-sm sm:text-base w-[675px]">
 Whether you're pouring a small pad, a foundation, or a large industrial slab, we'll help you
  find the right mix, in cost and performance.
         </p>
       </div>
-<div className="grid grid-cols-1 md:grid-cols-3 gap-[48px] mt-10 mb-99 translate-y-8">
+<div className="grid grid-cols-1 md:grid-cols-3 gap-[48px] mt-3 mb-99 translate-y-8">
   {/* Card 1: Tell Us About Your Project */}
   <div className="flex flex-col translate-y-0">
     <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-200 flex flex-col h-full">

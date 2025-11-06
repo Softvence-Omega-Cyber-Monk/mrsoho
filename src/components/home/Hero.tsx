@@ -1,5 +1,5 @@
 import { useState, ChangeEvent, FormEvent } from 'react';
-import ImageContainer from '../../assets/Image_container.png';
+import pillerlighthousecar from '../../assets/pillerlighthousecar.jpg';
 import CloudflareLogo from '@/components/CloudflareLogo';
 
 // Define the type for form data for better type safety in TypeScript
@@ -23,7 +23,7 @@ const Hero = () => {
     address: '',
     subject: '',
     message: '',
-    source: 'Google Search' // Defaulting to the value shown in the screenshot
+    source: 'Google Search'
   });
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -33,39 +33,47 @@ const Hero = () => {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
-    // In a real application, you would send this data to an API
     alert('Thank you! We will contact you soon.');
   };
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center">
-      {/* Background Image/Overlay for the left side */}
+    <div className="relative min-h-screen   flex items-center justify-center">
       <div
-        className="absolute inset-0 bg-cover bg-center rounded-md w-[1462px] h-[698px] mx-auto"
-        style={{ backgroundImage: `url(${ImageContainer})` }}
+        className="
+    absolute inset-0 
+    bg-cover bg-center rounded-md 
+    w-full h-[600px] 
+    sm:h-[400px] 
+    md:h-[500px] 
+    lg:h-[600px] 
+    xl:h-[700px] 
+    mx-auto
+  "
+        style={{ backgroundImage: `url(${pillerlighthousecar})` }}
       >
-        <div className="absolute inset-0  opacity-75"></div>
+
+        <div className="absolute inset-50 opacity-100"></div>
       </div>
 
-      {/* Content Container: FIX APPLIED HERE - Removed h-[552px] to allow form to expand */}
-      <div className="relative max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 mt-9">
+      <div className="relative max-w-[1440px] mx-auto flex flex-col lg:flex-row gap-8 mt-9">
+        <div className="  z-10">
+          <div className="text-center md:text-left px-4 sm:px-6 lg:px-8">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 sm:mb-6 text-[#FEDA42]">
+              Ready Mix Concrete <br className="hidden sm:block" /> by GATORMIX
+            </h1>
 
-        {/* Left Content (Text/Features) */}
-        <div className="pt-16 z-10">
-          <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6 max-w-full text-[#FEDA42] ">
-            Ready Mix Concrete
-            by GATORMIX
-          </h1>
-          <p className="text-base sm:text-lg font-semibold mb-4 uppercase tracking-wide text-gray-300">
-GATORMIX READY MIX CONCRETE FOR ALL RESIDENTIAL,
-COMMERCIAL & INDUSTRIAL CONSTRUCTION PROJECTS
-          </p>
-          <p className="text-sm sm:text-base text-gray-300 mb-8 leading-relaxed">
-            A wide range of fresh, high quality concretes, including specialty concretes mixed on site and miles at your job site, according to your specifications.
-          </p>
+            <p className="text-sm sm:text-base md:text-lg font-semibold mb-3 sm:mb-4 uppercase tracking-wide text-gray-300">
+              GATORMIX READY MIX CONCRETE FOR ALL RESIDENTIAL, COMMERCIAL & INDUSTRIAL CONSTRUCTION PROJECTS
+            </p>
 
-          <div className="space-y-4 text-sm">
-            <div className="flex items-start">
+            <p className="text-xs sm:text-sm md:text-base text-gray-300 mb-6 sm:mb-8 leading-relaxed max-w-2xl mx-auto md:mx-0">
+              A wide range of fresh, high-quality concretes, including specialty concretes mixed on-site and miles at your job site, according to your specifications.
+            </p>
+          </div>
+
+
+          <div className="space-y-4 pl-6 text-sm  md:mb-10 lg:mb-0">
+            <div className="flex items-start sm:mx-auto md:mx-[12px]">
               <span className="text-yellow-400 mr-3 mt-1">
                 {/* SVG for Batching Software */}
                 <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -97,7 +105,6 @@ COMMERCIAL & INDUSTRIAL CONSTRUCTION PROJECTS
             </div>
             <div className="flex items-start">
               <span className="text-yellow-400 mr-3 mt-1">
-                {/* SVG for Payment */}
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M22.9165 14.4102C21.736 13.9829 20.4255 14.0816 19.3207 14.681C19.3063 14.6882 14.9954 16.6364 14.9954 16.6364C14.6892 16.8658 14.3339 16.987 13.9681 16.987H11.2558C10.9188 16.987 10.6457 16.7142 10.6457 16.3776C10.6457 16.0411 10.9188 15.7683 11.2558 15.7683H13.9681C14.816 15.7683 14.8345 14.0239 14.0041 13.9548L10.2237 13.9114C9.55659 13.904 8.88895 13.4752 8.18577 13.4591C7.47007 13.4428 6.793 13.6253 6.19131 14.0155C5.35346 14.559 4.78146 15.4226 4.39808 16.3281L6.44341 21.4931H12.3245C12.8562 21.4929 13.3786 21.354 13.8402 21.0902L22.9672 15.869C23.2446 15.6337 23.459 15.3589 23.3648 14.937C23.3118 14.6997 23.1416 14.4918 22.9165 14.4102ZM0.612793 16.9609L3.40018 24L5.63756 22.7715L2.85013 15.7325L0.612793 16.9609ZM17.4094 0C14.4168 0 11.9908 2.45882 11.9908 5.4919C11.9908 8.52497 14.4168 10.9838 17.4094 10.9838C20.402 10.9838 22.828 8.52497 22.828 5.4919C22.828 2.45882 20.402 0 17.4094 0ZM18.0252 8.23328V9.14369H16.7713V8.30733C16.2869 8.23533 15.8564 8.04256 15.4845 7.75036L15.9342 6.48928C16.2988 6.77579 16.8199 7.03759 17.2679 7.03759C17.6115 7.03759 17.8335 6.8799 17.8335 6.63579C17.8335 6.47713 17.7825 6.28703 17.1734 6.03877C16.4109 5.7379 15.6303 5.29656 15.6303 4.30805C15.6303 3.56174 16.0865 2.96215 16.8268 2.72574V1.84005H18.0729V2.64723C18.452 2.70641 18.8576 2.89128 19.1912 3.10651L18.7238 4.34769C18.3879 4.12364 17.9115 3.9062 17.5292 3.9062C17.1113 3.9062 17.0662 4.12036 17.0662 4.21241C17.0662 4.35656 17.12 4.48097 17.8158 4.77046C18.4962 5.04959 19.2771 5.50749 19.2771 6.57995C19.2772 7.34615 18.7885 7.98697 18.0252 8.23328Z" fill="url(#paint0_linear_10148_385)" />
                   <defs>
@@ -136,6 +143,7 @@ COMMERCIAL & INDUSTRIAL CONSTRUCTION PROJECTS
               <span className="text-gray-200">Rely on stronger, more consistent concrete from on-site mixing</span>
             </div>
           </div>
+          
         </div>
 
         {/* Right Content (Form) */}
