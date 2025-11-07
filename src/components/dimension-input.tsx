@@ -12,7 +12,7 @@ export default function DimensionInput({
   onDimensionsChange,
   shape,
 }: DimensionInputProps) {
-  const [unit, setUnit] = useState<"feet" | "meters">("feet");
+  const [unit, setUnit] = useState<"feet" | "meters">("meters");
 
   const conversionFactor = unit === "feet" ? 0.3048 : 1;
 
@@ -26,7 +26,7 @@ export default function DimensionInput({
       : Math.max(0, value);
 
     onDimensionsChange({
-      ...(dimensions || { length: 0, width: 0, depth: 0, quantity: 1, rise: 0, run: 0, height: 0, curbDepth: 0 }),
+      ...dimensions,
       [field]: updatedValue,
     });
   };
@@ -42,7 +42,7 @@ export default function DimensionInput({
       case "slab":
         return { length: "Length", width: "Width", depth: "Depth" };
       case "footing":
-         return { length: "Diameter", width: "N/A", depth: "Depth" };
+         return { length: "Length", width: "Width", depth: "Depth" };
       case "steps":
         return { length: "Rise", width: "Run", depth: "Depth" };
       default:
@@ -163,7 +163,7 @@ export default function DimensionInput({
         <input
           type="number"
           value={dimensions ? dimensions.quantity : 1}
-          onChange={(e) => onDimensionsChange({ ...(dimensions || { length: 0, width: 0, depth: 0, quantity: 1, rise: 0, run: 0 }), quantity: Number.parseFloat(e.target.value) || 1 })}
+          onChange={(e) => onDimensionsChange({ ...dimensions, quantity: Number.parseFloat(e.target.value) || 1 })}
           min="1"
           className="w-full bg-slate-700 border border-slate-600 rounded px-3 py-2 text-white placeholder-slate-400 focus:outline-none focus:border-yellow-400"
           placeholder="1"
