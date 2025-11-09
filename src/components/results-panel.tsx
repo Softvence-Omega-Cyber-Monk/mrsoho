@@ -11,9 +11,6 @@ interface ResultsPanelProps {
 
 export default function ResultsPanel({
   volume,
-  pricePerYard,
-  materialCost,
-  deliverySurcharge,
   totalCost,
   onClearAll,
 }: ResultsPanelProps) {
@@ -29,31 +26,6 @@ export default function ResultsPanel({
             {Math.round(volume)} <span className="text-sm text-slate-400">Yards³</span>
           </p>
         </div>
-
-        {/* Price Per Yard */}
-        <div className="bg-slate-800 rounded p-4 border border-slate-700">
-          <p className="text-slate-400 text-sm mb-1">Price Per Yard</p>
-          <p className="text-2xl font-bold text-white">
-            ${pricePerYard.toFixed(2)}
-          </p>
-        </div>
-
-        {/* Material Cost */}
-        <div className="bg-slate-800 rounded p-4 border border-slate-700">
-          <p className="text-slate-400 text-sm mb-1">Material Cost</p>
-          <p className="text-2xl font-bold text-white">
-            ${materialCost.toFixed(2)}
-          </p>
-        </div>
-
-        {/* Delivery Surcharge */}
-        <div className="bg-slate-800 rounded p-4 border border-slate-700">
-          <p className="text-slate-400 text-sm mb-1">Delivery Surcharge</p>
-          <p className="text-2xl font-bold text-white">
-            ${deliverySurcharge.toFixed(2)}
-          </p>
-        </div>
-
         {/* Estimated Cost */}
         <div className="bg-yellow-400 rounded p-4">
           <p className="text-slate-900 text-sm mb-1 font-medium">Estimated costs depending on delivery location</p>
