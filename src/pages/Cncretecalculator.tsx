@@ -19,6 +19,22 @@ const CONCRETE_MIXES: ConcreteMix[] = [
   { name: "ULTRA BASE", price: 235.00 },
 ];
 
+// Material prices lookup map
+const MATERIAL_PRICES: { [key: string]: number } = {
+  "3000 PSI concrete": 275.00,
+  "4000 PSI concrete": 295.00,
+  "5000 PSI concrete": 325.00,
+  "Flowable FILL": 235.00,
+  "ULTRA BASE": 235.00,
+};
+
+// Delivery surcharge tiers
+const DELIVERY_SURCHARGE_TIERS = {
+  SMALL: { maxVolume: 2.5, charge: 300 },    // $300 for ≤ 2.5 yards
+  MEDIUM: { maxVolume: 4.0, charge: 250 },   // $250 for >2.5 - ≤4.0 yards  
+  LARGE: { maxVolume: 6.0, charge: 200 },    // $200 for >4.0 - ≤6.0 yards
+  // No charge for > 6.0 yards
+};
 
 export default function Home() {
   const [selectedShape, setSelectedShape] = useState<ShapeType>("slab");
@@ -156,30 +172,48 @@ export default function Home() {
   };
 
   const volume = calculateVolume();
-  const [additionalCost, setAdditionalCost] = useState(0);
+  const [deliverySurcharge, setDeliverySurcharge] = useState(0);
 
   useEffect(() => {
     const volumeInCubicYards = volume;
-    let newAdditionalCost = 0;
+    let surcharge = 0;
+    
+    // Apply Delivery Surcharge (Z) with cascading if/else logic
+    // Critical: Start checking from lowest volume (highest surcharge) upwards
     if (volumeInCubicYards > 0) {
-      if (volumeInCubicYards <= 2.5) {
-        newAdditionalCost = 300;
-      } else if (volumeInCubicYards >= 3 && volumeInCubicYards <= 4) {
-        newAdditionalCost = 250;
-      } else if (volumeInCubicYards >= 4.5 && volumeInCubicYards <= 6) {
-        newAdditionalCost = 200;
+      if (volumeInCubicYards <= DELIVERY_SURCHARGE_TIERS.SMALL.maxVolume) {
+        // $300 Charge: Applied if X ≤ 2.5 yards
+        surcharge = DELIVERY_SURCHARGE_TIERS.SMALL.charge;
+      } else if (volumeInCubicYards <= DELIVERY_SURCHARGE_TIERS.MEDIUM.maxVolume) {
+        // $250 Charge: Applied if X > 2.5 but ≤ 4.0 yards
+        surcharge = DELIVERY_SURCHARGE_TIERS.MEDIUM.charge;
+      } else if (volumeInCubicYards <= DELIVERY_SURCHARGE_TIERS.LARGE.maxVolume) {
+        // $200 Charge: Applied if X > 4.0 but ≤ 6.0 yards
+        surcharge = DELIVERY_SURCHARGE_TIERS.LARGE.charge;
       }
+      // $0 Charge: Applied for all volumes greater than 6.0 yards
     }
-    setAdditionalCost(newAdditionalCost);
+    
+    setDeliverySurcharge(surcharge);
   }, [volume]);
 
-  const mixCost = selectedMix ? selectedMix.price * volume : 0;
-  const totalCost = mixCost + additionalCost;
+  // Core Formula: X × Y = Z (Material Cost)
+  // Where: X = Total Volume, Y = Price per Unit, Z = Material Cost
+  const getPricePerYard = (): number => {
+    if (!selectedMix) return 0;
+    return MATERIAL_PRICES[selectedMix.name] || 0;
+  };
+
+  const pricePerYard = getPricePerYard();
+  const materialCost = pricePerYard * volume;
+
+  // Final Total: Material Cost + Delivery Surcharge (Z)
+  const totalCost = materialCost + deliverySurcharge;
 
   const handleClearAll = () => {
     setDimensions(null);
     setSelectedMix(null);
-    setAdditionalCost(0);
+    setDeliverySurcharge(0);
   };
 
   return (
@@ -240,6 +274,9 @@ export default function Home() {
             </div>
             <ResultsPanel
               volume={volume}
+              pricePerYard={pricePerYard}
+              materialCost={materialCost}
+              deliverySurcharge={deliverySurcharge}
               totalCost={totalCost}
               onClearAll={handleClearAll}
             />
