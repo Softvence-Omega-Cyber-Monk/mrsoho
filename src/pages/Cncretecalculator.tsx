@@ -4,29 +4,23 @@ import DimensionInput from "@/components/dimension-input";
 import ConcreteMixSelector from "@/components/concrete-mix-selector";
 import ResultsPanel from "@/components/results-panel";
 import ShapePreview from "@/components/shape-preview";
-import { ShapeType, Dimensions } from "../types";
+import { ShapeType, Dimensions, ConcreteMix } from "../types";
 
-interface ConcreteMix {
-  name: string;
-  price: number;
-}
+
 
 const CONCRETE_MIXES: ConcreteMix[] = [
-  { name: "3000 PSI concrete", price: 275.00 },
-  { name: "4000 PSI concrete", price: 295.00 },
-  { name: "5000 PSI concrete", price: 325.00 },
-  { name: "Flowable FILL", price: 235.00 },
-  { name: "ULTRA BASE", price: 235.00 },
+  { id: "1", name: "3000 PSI concrete", pricePerCubicYard: 275.00 },
+  { id: "2", name: "4000 PSI concrete", pricePerCubicYard: 295.00 },
+  { id: "3", name: "5000 PSI concrete", pricePerCubicYard: 325.00 },
+  { id: "4", name: "Flowable FILL", pricePerCubicYard: 235.00 },
+  { id: "5", name: "ULTRA BASE", pricePerCubicYard: 235.00 },
 ];
 
 // Material prices lookup map
-const MATERIAL_PRICES: { [key: string]: number } = {
-  "3000 PSI concrete": 275.00,
-  "4000 PSI concrete": 295.00,
-  "5000 PSI concrete": 325.00,
-  "Flowable FILL": 235.00,
-  "ULTRA BASE": 235.00,
-};
+const MATERIAL_PRICES: { [key: string]: number } = CONCRETE_MIXES.reduce((acc, mix) => {
+  acc[mix.name] = mix.pricePerCubicYard;
+  return acc;
+}, {} as { [key: string]: number });
 
 // Delivery surcharge tiers
 const DELIVERY_SURCHARGE_TIERS = {
@@ -42,6 +36,10 @@ export default function Home() {
   const [selectedShape, setSelectedShape] = useState<ShapeType>("slab");
   const [dimensions, setDimensions] = useState<Dimensions | null>(null);
   const [selectedMix, setSelectedMix] = useState<ConcreteMix | null>(null);
+
+  useEffect(() => {
+    console.log("Dimensions changed:", dimensions);
+  }, [dimensions]);
 
   const calculateVolume = (): number => {
     if (!dimensions) return 0;
@@ -79,6 +77,7 @@ export default function Home() {
     }
 
     const totalVolumeCubicMeters = volumeCubicMeters * quantity;
+    const totalVolumeCubicYards = totalVolumeCubicMeters * CUBIC_METERS_TO_CUBIC_YARDS;
 
     // Special case for the user's request
     const isSpecialCase =
@@ -170,32 +169,32 @@ export default function Home() {
       return 28.3;
     }
 
-    return Math.max(0, totalVolumeCubicMeters);
+    return Math.max(0, totalVolumeCubicYards);
   };
 
   const volume = calculateVolume();
+  console.log("Calculated volume:", volume);
   const [deliverySurcharge, setDeliverySurcharge] = useState(0);
 
   useEffect(() => {
-    const volumeInCubicYards = volume * CUBIC_METERS_TO_CUBIC_YARDS;
     let surcharge = 0;
-    
+
     // Apply Delivery Surcharge (Z) with cascading if/else logic
     // Critical: Start checking from lowest volume (highest surcharge) upwards
-    if (volumeInCubicYards > 0) {
-      if (volumeInCubicYards <= DELIVERY_SURCHARGE_TIERS.SMALL.maxVolume) {
+    if (volume > 0) {
+      if (volume <= DELIVERY_SURCHARGE_TIERS.SMALL.maxVolume) {
         // $300 Charge: Applied if X ≤ 2.5 yards
         surcharge = DELIVERY_SURCHARGE_TIERS.SMALL.charge;
-      } else if (volumeInCubicYards <= DELIVERY_SURCHARGE_TIERS.MEDIUM.maxVolume) {
+      } else if (volume <= DELIVERY_SURCHARGE_TIERS.MEDIUM.maxVolume) {
         // $250 Charge: Applied if X > 2.5 but ≤ 4.0 yards
         surcharge = DELIVERY_SURCHARGE_TIERS.MEDIUM.charge;
-      } else if (volumeInCubicYards <= DELIVERY_SURCHARGE_TIERS.LARGE.maxVolume) {
+      } else if (volume <= DELIVERY_SURCHARGE_TIERS.LARGE.maxVolume) {
         // $200 Charge: Applied if X > 4.0 but ≤ 6.0 yards
         surcharge = DELIVERY_SURCHARGE_TIERS.LARGE.charge;
       }
       // $0 Charge: Applied for all volumes greater than 6.0 yards
     }
-    
+
     setDeliverySurcharge(surcharge);
   }, [volume]);
 
@@ -210,7 +209,11 @@ export default function Home() {
   const materialCost = pricePerYard * volume;
 
   // Final Total: Material Cost + Delivery Surcharge (Z)
-  const totalCost = materialCost + deliverySurcharge;
+  const [totalCost, setTotalCost] = useState(0);
+
+  useEffect(() => {
+    setTotalCost(materialCost + deliverySurcharge);
+  }, [materialCost, deliverySurcharge]);
 
   const handleClearAll = () => {
     setDimensions(null);
@@ -260,7 +263,7 @@ export default function Home() {
               <h2 className="text-lg sm:text-xl font-semibold text-slate-900 mb-4">
                 3. Select a Concrete Mix (Optional)
               </h2>
-              <ConcreteMixSelector mixes={CONCRETE_MIXES} selectedMix={selectedMix} onMixChange={setSelectedMix} />
+              <ConcreteMixSelector mixes={CONCRETE_MIXES} selectedMix={selectedMix} onSelectMix={setSelectedMix} />
             </div>
 
             {/* CTA Button */}
@@ -281,6 +284,7 @@ export default function Home() {
               deliverySurcharge={deliverySurcharge}
               totalCost={totalCost}
               onClearAll={handleClearAll}
+              selectedMix={selectedMix}
             />
           </div>
         </div>

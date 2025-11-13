@@ -4,8 +4,8 @@ interface DimensionFormProps {
   selectedMaterial: string
   dimensions: Record<string, string>
   onDimensionsChange: (dimensions: Record<string, string>) => void
-  unit: "meters" | "feet"
-  onUnitChange: (unit: "meters" | "feet") => void
+  unit: "meters" | "feet" | "yards"
+  onUnitChange: (unit: "meters" | "feet" | "yards") => void
   onCalculate: () => void
 }
 
@@ -68,6 +68,14 @@ export default function DimensionForm({
           }`}
         >
           Feet
+        </button>
+        <button
+          onClick={() => onUnitChange("yards")}
+          className={`flex-1 py-2 px-3 rounded-lg font-medium text-sm transition-all ${
+            unit === "yards" ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+          }`}
+        >
+          Yards
         </button>
       </div>
 

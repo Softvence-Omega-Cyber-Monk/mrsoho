@@ -12,11 +12,11 @@ export default function DimensionInput({
   onDimensionsChange,
   shape,
 }: DimensionInputProps) {
-  const [unit, setUnit] = useState<"feet" | "meters">("meters");
+  const [unit, setUnit] = useState<"feet" | "meters" | "yards">("meters");
 
-  const conversionFactor = unit === "feet" ? 0.3048 : 1;
+  const conversionFactor = unit === "feet" ? 0.3048 : unit === "yards" ? 0.9144 : 1;
 
-  const handleUnitChange = (newUnit: "feet" | "meters") => {
+  const handleUnitChange = (newUnit: "feet" | "meters" | "yards") => {
     setUnit(newUnit);
   };
 
@@ -51,7 +51,7 @@ export default function DimensionInput({
   };
 
   const labels = getLabels();
-  const unitLabel = unit === "feet" ? "ft" : "m";
+  const unitLabel = unit === "feet" ? "ft" : unit === "yards" ? "yd" : "m";
 
   return (
     <div className="space-y-4">
@@ -67,6 +67,12 @@ export default function DimensionInput({
           className={`px-4 py-2 rounded ${unit === "meters" ? "bg-yellow-400 text-slate-900" : "bg-slate-600 text-white"}`}
         >
           Meters
+        </button>
+        <button
+          onClick={() => handleUnitChange("yards")}
+          className={`px-4 py-2 rounded ${unit === "yards" ? "bg-yellow-400 text-slate-900" : "bg-slate-600 text-white"}`}
+        >
+          Yards
         </button>
       </div>
       <div className="grid grid-cols-2 gap-4">

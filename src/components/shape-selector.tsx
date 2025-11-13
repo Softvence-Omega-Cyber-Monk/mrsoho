@@ -25,7 +25,7 @@ export default function ShapeSelector({ selectedShape, onShapeChange }: ShapeSel
           <button
             key={shape.id}
             onClick={() => onShapeChange(shape.id as ShapeType)}
-            className={`p-4 rounded-lg border-2 transition-all flex flex-col items-center gap-2 ${
+            className={`p-4 rounded-lg border-2 transition-all flex flex-col items-center gap-2 cursor-pointer ${
               isSelected
                 ? "bg-yellow-400 border-yellow-500 text-slate-900"
                 : "bg-slate-700 border-slate-600 text-slate-300 hover:border-slate-500"
