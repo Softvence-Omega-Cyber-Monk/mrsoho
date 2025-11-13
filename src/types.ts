@@ -57,5 +57,12 @@ export interface User {
     totalCost: number;
     additionalCost: number;
     onAdditionalCostChange: (cost: number) => void;
-    onClearAll: () => void;
-  }
+        onClearAll: () => void;
+      }
+    
+      export interface ConcreteMix {
+        id: string;
+        name: string;
+        pricePerCubicYard: number;
+      }
+    

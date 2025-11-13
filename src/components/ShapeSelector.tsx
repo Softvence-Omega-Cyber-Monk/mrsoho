@@ -1,13 +1,13 @@
 // src/components/ShapeSelector.tsx
-import { Shape } from '@/typs';
+import { ShapeDisplayName } from '@/types';
 import React from 'react';// Adjust the import path as necessary
 
 interface ShapeSelectorProps {
-  selectedShape: Shape;
-  onSelectShape: (newShape: Shape) => void;
+  selectedShape: ShapeDisplayName;
+  onSelectShape: (newShape: ShapeDisplayName) => void;
 }
 
-const SHAPE_OPTIONS: Shape[] = [
+const SHAPE_OPTIONS: ShapeDisplayName[] = [
   'Slabs & Walls', 
   'Footings', 
   'Curbs & Gutters', 

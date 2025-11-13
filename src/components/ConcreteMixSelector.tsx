@@ -1,5 +1,5 @@
 // src/components/ConcreteMixSelector.tsx
-import { ConcreteMix } from '@/typs';
+import { ConcreteMix } from '@/types';
 import React from 'react'; // Assuming ConcreteMix type is imported
 
 interface ConcreteMixSelectorProps {
