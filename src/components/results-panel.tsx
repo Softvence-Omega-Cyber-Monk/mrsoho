@@ -2,6 +2,9 @@ import { Trash2 } from "lucide-react";
 
 interface ResultsPanelProps {
   volume: number;
+  pricePerYard: number;
+  materialCost: number;
+  deliverySurcharge: number;
   totalCost: number;
   onClearAll: () => void;
 }
@@ -23,7 +26,6 @@ export default function ResultsPanel({
             {Math.round(volume)} <span className="text-sm text-slate-400">Yards³</span>
           </p>
         </div>
-
         {/* Estimated Cost */}
         <div className="bg-yellow-400 rounded p-4">
           <p className="text-slate-900 text-sm mb-1 font-medium">Estimated costs depending on delivery location</p>

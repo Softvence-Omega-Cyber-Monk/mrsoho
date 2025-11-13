@@ -32,10 +32,10 @@ const Navbar: React.FC = () => {
                 src={logo}
                 alt="logo"
                 className="
-                  h-12                /* mobile */
-                  sm:h-16             /* small devices */
-                  md:h-20             /* tablets */
-                  lg:h-24             /* desktops */
+                  h-10                /* mobile */
+                  sm:h-14             /* small devices */
+                  md:h-18             /* tablets */
+                  lg:h-19             /* desktops */
                   w-auto              /* keeps aspect ratio */
                 "
               />
@@ -142,8 +142,6 @@ const Navbar: React.FC = () => {
           )}
         </nav>
       </CommonWrapper>
-      {/* spacer to prevent content from being hidden under the sticky navbar */}
-      <div className="h-3 md:h-3 lg:h-3" aria-hidden="true" />
     </div>
   );
 };
