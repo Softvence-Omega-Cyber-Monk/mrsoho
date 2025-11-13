@@ -33,7 +33,7 @@ export default function ResultsPanel({
         <div className="bg-yellow-400 rounded p-4">
           <p className="text-slate-900 text-sm mb-1 font-medium">Estimated costs depending on delivery location</p>
           {selectedMix === null && volume > 0 ? (
-            <p className="text-3xl font-bold text-red-600">Please select a PSI value</p>
+            <p className="text-[20px] sm:text-[14px] font-semibold text-red-600">Please select a PSI value</p>
           ) : (
             <p className="text-3xl font-bold text-slate-900">${totalCost.toFixed(2)}</p>
           )}
