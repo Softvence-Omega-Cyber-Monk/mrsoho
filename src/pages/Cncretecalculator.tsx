@@ -36,6 +36,8 @@ const DELIVERY_SURCHARGE_TIERS = {
   // No charge for > 6.0 yards
 };
 
+const CUBIC_METERS_TO_CUBIC_YARDS = 1.30795;
+
 export default function Home() {
   const [selectedShape, setSelectedShape] = useState<ShapeType>("slab");
   const [dimensions, setDimensions] = useState<Dimensions | null>(null);
@@ -175,7 +177,7 @@ export default function Home() {
   const [deliverySurcharge, setDeliverySurcharge] = useState(0);
 
   useEffect(() => {
-    const volumeInCubicYards = volume;
+    const volumeInCubicYards = volume * CUBIC_METERS_TO_CUBIC_YARDS;
     let surcharge = 0;
     
     // Apply Delivery Surcharge (Z) with cascading if/else logic
