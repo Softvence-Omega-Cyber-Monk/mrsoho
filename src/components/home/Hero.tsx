@@ -1,6 +1,8 @@
 import { useState, ChangeEvent, FormEvent } from 'react';
 import pillerlighthousecar from '../../assets/pillerlighthousecar.jpg';
 import CloudflareLogo from '@/components/CloudflareLogo';
+import { useSaveAndSendContactMutation } from '@/store/Slices/ContactSlice/contactApi';
+import SuccessCheckmark from '../SuccessCheckmark';
 
 // Define the type for form data for better type safety in TypeScript
 interface FormData {
@@ -11,7 +13,7 @@ interface FormData {
   address: string;
   subject: string;
   message: string;
-  source: string;
+  howDidYouHearAboutUs: string;
 }
 
 const Hero = () => {
@@ -23,17 +25,22 @@ const Hero = () => {
     address: '',
     subject: '',
     message: '',
-    source: 'Google Search'
+    howDidYouHearAboutUs: 'Google Search'
   });
+
+  const [saveAndSendContact, { isLoading, isError, isSuccess, error }] = useSaveAndSendContactMutation();
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Thank you! We will contact you soon.');
+    try {
+      await saveAndSendContact(formData).unwrap();
+    } catch (err) {
+      console.error('Failed to submit contact form:', err);
+    }
   };
 
   return (
@@ -149,133 +156,144 @@ const Hero = () => {
         {/* Right Content (Form) */}
         <div className="w-full z-10 mx-auto mb-24">
           <div className="bg-white p-8 rounded-lg shadow-xl">
+            {isSuccess ? (
+              <div className="text-center">
+                <SuccessCheckmark />
+                <h2 className="text-2xl font-bold text-green-800 mt-4">Thank You!</h2>
+                <p className="text-gray-600">Your message has been sent successfully.</p>
+              </div>
+            ) : (
+              <>
+                {/* --- Header --- */}
+                <h2 className="text-gray-800 text-sm font-bold mb-2 uppercase tracking-wider text-center">
+                  NEED CONCRETE DELIVERED FROM GATORMIX?
+                </h2>
+                <p className="text-sm text-gray-500 mb-6 text-center">
+                  Schedule a delivery today.
+                </p>
 
-            {/* --- Header --- */}
-            <h2 className="text-gray-800 text-sm font-bold mb-2 uppercase tracking-wider text-center">
-              NEED CONCRETE DELIVERED FROM GATORMIX?
-            </h2>
-            <p className="text-sm text-gray-500 mb-6 text-center">
-              Schedule a delivery today.
-            </p>
+                {/* --- Form Fields --- */}
+                <form onSubmit={handleSubmit} className="space-y-4">
 
-            {/* --- Form Fields --- */}
-            <form onSubmit={handleSubmit} className="space-y-4">
+                  {/* Name and Phone Number - Grid Layout */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <input
+                        type="text"
+                        name="name"
+                        placeholder="Name*"
+                        aria-label="Name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                        className="w-full p-3 border border-gray-300 rounded text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500"
+                      />
+                    </div>
+                    <div>
+                      <input
+                        type="tel"
+                        name="phone"
+                        placeholder="Phone Number"
+                        aria-label="Phone Number"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        className="w-full p-3 border border-gray-300 rounded text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500"
+                      />
+                    </div>
+                  </div>
 
-              {/* Name and Phone Number - Grid Layout */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
+                  {/* Email Address */}
                   <input
-                    type="text"
-                    name="name"
-                    placeholder="Name*"
-                    aria-label="Name"
-                    value={formData.name}
+                    type="email"
+                    name="email"
+                    placeholder="Email Address*"
+                    aria-label="Email Address"
+                    value={formData.email}
                     onChange={handleChange}
                     required
                     className="w-full p-3 border border-gray-300 rounded text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500"
                   />
-                </div>
-                <div>
+
+                  {/* Business */}
                   <input
-                    type="tel"
-                    name="phone"
-                    placeholder="Phone Number"
-                    aria-label="Phone Number"
-                    value={formData.phone}
+                    type="text"
+                    name="business"
+                    placeholder="Business"
+                    aria-label="Business"
+                    value={formData.business}
                     onChange={handleChange}
                     className="w-full p-3 border border-gray-300 rounded text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500"
                   />
-                </div>
-              </div>
 
-              {/* Email Address */}
-              <input
-                type="email"
-                name="email"
-                placeholder="Email Address*"
-                aria-label="Email Address"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                className="w-full p-3 border border-gray-300 rounded text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500"
-              />
+                  {/* Address */}
+                  <input
+                    type="text"
+                    name="address"
+                    placeholder="Address"
+                    aria-label="Address"
+                    value={formData.address}
+                    onChange={handleChange}
+                    className="w-full p-3 border border-gray-300 rounded text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500"
+                  />
 
-              {/* Business */}
-              <input
-                type="text"
-                name="business"
-                placeholder="Business"
-                aria-label="Business"
-                value={formData.business}
-                onChange={handleChange}
-                className="w-full p-3 border border-gray-300 rounded text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500"
-              />
+                  {/* Subject */}
+                  <input
+                    type="text"
+                    name="subject"
+                    placeholder="Subject"
+                    aria-label="Subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    className="w-full p-3 border border-gray-300 rounded text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500"
+                  />
 
-              {/* Address */}
-              <input
-                type="text"
-                name="address"
-                placeholder="Address"
-                aria-label="Address"
-                value={formData.address}
-                onChange={handleChange}
-                className="w-full p-3 border border-gray-300 rounded text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500"
-              />
+                  {/* Message */}
+                  <textarea
+                    name="message"
+                    placeholder="Message"
+                    aria-label="Message"
+                    rows={4}
+                    value={formData.message}
+                    onChange={handleChange}
+                    className="w-full p-3 border border-gray-300 rounded text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 resize-none"
+                  ></textarea>
 
-              {/* Subject */}
-              <input
-                type="text"
-                name="subject"
-                placeholder="Subject"
-                aria-label="Subject"
-                value={formData.subject}
-                onChange={handleChange}
-                className="w-full p-3 border border-gray-300 rounded text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500"
-              />
+                  {/* --- Success & Cloudflare --- */}
+                  <div className="flex items-center justify-between py-2">
 
-              {/* Message */}
-              <textarea
-                name="message"
-                placeholder="Message"
-                aria-label="Message"
-                rows={4}
-                value={formData.message}
-                onChange={handleChange}
-                className="w-full p-3 border border-gray-300 rounded text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 resize-none"
-              ></textarea>
+                    <div className="flex items-center space-x-1">
+                      <CloudflareLogo />
+                    </div>
+                  </div>
 
-              {/* --- Success & Cloudflare --- */}
-              <div className="flex items-center justify-between py-2">
+                  {/* How did you hear about us? */}
+                  <label htmlFor="howDidYouHearAboutUs" className="sr-only">How did you hear about us?</label>
+                  <select
+                    id="howDidYouHearAboutUs"
+                    name="howDidYouHearAboutUs"
+                    value={formData.howDidYouHearAboutUs}
+                    onChange={handleChange}
+                    className="w-full p-3 border border-gray-300 rounded text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 appearance-none"
+                  >
+                    <option value="" disabled>How did you hear about us?</option>
+                    <option value="Google Search">Google Search</option>
+                    <option value="Referral">Referral</option>
+                    <option value="Social Media">Social Media</option>
+                    <option value="Advertisement">Advertisement</option>
+                  </select>
 
-                <div className="flex items-center space-x-1">
-                  <CloudflareLogo />
-                </div>
-              </div>
-
-              {/* How did you hear about us? */}
-              <label htmlFor="source" className="sr-only">How did you hear about us?</label>
-              <select
-                id="source"
-                name="source"
-                value={formData.source}
-                onChange={handleChange}
-                className="w-full p-3 border border-gray-300 rounded text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 appearance-none"
-              >
-                <option value="" disabled>How did you hear about us?</option>
-                <option value="Google Search">Google Search</option>
-                <option value="Referral">Referral</option>
-                <option value="Social Media">Social Media</option>
-                <option value="Advertisement">Advertisement</option>
-              </select>
-
-              {/* Submit Button */}
-              <button
-                type="submit"
-                className="w-full p-3 mt-6 bg-yellow-400 text-gray-900 font-extrabold text-base rounded-lg shadow-md hover:bg-yellow-500 transition-colors"
-              >
-                Get Started for free
-              </button>
-            </form>
+                  {/* Submit Button */}
+                  <button
+                    type="submit"
+                    disabled={isLoading}
+                    className="w-full p-3 mt-6 bg-yellow-400 text-gray-900 font-extrabold text-base rounded-lg shadow-md hover:bg-yellow-500 transition-colors disabled:opacity-50"
+                  >
+                    {isLoading ? 'Submitting...' : 'Get Started for free'}
+                  </button>
+                  {isError && <p className="text-red-500 text-sm text-center mt-2">Error: {(error as any)?.data?.message || 'Something went wrong.'}</p>}
+                </form>
+              </>
+            )}
           </div>
         </div>
       </div>
