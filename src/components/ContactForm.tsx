@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import PrimaryBtn from "./PrimaryBtn";
 import CloudflareLogo from "./CloudflareLogo";
+import { useSaveAndSendContactMutation } from "@/store/Slices/ContactSlice/contactApi";
+import SuccessCheckmark from "./SuccessCheckmark";
 
 interface FormData {
   name: string;
@@ -10,7 +12,7 @@ interface FormData {
   address: string;
   subject: string;
   message: string;
-  source: string;
+  howDidYouHearAboutUs: string;
 }
 
 const ContactForm: React.FC = () => {
@@ -22,8 +24,10 @@ const ContactForm: React.FC = () => {
     address: "",
     subject: "",
     message: "",
-    source: "Google Search",
+    howDidYouHearAboutUs: "Google Search",
   });
+
+  const [saveAndSendContact, { isLoading, isError, isSuccess, error }] = useSaveAndSendContactMutation();
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -31,11 +35,24 @@ const ContactForm: React.FC = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    alert("Form submitted successfully!");
+    try {
+      await saveAndSendContact(formData).unwrap();
+    } catch (err) {
+      console.error('Failed to submit contact form:', err);
+    }
   };
+
+  if (isSuccess) {
+    return (
+      <div className="max-w-md mx-auto bg-white shadow-md rounded-2xl p-6 space-y-5 border border-gray-200 text-center">
+        <SuccessCheckmark />
+        <h2 className="text-2xl font-bold text-green-800">Thank You!</h2>
+        <p className="text-gray-600">Your message has been sent successfully. We will get back to you shortly.</p>
+      </div>
+    );
+  }
 
   return (
     <form
@@ -156,8 +173,8 @@ const ContactForm: React.FC = () => {
           How did you hear about us?
         </label>
         <select
-          name="source"
-          value={formData.source}
+          name="howDidYouHearAboutUs"
+          value={formData.howDidYouHearAboutUs}
           onChange={handleChange}
           className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:ring-2 focus:ring-yellow-400 outline-none"
         >
@@ -170,11 +187,17 @@ const ContactForm: React.FC = () => {
       </div>
 
       {/* Submit button */}
-    <PrimaryBtn btnText="Get Started for free" />
+      <button type="submit" disabled={isLoading} className="w-full">
+        <PrimaryBtn btnText={isLoading ? "Submitting..." : "Get Started for free"} />
+      </button>
 
-    <div className="text-center text-[#848D9B] text-[16px]">
-      <h2>Contact Us: (239)309-7779</h2>
-    </div>
+      {isError && <p className="text-red-500 text-sm text-center">Error: {
+        (error as any)?.data?.message || (error as any)?.message || 'Something went wrong.'
+      }</p>}
+
+      <div className="text-center text-[#848D9B] text-[16px]">
+        <h2>Contact Us: (239)309-7779</h2>
+      </div>
     </form>
   );
 };
