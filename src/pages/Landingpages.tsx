@@ -6,6 +6,7 @@ import Faq from "@/components/home/Faq";
 import Banner from "@/components/Banner";
 import traktor from "@/assets/traktor.jpg";
 import nobgslish from '@/assets/nobgslish.png';
+import { useSaveAndSendContactMutation } from "@/store/Slices/ContactSlice/contactApi";
 const Landingpages = () => {
     const [formData, setFormData] = useState({
         name: "",
@@ -17,15 +18,20 @@ const Landingpages = () => {
         message: "",
         source: "",
     });
-
+    const [saveAndSendContact, { isLoading }] = useSaveAndSendContactMutation();
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        console.log("Form Submitted:", formData);
-        alert("Form submitted successfully!");
+        try {
+            await saveAndSendContact(formData).unwrap();
+            alert("Form submitted successfully!");
+        } catch (error) {
+            console.error("Failed to submit form:", error);
+            alert("Failed to submit form. Please try again.");
+        }
     };
 
     return (
@@ -131,8 +137,9 @@ const Landingpages = () => {
                             <button
                                 type="submit"
                                 className="w-full p-3 mt-4 lg:mt-6 bg-yellow-400 text-gray-900 font-extrabold text-base rounded-lg shadow-md hover:bg-yellow-500 transition-colors"
+                                disabled={isLoading}
                             >
-                                Get Started for Free
+                                {isLoading ? "Submitting..." : "Get Started for Free"}
                             </button>
                         </form>
                     </div>
