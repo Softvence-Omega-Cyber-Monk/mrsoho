@@ -1,11 +1,42 @@
-import React from 'react';
-
+import CommonWrapper from "@/common/CommonWrapper";
+import Banner from "@/components/Banner";
+import CalculatorCta from "@/components/CalculatorCta";
+import ContactForm from "@/components/ContactForm";
+import puttk from '@/assets/puttk.png';
+import servicesanalysers from '@/assets/servicesanalysers.png';
 const ServiceAreas: React.FC = () => {
   return (
-    <div>
-      <h1>Service Areas Page</h1>
-      <p>Content for Service Areas will go here.</p>
-    </div>
+    <>
+      <CommonWrapper>
+        <Banner
+          imageUrl={servicesanalysers}
+          title="Service Areas"
+          subtitle="Get concrete for your building project delivered and mixed on-site across SOUTH WEST FLORIDA"
+          secondTitle="as well as Fort Myers, Lehigh Acres, Estero, Immokalee, Bontia Springs, Ave Maria, Orangetree, and Naples"
+          secondTitleClassName="text-[#FEDA42]"
+        />
+        <div className="flex justify-center my-6">
+          <iframe
+            width="100%"
+            height="450"
+            loading="lazy"
+            src="https://www.google.com/maps?q=26.35,-81.83&z=10&output=embed">
+          </iframe>
+        </div>
+        <div className=" flex justify-center my-6">
+          <ContactForm />
+        </div>
+
+        <div>
+          <CalculatorCta />
+        </div>
+        <div>
+
+          <Banner imageUrl={puttk} title='DO YOU NEED A CONCRETE PUMP' btnText='Get In Touch' showButton />
+
+        </div>
+      </CommonWrapper>
+    </>
   );
 };
 

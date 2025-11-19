@@ -1,45 +1,27 @@
-import CommonWrapper from "../common/CommonWrapper";
-import {
-  decrement,
-  increment,
-  reset,
-} from "@/store/Slices/counterSlice/counterSlice";
-import { useAppDispatch, useAppSelector } from "@/hooks/useRedux";
+import CommonWrapper from '@/common/CommonWrapper';
+import Hero from '@/components/home/Hero';
+import HowItWorks from '@/components/home/HowItWorks';
+import Faq from '@/components/home/Faq';
+import Features from '@/components/home/Features';
+import Cta from '@/components/home/Cta';
+import ConcreteServicesSection from '@/components/home/ConcreteServices';
 
-const Home = () => {
-  const count = useAppSelector((state) => state.counter.value);
-  const dispatch = useAppDispatch();
-
+const GatorMixComplete = () => {
   return (
     <CommonWrapper>
-      <div className="h-screen bg-website-color-lightGreen">
-        <div className="flex flex-col items-center justify-center min-h-screen ">
-          <h1 className="text-2xl font-bold mb-4">Home Page</h1>
-          <h2 className="text-xl font-bold">Counter: {count}</h2>
-          <div className="mt-4 space-x-2">
-            <button
-              className="bg-blue-500 text-white px-4 py-2 rounded"
-              onClick={() => dispatch(increment())}
-            >
-              Increment
-            </button>
-            <button
-              className="bg-red-500 text-white px-4 py-2 rounded"
-              onClick={() => dispatch(decrement())}
-            >
-              Decrement
-            </button>
-            <button
-              className="bg-gray-500 text-white px-4 py-2 rounded"
-              onClick={() => dispatch(reset())}
-            >
-              Reset
-            </button>
-          </div>
+      <Hero />
+      <HowItWorks />
+      <Cta />
+      <Features />
+      <ConcreteServicesSection />
+      <div className='bg-[#212121]'>
+        <div className="max-w-[1490px] mx-auto">
+          <Faq />
         </div>
       </div>
+
     </CommonWrapper>
   );
 };
 
-export default Home;
+export default GatorMixComplete;

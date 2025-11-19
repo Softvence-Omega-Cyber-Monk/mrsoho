@@ -10,9 +10,11 @@ import Login from "@/pages/Login";
 import Signup from "@/pages/Signup";
 import Form from "@/pages/Form";
 import Services from "../pages/Services";
-import HowItWorks from "../pages/HowItWorks";
+import HowItWorks from "../components/home/HowItWorks";
 import Concrete from "../pages/Concrete";
 import ServiceAreas from "../pages/ServiceAreas";
+import ConcreteCalculator from "../pages/Cncretecalculator"; 
+import Landingpages from "@/pages/Landingpages";
 
 const routes = createBrowserRouter([
   {
@@ -20,7 +22,7 @@ const routes = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: "/",
+        path: "/HOW-IT-WORKS",
         element: <Home />,
       },
       {
@@ -48,6 +50,10 @@ const routes = createBrowserRouter([
         element: <ServiceAreas />,
       },
       {
+        path: "/",
+        element: <Landingpages />,
+      },
+      {
         path: "/form",
         element: <Form />,
       },
@@ -58,6 +64,10 @@ const routes = createBrowserRouter([
       {
         path: "/signup",
         element: <Signup />,
+      },
+      {
+        path: "/concrete-calculator",
+        element: <ConcreteCalculator />,
       },
       {
         path: "/admin",
