@@ -1,5 +1,5 @@
 import CommonWrapper from "@/common/CommonWrapper";
-import Banner from "@/components/Banner";
+import Banner from "@/components/ui/Banner";
 import CalculatorCta from "@/components/CalculatorCta";
 import ContactForm from "@/components/ContactForm";
 import puttk from '@/assets/puttk.png';
@@ -32,7 +32,7 @@ const ServiceAreas: React.FC = () => {
         </div>
         <div>
 
-          <Banner imageUrl={puttk} title='DO YOU NEED A CONCRETE PUMP' btnText='Get In Touch' showButton />
+          <Banner imageUrl={puttk} title='DO YOU NEED A CONCRETE PUMP' />
 
         </div>
       </CommonWrapper>

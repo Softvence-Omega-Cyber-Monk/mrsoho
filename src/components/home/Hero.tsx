@@ -288,7 +288,7 @@ const Hero = () => {
                     disabled={isLoading}
                     className="w-full p-3 mt-6 bg-yellow-400 text-gray-900 font-extrabold text-base rounded-lg shadow-md hover:bg-yellow-500 transition-colors disabled:opacity-50"
                   >
-                    {isLoading ? 'Submitting...' : 'Get Started for free'}
+                    {isLoading ? 'Submitting...' : 'Submit Contact'}
                   </button>
                   {isError && <p className="text-red-500 text-sm text-center mt-2">Error: {(error as any)?.data?.message || 'Something went wrong.'}</p>}
                 </form>

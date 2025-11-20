@@ -1,7 +1,7 @@
 import CommonWrapper from "@/common/CommonWrapper"
 import traktor from '@/assets/traktor.jpg';
 import ALIGNMENT from '@/assets/ALIGNMENT.jpg';
-import Banner from "@/components/Banner";
+import Banner from "@/components/ui/Banner";
 import BuiltToLast from "@/components/BuiltToLast";
 import ConcreteVsCement from "@/components/ConcreteVsCement";
 import ConcreteMixDesign from "@/components/ConcreteMixDesign";
@@ -23,7 +23,7 @@ const CONCRETE = () => {
         <PerfectConcreteMix />
         <Cta />
         <CalculatorCta />
-        <Banner imageUrl={traktor} title='DO YOU NEED A CONCRETE PUMP' subtitle="The easy-to-use Concrete Calculator tells you the type and volume of concrete you need for your project, and how much it will cost." btnText='Get In Touch' showButton />
+        <Banner imageUrl={traktor} title='DO YOU NEED A CONCRETE PUMP' subtitle="The easy-to-use Concrete Calculator tells you the type and volume of concrete you need for your project, and how much it will cost." />
       </CommonWrapper>
     </>
   )

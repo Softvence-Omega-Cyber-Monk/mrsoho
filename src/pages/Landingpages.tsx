@@ -3,9 +3,10 @@ import CommonWrapper from "@/common/CommonWrapper";
 import ALIGNMENT from "@/assets/ALIGNMENT.jpg";
 import CloudflareLogo from "@/components/CloudflareLogo.tsx";
 import Faq from "@/components/home/Faq";
-import Banner from "@/components/Banner";
+import Banner from "@/components/ui/Banner";
 import traktor from "@/assets/traktor.jpg";
 import nobgslish from '@/assets/nobgslish.png';
+import { useSaveAndSendContactMutation } from "@/store/Slices/ContactSlice/contactApi";
 const Landingpages = () => {
     const [formData, setFormData] = useState({
         name: "",
@@ -17,15 +18,20 @@ const Landingpages = () => {
         message: "",
         source: "",
     });
-
+    const [saveAndSendContact, { isLoading }] = useSaveAndSendContactMutation();
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        console.log("Form Submitted:", formData);
-        alert("Form submitted successfully!");
+        try {
+            await saveAndSendContact(formData).unwrap();
+            alert("Form submitted successfully!");
+        } catch (error) {
+            console.error("Failed to submit form:", error);
+            alert("Failed to submit form. Please try again.");
+        }
     };
 
     return (
@@ -131,8 +137,9 @@ const Landingpages = () => {
                             <button
                                 type="submit"
                                 className="w-full p-3 mt-4 lg:mt-6 bg-yellow-400 text-gray-900 font-extrabold text-base rounded-lg shadow-md hover:bg-yellow-500 transition-colors"
+                                disabled={isLoading}
                             >
-                                Get Started for Free
+                                {isLoading ? "Submitting..." : "Submit Contact"}
                             </button>
                         </form>
                     </div>
@@ -163,11 +170,11 @@ const Landingpages = () => {
                                 </p>
 
                                 {/* Button */}
-                                <button
+                                {/* <button
                                     className="inline-flex items-center gap-2 px-6 py-3 text-base sm:text-lg font-bold rounded-md bg-yellow-400 text-gray-900 hover:bg-yellow-500 transition duration-300 shadow-lg shadow-yellow-500/40"
                                 >
                                     <span>Get In Touch</span>
-                                </button>
+                                </button> */}
                             </div>
                         </div>
                     </CommonWrapper>
@@ -273,11 +280,11 @@ const Landingpages = () => {
                             <p className="text-base sm:text-lg text-gray-700 max-w-lg mx-auto md:mx-0 mb-8">
                                 Concrete can be confusing, but it doesn't have to be.  Reach out to us with any questions you may have, and we will respond within 24 hours.
                             </p>
-                            <div className="relative inline-flex items-center">
+                            {/* <div className="relative inline-flex items-center">
                                 <button className="flex items-center px-8 py-4 bg-yellow-400 text-black font-extrabold rounded-lg text-lg shadow-lg hover:bg-yellow-600 transition duration-300 transform hover:-translate-y-1">
                                     Get In Touch
                                 </button>
-                            </div>
+                            </div> */}
                         </div>
                         <div className="w-full md:w-1/2 flex justify-center md:justify-end opacity-20 md:opacity-100 z-0">
                             <img

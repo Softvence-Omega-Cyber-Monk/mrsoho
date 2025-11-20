@@ -188,7 +188,7 @@ const ContactForm: React.FC = () => {
 
       {/* Submit button */}
       <button type="submit" disabled={isLoading} className="w-full">
-        <PrimaryBtn btnText={isLoading ? "Submitting..." : "Get Started for free"} />
+        <PrimaryBtn btnText={isLoading ? "Submitting..." : "Submit Contact"} />
       </button>
 
       {isError && <p className="text-red-500 text-sm text-center">Error: {

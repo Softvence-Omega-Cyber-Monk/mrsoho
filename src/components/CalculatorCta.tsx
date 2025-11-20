@@ -2,6 +2,7 @@ import nobgslish from '@/assets/nobgslish.png';
 import CommonWrapper from '@/common/CommonWrapper';
 
 const CalculatorCta = () => {
+
   return (
     <CommonWrapper>
       <div className="relative bg-gray-100 py-16 overflow-hidden md:py-24">
@@ -14,11 +15,11 @@ const CalculatorCta = () => {
               The easy-to-use Concrete Calculator tells you the type and volume
               of concrete you need for your project, and how much it will cost.
             </p>
-            <div className="relative inline-flex items-center">
+            {/* <div className="relative inline-flex items-center">
               <button className="flex items-center px-8 py-4 bg-yellow-400 text-black font-extrabold rounded-lg text-lg shadow-lg hover:bg-yellow-600 transition duration-300 transform hover:-translate-y-1">
                 Try the Concrete Calculator
               </button>
-            </div>
+            </div> */}
           </div>
 
           <div className="w-full md:w-1/2 flex justify-center md:justify-end opacity-20 md:opacity-100 z-0">

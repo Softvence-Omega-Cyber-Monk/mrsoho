@@ -1,5 +1,4 @@
 import React from "react";
-import PrimaryBtn from "./PrimaryBtn";
 import CommonWrapper from "@/common/CommonWrapper";
 
 interface BannerProps {
@@ -7,8 +6,6 @@ interface BannerProps {
   secondTitle?: string;
   subtitle?: string;
   imageUrl: string;
-  btnText?: string;
-  showButton?: boolean;
   showTitle?: boolean;
   titleClassName?: string;
   secondTitleClassName?: string;
@@ -19,8 +16,6 @@ const Banner: React.FC<BannerProps> = ({
   secondTitle,
   subtitle,
   imageUrl,
-  btnText = "Learn More",
-  showButton = false,
   showTitle = true,
   titleClassName,
   secondTitleClassName,
@@ -50,22 +45,19 @@ const Banner: React.FC<BannerProps> = ({
                 {title}
               </h1>
             )}
+
             {subtitle && (
               <p className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed">
                 {subtitle}
               </p>
             )}
+
             {secondTitle && (
               <p
                 className={`text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed mt-2 sm:mt-3 ${secondTitleClassName}`}
               >
                 {secondTitle}
               </p>
-            )}
-            {showButton && btnText && (
-              <div className="mt-4 sm:mt-6 max-w-xs">
-                <PrimaryBtn btnText={btnText} />
-              </div>
             )}
           </div>
         </div>
