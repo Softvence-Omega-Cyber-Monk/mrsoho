@@ -1,4 +1,4 @@
-import Banner from "@/components/Banner";
+import Banner from "@/components/ui/Banner";
 import contact from "@/assets/contact.png";
 import puttk from "@/assets/puttk.png";
 import ContactForm from "@/components/ContactForm";
@@ -14,7 +14,7 @@ const Contact = () => {
       </div>
 
       <div>
-        <Banner imageUrl={puttk} title='DO YOU NEED A CONCRETE PUMP' showTitle btnText='Get In Touch' showButton />
+        <Banner imageUrl={puttk} title='DO YOU NEED A CONCRETE PUMP' showTitle />
       </div>
       <div>
         <CalculatorCta />

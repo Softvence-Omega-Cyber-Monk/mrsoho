@@ -55,25 +55,22 @@ export default function DimensionForm({
       <div className="flex gap-2 mb-6">
         <button
           onClick={() => onUnitChange("meters")}
-          className={`flex-1 py-2 px-3 rounded-lg font-medium text-sm transition-all ${
-            unit === "meters" ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-          }`}
+          className={`flex-1 py-2 px-3 rounded-lg font-medium text-sm transition-all ${unit === "meters" ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+            }`}
         >
           Meters
         </button>
         <button
           onClick={() => onUnitChange("feet")}
-          className={`flex-1 py-2 px-3 rounded-lg font-medium text-sm transition-all ${
-            unit === "feet" ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-          }`}
+          className={`flex-1 py-2 px-3 rounded-lg font-medium text-sm transition-all ${unit === "feet" ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+            }`}
         >
           Feet
         </button>
         <button
           onClick={() => onUnitChange("yards")}
-          className={`flex-1 py-2 px-3 rounded-lg font-medium text-sm transition-all ${
-            unit === "yards" ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-          }`}
+          className={`flex-1 py-2 px-3 rounded-lg font-medium text-sm transition-all ${unit === "yards" ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+            }`}
         >
           Yards
         </button>
@@ -100,7 +97,7 @@ export default function DimensionForm({
         onClick={onCalculate}
         className="w-full bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-3 px-4 rounded-lg transition-all"
       >
-        Get Started for free
+        Submit Contact
       </button>
     </div>
   )
