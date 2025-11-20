@@ -266,10 +266,10 @@ export default function Home() {
               <ConcreteMixSelector mixes={CONCRETE_MIXES} selectedMix={selectedMix} onSelectMix={setSelectedMix} />
             </div>
 
-            {/* CTA Button */}
+            {/* CTA Button
             <button className="w-full bg-yellow-400 hover:bg-yellow-500 text-slate-900 font-bold py-3 md:py-4 px-6 rounded-lg transition-colors">
-              Get Started for Free
-            </button>
+              Calculate My Concrete Needs
+            </button> */}
           </div>
 
           {/* RIGHT SIDE (Preview & Results) */}

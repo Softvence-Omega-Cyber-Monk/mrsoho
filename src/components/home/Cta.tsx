@@ -1,8 +1,10 @@
 import { Calculator } from 'lucide-react';
 import dfjvgfrgvcar3 from "../../assets/dfjvgfrgvcar3.jpg";
 import CommonWrapper from "@/common/CommonWrapper";
+import { useNavigate } from "react-router-dom";
 
 const Cta = () => {
+  const navigate = useNavigate();
   return (
     <section
       className="
@@ -55,6 +57,7 @@ const Cta = () => {
           </p>
 
           <button
+            onClick={() => navigate("/concrete-calculator")}
             className="
               inline-flex items-center justify-center gap-2
               px-5 sm:px-6 py-2.5 sm:py-3
