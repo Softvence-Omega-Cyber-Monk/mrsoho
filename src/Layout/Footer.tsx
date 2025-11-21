@@ -1,6 +1,7 @@
 import CommonWrapper from "@/common/CommonWrapper";
 import InstagramIcon from '@/components/ui/InstagramIcon';
 import TikTokIcon from '@/components/ui/TikTokIcon';
+// import { Link, NavLink } from "react-router-dom";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -41,9 +42,26 @@ const Footer = () => {
 
           {/* Right Section - Social Media */}
           <div className="order-3 md:order-none flex gap-3">
-            <InstagramIcon />
-            <TikTokIcon />
+            <a
+              href="https://www.instagram.com/gatormixfl/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1"
+            >
+              <InstagramIcon />
+            </a>
+
+            <a
+              href="https://www.tiktok.com/@gatormixfl"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1"
+            >
+              <TikTokIcon />
+            </a>
           </div>
+
+
         </div>
       </footer>
     </CommonWrapper>

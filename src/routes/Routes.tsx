@@ -14,7 +14,7 @@ import HowItWorks from "../components/home/HowItWorks";
 import Concrete from "../pages/Concrete";
 import ServiceAreas from "../pages/ServiceAreas";
 import ConcreteCalculator from "../pages/Cncretecalculator"; 
-import Landingpages from "@/pages/Landingpages";
+import Landingpages from "@/components/Landingpages";
 
 const routes = createBrowserRouter([
   {

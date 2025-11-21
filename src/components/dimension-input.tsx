@@ -58,19 +58,19 @@ export default function DimensionInput({
       <div className="flex space-x-2 mb-4">
         <button
           onClick={() => handleUnitChange("feet")}
-          className={`px-4 py-2 rounded ${unit === "feet" ? "bg-yellow-400 text-slate-900" : "bg-slate-600 text-white"}`}
+          className={`px-4 py-2 rounded cursor-pointer ${unit === "feet" ? "bg-yellow-400 text-slate-900" : "bg-slate-600 text-white"}`}
         >
           Feet
         </button>
         <button
           onClick={() => handleUnitChange("meters")}
-          className={`px-4 py-2 rounded ${unit === "meters" ? "bg-yellow-400 text-slate-900" : "bg-slate-600 text-white"}`}
+          className={`px-4 py-2 rounded cursor-pointer ${unit === "meters" ? "bg-yellow-400 text-slate-900" : "bg-slate-600 text-white"}`}
         >
           Meters
         </button>
         <button
           onClick={() => handleUnitChange("yards")}
-          className={`px-4 py-2 rounded ${unit === "yards" ? "bg-yellow-400 text-slate-900" : "bg-slate-600 text-white"}`}
+          className={`px-4 py-2 rounded cursor-pointer ${unit === "yards" ? "bg-yellow-400 text-slate-900" : "bg-slate-600 text-white"}`}
         >
           Yards
         </button>

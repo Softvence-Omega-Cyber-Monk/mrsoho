@@ -1,9 +1,10 @@
 import CommonWrapper from "@/common/CommonWrapper";
 import Banner from "@/components/ui/Banner";
 import CalculatorCta from "@/components/CalculatorCta";
-import ContactForm from "@/components/ContactForm";
+// import ContactForm from "@/components/ContactForm";
 import puttk from '@/assets/puttk.png';
 import servicesanalysers from '@/assets/servicesanalysers.png';
+// import ContactForm from "@/components/ContactForm";
 const ServiceAreas: React.FC = () => {
   return (
     <>
@@ -23,9 +24,9 @@ const ServiceAreas: React.FC = () => {
             src="https://www.google.com/maps?q=26.35,-81.83&z=10&output=embed">
           </iframe>
         </div>
-        <div className=" flex justify-center my-6">
+        {/* <div className=" flex justify-center my-6">
           <ContactForm />
-        </div>
+        </div> */}
 
         <div>
           <CalculatorCta />

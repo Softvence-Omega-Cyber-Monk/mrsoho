@@ -93,7 +93,7 @@ const Navbar: React.FC = () => {
 
             {/* CONCRETE CALCULATOR Button */}
             <Link to="/concrete-calculator">
-              <button className="px-4 py-2 lg:px-6 lg:py-3 bg-[#FEDA42] text-gray-900 font-bold uppercase text-xs lg:text-sm rounded-lg shadow-md outline-none hover:bg-[#fed130] transition-colors whitespace-nowrap">
+              <button className="px-4 py-2 lg:px-6 lg:py-3 bg-[#FEDA42] text-gray-900 font-bold uppercase text-xs lg:text-sm rounded-lg shadow-md outline-none hover:bg-[#fed130] transition-colors whitespace-nowrap cursor-pointer">
                 CONCRETE CALCULATOR
               </button>
             </Link>

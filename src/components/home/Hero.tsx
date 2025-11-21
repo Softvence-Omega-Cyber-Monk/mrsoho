@@ -1,6 +1,6 @@
 import { useState, ChangeEvent, FormEvent } from 'react';
 import pillerlighthousecar from '../../assets/pillerlighthousecar.jpg';
-import CloudflareLogo from '@/components/CloudflareLogo';
+// import ContactForm from '@/components/ContactForm';
 import { useSaveAndSendContactMutation } from '@/store/Slices/ContactSlice/contactApi';
 import SuccessCheckmark from '../SuccessCheckmark';
 
@@ -262,7 +262,7 @@ const Hero = () => {
                   <div className="flex items-center justify-between py-2">
 
                     <div className="flex items-center space-x-1">
-                      <CloudflareLogo />
+                      {/* <ContactForm /> */}
                     </div>
                   </div>
 
@@ -286,7 +286,7 @@ const Hero = () => {
                   <button
                     type="submit"
                     disabled={isLoading}
-                    className="w-full p-3 mt-6 bg-yellow-400 text-gray-900 font-extrabold text-base rounded-lg shadow-md hover:bg-yellow-500 transition-colors disabled:opacity-50"
+                    className="w-full p-3 mt-6 bg-yellow-400 text-gray-900 font-extrabold text-base rounded-lg shadow-md hover:bg-yellow-500 transition-colors disabled:opacity-50 cursor-pointer"
                   >
                     {isLoading ? 'Submitting...' : 'Submit Contact'}
                   </button>

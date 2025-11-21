@@ -64,7 +64,7 @@ const Cta = () => {
               text-sm sm:text-base md:text-lg font-bold
               rounded-md bg-yellow-400 text-gray-900 
               hover:bg-yellow-500 transition duration-300 
-              shadow-lg shadow-yellow-500/40
+              shadow-lg shadow-yellow-500/40 cursor-pointer
             "
           >
             <Calculator className="w-5 h-5 sm:w-6 sm:h-6" />

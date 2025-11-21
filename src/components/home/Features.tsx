@@ -122,9 +122,9 @@ const Features = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-12 gap-8">
+        <div className="grid grid-cols-12 gap-8 ">
           {featuresData.map((feature) => (
-            <FeatureCard key={feature.id} feature={feature} />
+              <FeatureCard key={feature.id} feature={feature} />
           ))}
         </div>
       </CommonWrapper>

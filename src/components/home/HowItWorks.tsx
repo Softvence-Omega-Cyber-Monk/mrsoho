@@ -18,7 +18,7 @@ Whether you're pouring a small pad, a foundation, or a large industrial slab, we
       </div>
 <div className="grid grid-cols-1 md:grid-cols-3 gap-[48px] mt-3 mb-99 translate-y-8">
   {/* Card 1: Tell Us About Your Project */}
-  <div className="flex flex-col translate-y-0">
+  <div className="flex flex-col translate-y-0 cursor-pointer">
     <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-200 flex flex-col h-full">
       <img
         alt="Construction Worker"
@@ -38,7 +38,7 @@ Whether you're pouring a small pad, a foundation, or a large industrial slab, we
   </div>
 
   {/* Card 2: Get Your Quote & Cost */}
-  <div className="flex flex-col translate-y-15">
+  <div className="flex flex-col translate-y-15 cursor-pointer">
     <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-200 flex flex-col h-full">
       {/* Ensure the image/container has the standardized height */}
       <img
@@ -58,7 +58,7 @@ Whether you're pouring a small pad, a foundation, or a large industrial slab, we
   </div>
 
   {/* Card 3: Get Concrete Mixed On-Site */}
-  <div className="flex flex-col translate-y-30">
+  <div className="flex flex-col translate-y-30 cursor-pointer">
     <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-200 flex flex-col h-full">
       <img
         alt="Concrete Mixer Truck"
