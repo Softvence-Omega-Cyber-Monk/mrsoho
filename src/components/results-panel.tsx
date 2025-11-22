@@ -42,7 +42,7 @@ export default function ResultsPanel({
         {/* Clear All Button */}
         <button
           onClick={onClearAll}
-          className="w-full bg-slate-700 hover:bg-slate-600 text-slate-300 font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2"
+          className="w-full bg-slate-700 hover:bg-slate-600 text-slate-300 font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 cursor-pointer"
         >
           <Trash2 size={18} />
           Clear All

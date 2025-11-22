@@ -54,7 +54,7 @@ const ConcreteServicesSection: React.FC = () => {
           <p className="mt-4 text-md text-gray-600">
             Schedule a delivery today.
           </p>
-          <div className="mt-8 flex justify-center items-center">
+          <div className="mt-8 cursor-pointer flex justify-center items-center">
             <a
               href="/concrete-calculator"
               className="bg-yellow-400 w-[270px] hover:bg-yellow-500 text-gray-900 font-bold py-3 px-6 rounded-md transition duration-300 ease-in-out flex items-center space-x-2"
