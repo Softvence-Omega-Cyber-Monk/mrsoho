@@ -337,7 +337,7 @@
 
 
 
-
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import CommonWrapper from "@/common/CommonWrapper";
 import ALIGNMENT from "@/assets/ALIGNMENT.jpg";
@@ -350,6 +350,8 @@ import AvatarImage2 from "@/assets/AvatarImage2.png";
 import AvatarImage3 from "@/assets/AvatarImage3.png";
 import { useSaveAndSendContactMutation } from "@/store/Slices/ContactSlice/contactApi";
 import SuccessCheckmark from "@/components/SuccessCheckmark";
+import { Link } from "react-router-dom";
+// import { Calculator } from "lucide-react";
 
 interface FormData {
   name: string;
@@ -373,6 +375,7 @@ const Landingpages = () => {
     message: "",
     source: "",
   });
+  const navigate = useNavigate();
 
   const [saveAndSendContact, { isLoading, isSuccess, isError, error }] = useSaveAndSendContactMutation();
 
@@ -561,13 +564,19 @@ const Landingpages = () => {
         <CommonWrapper className="max-w-[1440px]">
           <div className="relative w-full h-[640px] overflow-hidden flex items-center">
             <div className="relative z-10 max-w-3xl p-6 bg-black/40 rounded-lg text-white">
-              <h1 className="text-4xl md:text-5xl font-bold text-[#FEDA42] mb-3">
+              <h1 className="text-4xl md:text-5xl font-bold text-[#FEDA42] mb-3 w-[516px]">
                 DO YOU NEED A CONCRETE PUMP
               </h1>
-              <p className="text-base md:text-lg leading-relaxed">
+              <p className="text-base md:text-lg leading-relaxed w-[516px]">
                 Access to state of the art concrete pumping equipment and fully
                 trained operators,
               </p>
+              <Link to="/concrete-calculator">
+               <button
+               className="mt-6 px-6 py-3 bg-yellow-400 text-gray-900 font-extrabold rounded-lg shadow-md hover:bg-yellow-500 transition-colors">
+                Get In Touch 
+              </button>
+              </Link>
             </div>
           </div>
         </CommonWrapper>
@@ -662,7 +671,7 @@ const Landingpages = () => {
       </CommonWrapper>
 
       {/* Questions Section */}
-      <div className="relative bg-[#FBFBFB] py-16 overflow-hidden md:py-24">
+      <div className="relative bg-[#FBFBFB] pt-16 overflow-hidden md:py-24">
         <div className="max-w-[1440px] mx-auto">
           <div className="mx-auto px-12 flex flex-col md:flex-row items-center justify-between">
             <div className="w-full md:w-1/2 text-center md:text-left mb-12 md:mb-0 z-10">
@@ -672,7 +681,22 @@ const Landingpages = () => {
               <p className="text-base sm:text-lg text-gray-700 max-w-lg mx-auto md:mx-0 mb-8">
                 Concrete can be confusing, but it doesn't have to be. Reach out to us with any questions you may have, and we will respond within 24 hours.
               </p>
+              <button
+            onClick={() => navigate("/concrete-calculator")}
+            className="
+              inline-flex items-center cursor-pointer justify-center gap-2
+               sm:px-6 py-2.5 sm:py-3
+              text-sm sm:text-base md:text-lg font-bold
+              rounded-md bg-yellow-400 text-gray-900 
+              hover:bg-yellow-500 transition duration-300 
+              shadow-lg shadow-yellow-500/40 
+            "
+          >
+            {/* <Calculator className="w-5 h-5 sm:w-6 sm:h-6" /> */}
+            <span>Get In Touch </span>
+          </button>
             </div>
+             
             <div className="w-full md:w-1/2 flex justify-center md:justify-end z-0">
               <img
                 src={tracktornobghavr}
@@ -680,8 +704,11 @@ const Landingpages = () => {
                 className="max-w-full h-auto brightness-110 contrast-125 opacity-40"
               />
             </div>
+             
           </div>
+          
         </div>
+    
       </div>
     </>
   );
