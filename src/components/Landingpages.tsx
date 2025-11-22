@@ -682,7 +682,7 @@ const Landingpages = () => {
                 Concrete can be confusing, but it doesn't have to be. Reach out to us with any questions you may have, and we will respond within 24 hours.
               </p>
               <button
-            onClick={() => navigate("/concrete-calculator")}
+            onClick={() => navigate("/contact")}
             className="
               inline-flex items-center cursor-pointer justify-center gap-2
                sm:px-6 py-2.5 sm:py-3
