@@ -1,11 +1,12 @@
-import Banner from "@/components/ui/Banner";
+// import Banner from "@/components/ui/Banner";
 import contact from "@/assets/contact.png";
-import puttk from "@/assets/puttk.png";
+import traktor from "@/assets/traktor.jpg";
 import CalculatorCta from "@/components/CalculatorCta";
 import { useSaveAndSendContactMutation } from "@/store/Slices/ContactSlice/contactApi";
 import CommonWrapper from "@/common/CommonWrapper";
 import { useState } from "react";
 import SuccessCheckmark from "@/components/SuccessCheckmark";
+import { Link } from "react-router-dom";
 
 interface FormData {
   name: string;
@@ -198,7 +199,38 @@ const Contact = () => {
       </CommonWrapper>
 
       <div>
-        <Banner imageUrl={puttk} title="DO YOU NEED A CONCRETE PUMP" showTitle />
+<section
+        className="relative"
+        style={{
+          backgroundImage: `url("${traktor}")`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <div className="absolute inset-0 bg-black/40 z-0"></div>
+
+        <CommonWrapper className="max-w-[1440px]">
+          <div className="relative w-full h-[640px] overflow-hidden flex items-center">
+            <div className="relative z-10 max-w-3xl p-6 bg-black/40 rounded-lg text-white">
+              <h1 className="text-4xl md:text-5xl font-bold text-[#FEDA42] mb-3 w-[516px]">
+                DO YOU NEED A CONCRETE PUMP
+              </h1>
+              <p className="text-base md:text-lg leading-relaxed w-[516px]">
+                Access to state of the art concrete pumping equipment and fully
+                trained operators,
+              </p>
+              <Link to="/concrete-calculator">
+               <button
+               className="mt-6 px-6 py-3 bg-yellow-400 text-gray-900 font-extrabold rounded-lg shadow-md hover:bg-yellow-500 transition-colors">
+                Get In Touch 
+              </button>
+              </Link>
+            </div>
+          </div>
+        </CommonWrapper>
+      </section>
+
       </div>
       <div>
         <CalculatorCta />
