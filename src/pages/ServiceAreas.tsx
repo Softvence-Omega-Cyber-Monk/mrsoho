@@ -429,7 +429,7 @@ const ServiceAreas: React.FC = () => {
               </p>
               <Link to="/contact">
                <button
-               className="mt-6 px-6 py-3 bg-yellow-400 text-gray-900 font-extrabold rounded-lg shadow-md hover:bg-yellow-500 transition-colors">
+               className="mt-6 px-6 py-3 bg-yellow-400 text-gray-900 font-extrabold rounded-lg shadow-md hover:bg-yellow-500 transition-colors cursor-pointer">
                 Get In Touch 
               </button>
               </Link>
