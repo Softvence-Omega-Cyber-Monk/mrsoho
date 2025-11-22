@@ -7,11 +7,11 @@ const HowItWorks = () => {
     <CommonWrapper className="max-w-[1440px]">  
     <section className="">
       {/* Section Header */}
-      <div className="mb-4 relative bottom-67">
+      <div className="mb-4 relative bottom-[111px]">
         <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-3">
           How It Works
         </h2>
-        <p className="text-gray-600 text-sm sm:text-base w-[675px]">
+        <p className="text-gray-600 text-sm sm:text-base w-[600px]">
 Whether you're pouring a small pad, a foundation, or a large industrial slab, we'll help you
  find the right mix, in cost and performance.
         </p>

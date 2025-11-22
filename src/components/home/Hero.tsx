@@ -37,7 +37,11 @@ const Hero = () => {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      await saveAndSendContact(formData).unwrap();
+      const payload = {
+        ...formData,
+        subject: `${formData.subject ? `${formData.subject} - ` : ''}NEED CONCRETE delivered by GATORMIX concrete`,
+      };
+      await saveAndSendContact(payload).unwrap();
     } catch (err) {
       console.error('Failed to submit contact form:', err);
     }
@@ -150,11 +154,11 @@ const Hero = () => {
               <span className="text-gray-200">Rely on stronger, more consistent concrete from on-site mixing</span>
             </div>
           </div>
-          
+
         </div>
 
         {/* Right Content (Form) */}
-        <div className="w-full z-10 mx-auto mb-24">
+        <div className="w-full z-10 mx-auto mt-50">
           <div className="bg-white p-8 rounded-lg shadow-xl">
             {isSuccess ? (
               <div className="text-center">
@@ -186,7 +190,7 @@ const Hero = () => {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full p-3 border border-gray-300 rounded text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500"
+                        className="w-full p-3 border border-gray-300 rounded-lg text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500"
                       />
                     </div>
                     <div>
@@ -197,7 +201,7 @@ const Hero = () => {
                         aria-label="Phone Number"
                         value={formData.phone}
                         onChange={handleChange}
-                        className="w-full p-3 border border-gray-300 rounded text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500"
+                        className="w-full p-3 border border-gray-300 rounded-lg text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500"
                       />
                     </div>
                   </div>
@@ -211,7 +215,7 @@ const Hero = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full p-3 border border-gray-300 rounded text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500"
+                    className="w-full p-3 border border-gray-300 rounded-lg text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500"
                   />
 
                   {/* Business */}
@@ -222,7 +226,7 @@ const Hero = () => {
                     aria-label="Business"
                     value={formData.business}
                     onChange={handleChange}
-                    className="w-full p-3 border border-gray-300 rounded text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500"
+                    className="w-full p-3 border border-gray-300 rounded-lg text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500"
                   />
 
                   {/* Address */}
@@ -233,7 +237,7 @@ const Hero = () => {
                     aria-label="Address"
                     value={formData.address}
                     onChange={handleChange}
-                    className="w-full p-3 border border-gray-300 rounded text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500"
+                    className="w-full p-3 border border-gray-300 rounded-lg text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500"
                   />
 
                   {/* Subject */}
@@ -244,7 +248,7 @@ const Hero = () => {
                     aria-label="Subject"
                     value={formData.subject}
                     onChange={handleChange}
-                    className="w-full p-3 border border-gray-300 rounded text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500"
+                    className="w-full p-3 border border-gray-300 rounded-lg text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500"
                   />
 
                   {/* Message */}
@@ -255,7 +259,7 @@ const Hero = () => {
                     rows={4}
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full p-3 border border-gray-300 rounded text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 resize-none"
+                    className="w-full p-3 border border-gray-300 rounded-lg text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 resize-none"
                   ></textarea>
 
                   {/* --- Success & Cloudflare --- */}
@@ -273,7 +277,7 @@ const Hero = () => {
                     name="howDidYouHearAboutUs"
                     value={formData.howDidYouHearAboutUs}
                     onChange={handleChange}
-                    className="w-full p-3 border border-gray-300 rounded text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 appearance-none"
+                    className="w-full p-3 border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 appearance-none"
                   >
                     <option value="" disabled>How did you hear about us?</option>
                     <option value="Google Search">Google Search</option>
@@ -292,6 +296,9 @@ const Hero = () => {
                   </button>
                   {isError && <p className="text-red-500 text-sm text-center mt-2">Error: {(error as any)?.data?.message || 'Something went wrong.'}</p>}
                 </form>
+                <p className="text-[#848D9B] text-center mt-3 text-base sm:text-lg md:text-xl">
+                  Contact Us: (239)309-7779
+                </p>
               </>
             )}
           </div>

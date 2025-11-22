@@ -22,7 +22,7 @@ const routes = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: "/HOW-IT-WORKS",
+        path: "/",
         element: <Home />,
       },
       {
@@ -50,7 +50,7 @@ const routes = createBrowserRouter([
         element: <ServiceAreas />,
       },
       {
-        path: "/",
+        path: "/landingpages",
         element: <Landingpages />,
       },
       {
