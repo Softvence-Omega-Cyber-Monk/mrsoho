@@ -50,7 +50,7 @@ const ServiceAreas: React.FC = () => {
             height="450"
             loading="lazy"
             src="https://www.google.com/maps?q=26.35,-81.83&z=10&output=embed">
-          </iframe>
+          </iframe>.
         </div>
      
         <div className="w-full max-w-4xl mx-auto mb-16 lg:mb-24 mt-16 lg:mt-24 px-4">
