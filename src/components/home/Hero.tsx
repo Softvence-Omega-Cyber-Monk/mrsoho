@@ -25,7 +25,7 @@ const Hero = () => {
     address: '',
     subject: '',
     message: '',
-    howDidYouHearAboutUs: 'Google Search'
+    howDidYouHearAboutUs: 'how'
   });
 
   const [saveAndSendContact, { isLoading, isError, isSuccess, error }] = useSaveAndSendContactMutation();
@@ -39,7 +39,7 @@ const Hero = () => {
     try {
       const payload = {
         ...formData,
-        subject: `${formData.subject ? `${formData.subject} - ` : ''}NEED CONCRETE delivered by GATORMIX concrete`,
+        subject: `${formData.subject ? `${formData.subject}` : ''}`,
       };
       await saveAndSendContact(payload).unwrap();
     } catch (err) {
@@ -162,14 +162,16 @@ const Hero = () => {
           <div className="bg-white p-8 rounded-lg shadow-xl">
             {isSuccess ? (
               <div className="text-center">
-                <SuccessCheckmark />
+               <div className="flex items-center justify-center">
+              <SuccessCheckmark />
+              </div>
                 <h2 className="text-2xl font-bold text-green-800 mt-4">Thank You!</h2>
                 <p className="text-gray-600">Your message has been sent successfully.</p>
               </div>
             ) : (
               <>
                 {/* --- Header --- */}
-                <h2 className="text-gray-800 text-sm font-bold mb-2 uppercase tracking-wider text-center">
+                <h2 className="text-gray-800 text-md font-bold mb-2 uppercase tracking-wider text-center">
                   NEED CONCRETE DELIVERED FROM GATORMIX?
                 </h2>
                 <p className="text-sm text-gray-500 mb-6 text-center">
@@ -279,7 +281,7 @@ const Hero = () => {
                     onChange={handleChange}
                     className="w-full p-3 border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 appearance-none"
                   >
-                    <option value="" disabled>How did you hear about us?</option>
+                    <option value="how">How did you hear about us?</option>
                     <option value="Google Search">Google Search</option>
                     <option value="Referral">Referral</option>
                     <option value="Social Media">Social Media</option>
@@ -296,7 +298,7 @@ const Hero = () => {
                   </button>
                   {isError && <p className="text-red-500 text-sm text-center mt-2">Error: {(error as any)?.data?.message || 'Something went wrong.'}</p>}
                 </form>
-                <p className="text-[#848D9B] text-center mt-3 text-base sm:text-lg md:text-xl">
+                <p className="text-[#848D9B] text-center mt-3 text-base sm:text-lg md:text-sm">
                   Contact Us: (239)309-7779
                 </p>
               </>
