@@ -220,7 +220,7 @@ const Contact = () => {
                 Access to state of the art concrete pumping equipment and fully
                 trained operators,
               </p>
-              <Link to="/concrete-calculator">
+              <Link to="/contact">
                <button
                className="mt-6 px-6 py-3 bg-yellow-400 text-gray-900 font-extrabold rounded-lg shadow-md hover:bg-yellow-500 transition-colors">
                 Get In Touch 
