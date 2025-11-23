@@ -66,7 +66,7 @@ const Hero = () => {
         <div className="absolute inset-50 opacity-100"></div>
       </div>
 
-      <div className="relative max-w-[1440px] mx-auto flex flex-col lg:flex-row gap-8 mt-9">
+      <div className="relative max-w-[1440px] h-screen mx-auto flex flex-col lg:flex-row gap-8 mt-9">
         <div className="  z-10">
           <div className="text-center md:text-left px-4 sm:px-6 lg:px-8">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 sm:mb-6 text-[#FEDA42]">
@@ -161,10 +161,8 @@ const Hero = () => {
         <div className="w-full z-10 mx-auto mt-50">
           <div className="bg-white p-8 rounded-lg shadow-xl">
             {isSuccess ? (
-              <div className="text-center">
-               <div className="flex items-center justify-center">
-              <SuccessCheckmark />
-              </div>
+              <div className="text-center ">
+                <SuccessCheckmark />
                 <h2 className="text-2xl font-bold text-green-800 mt-4">Thank You!</h2>
                 <p className="text-gray-600">Your message has been sent successfully.</p>
               </div>
