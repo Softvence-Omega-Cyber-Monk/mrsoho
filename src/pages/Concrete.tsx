@@ -20,7 +20,7 @@ const CONCRETE = () => {
         />
         <BuiltToLast />
         <ConcreteVsCement />
-        <ConcreteMixDesign />
+        <ConcreteMixDesign /> 
         <PerfectConcreteMix />
         <Cta />
         <CalculatorCta />
