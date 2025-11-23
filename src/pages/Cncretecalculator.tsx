@@ -237,16 +237,17 @@ export default function Home() {
     <div className="absolute inset-0 bg-black/20 z-0"></div>
 
     <CommonWrapper className="px-4 sm:px-6 lg:px-8">
-      <div className="relative w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] xl:h-[640px] overflow-hidden flex items-center justify-center lg:justify-start">
-        <div className="relative z-10 w-full max-w-5xl p-4 sm:p-6 bg-black/40 rounded-lg text-white text-center lg:text-left mx-auto lg:mx-0 lg:ml-10 xl:ml-40">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#FEDA42] mb-2 sm:mb-3">
-            Concrete Calculator
-          </h1>
-          <p className="text-sm sm:text-base md:text-lg whitespace-normal sm:whitespace-nowrap">
-            A powerful tool to help you get an accurate estimate of the volume and cost of concrete needed for your next project.
-          </p>
-        </div>
-      </div>
+      <div className="relative w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] xl:h-[640px] overflow-hidden flex items-center justify-start">
+  <div className="relative z-10 w-full max-w-5xl p-4 sm:p-6 bg-black/40 rounded-lg text-white text-left ml-30 sm:ml-6 md:ml-10 lg:ml-60">
+    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#FEDA42] mb-2 sm:mb-3">
+      Concrete Calculator
+    </h1>
+    <p className="text-sm sm:text-base md:text-lg">
+      A powerful tool to help you get an accurate estimate of the volume and cost of concrete needed for your next project.
+    </p>
+  </div>
+</div>
+
     </CommonWrapper>
   </section>
 

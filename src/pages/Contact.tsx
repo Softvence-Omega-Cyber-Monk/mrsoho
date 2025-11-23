@@ -6,8 +6,8 @@ import { useSaveAndSendContactMutation } from "@/store/Slices/ContactSlice/conta
 import CommonWrapper from "@/common/CommonWrapper";
 import { useState } from "react";
 import SuccessCheckmark from "@/components/SuccessCheckmark";
-import { Link } from "react-router-dom";
-
+// import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 interface FormData {
   name: string;
   phone: string;
@@ -32,6 +32,7 @@ const Contact = () => {
   });
 
   const [saveAndSendContact, { isLoading, isSuccess, isError, error }] = useSaveAndSendContactMutation();
+  const navigate = useNavigate();
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -220,12 +221,15 @@ const Contact = () => {
                 Access to state of the art concrete pumping equipment and fully
                 trained operators,
               </p>
-              <Link to="/contact">
                <button
-               className="mt-6 px-6 py-3 bg-yellow-400 text-gray-900 font-extrabold rounded-lg shadow-md hover:bg-yellow-500 transition-colors cursor-pointer">
-                Get In Touch 
-              </button>
-              </Link>
+      onClick={() => {
+        window.scrollTo(0, 0);       // Scroll to top
+        navigate("/contact");        // Navigate
+      }}
+      className="mt-6 px-6 py-3 bg-yellow-400 text-gray-900 font-extrabold rounded-lg shadow-md hover:bg-yellow-500 transition-colors cursor-pointer"
+    >
+      Get In Touch
+    </button>
             </div>
           </div>
         </CommonWrapper>
