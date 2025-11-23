@@ -191,8 +191,9 @@ import servicesanalysers from '@/assets/servicesanalysers.png';
 import React, { useState } from 'react';
 import { useSaveAndSendContactMutation } from "@/store/Slices/ContactSlice/contactApi";
 import SuccessCheckmark from "@/components/SuccessCheckmark";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import traktor from "@/assets/traktor.jpg";
+import { useNavigate } from "react-router-dom";
 
 interface FormData {
   name: string;
@@ -253,6 +254,11 @@ const ServiceAreas: React.FC = () => {
       console.error("Failed to submit form:", error);
     }
   };
+
+
+ const navigate = useNavigate();
+
+
 
   return (
     <>
@@ -427,12 +433,15 @@ const ServiceAreas: React.FC = () => {
                 Access to state of the art concrete pumping equipment and fully
                 trained operators,
               </p>
-              <Link to="/contact">
-               <button
-               className="mt-6 px-6 py-3 bg-yellow-400 text-gray-900 font-extrabold rounded-lg shadow-md hover:bg-yellow-500 transition-colors cursor-pointer">
-                Get In Touch 
-              </button>
-              </Link>
+             <button
+      onClick={() => {
+        window.scrollTo(0, 0);   // Scroll to top
+        navigate("/contact");    // Navigate to /contact
+      }}
+      className="mt-6 px-6 py-3 bg-yellow-400 text-gray-900 font-extrabold rounded-lg shadow-md hover:bg-yellow-500 transition-colors cursor-pointer"
+    >
+      Get In Touch
+    </button>
             </div>
           </div>
         </CommonWrapper>

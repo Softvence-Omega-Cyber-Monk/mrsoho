@@ -1,7 +1,7 @@
 import React from 'react';
 import { GatorMixIcon, BuildingIcon, TruckIcon } from '../ui/icons';
 import proall from "../../assets/proall.jpg"
-// Define the structure for a column of project items
+import { Link } from 'react-router-dom';
 interface ProjectColumn {
   items: string[];
 }
@@ -55,12 +55,13 @@ const ConcreteServicesSection: React.FC = () => {
             Schedule a delivery today.
           </p>
           <div className="mt-8 cursor-pointer flex justify-center items-center">
-            <a
-              href="/concrete-calculator"
+            <Link
+              to="/concrete-calculator"
+              onClick={() => window.scrollTo(0, 0)} // Scroll to top on click
               className="bg-yellow-400 w-[270px] hover:bg-yellow-500 text-gray-900 font-bold py-3 px-6 rounded-md transition duration-300 ease-in-out flex items-center space-x-2"
             >
               <span>Try the Concrete Calculator</span>
-            </a>
+            </Link>
           </div>
         </div>
       </section>

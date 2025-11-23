@@ -57,19 +57,23 @@ const Cta = () => {
           </p>
 
           <button
-            onClick={() => navigate("/concrete-calculator")}
+            onClick={() => {
+              window.scrollTo(0, 0);           // Scroll to top
+              navigate("/concrete-calculator"); // Then navigate
+            }}
             className="
-              inline-flex items-center cursor-pointer justify-center gap-2
-              px-5 sm:px-6 py-2.5 sm:py-3
-              text-sm sm:text-base md:text-lg font-bold
-              rounded-md bg-yellow-400 text-gray-900 
-              hover:bg-yellow-500 transition duration-300 
-              shadow-lg shadow-yellow-500/40 
-            "
+    inline-flex items-center cursor-pointer justify-center gap-2
+    px-5 sm:px-6 py-2.5 sm:py-3
+    text-sm sm:text-base md:text-lg font-bold
+    rounded-md bg-yellow-400 text-gray-900 
+    hover:bg-yellow-500 transition duration-300 
+    shadow-lg shadow-yellow-500/40 
+  "
           >
             <Calculator className="w-5 h-5 sm:w-6 sm:h-6" />
             <span>Try the Concrete Calculator</span>
           </button>
+
         </div>
       </CommonWrapper>
     </section>
