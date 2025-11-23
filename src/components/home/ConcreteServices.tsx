@@ -56,11 +56,11 @@ const ConcreteServicesSection: React.FC = () => {
           </p>
           <div className="mt-8 cursor-pointer flex justify-center items-center">
             <Link
-              to="/concrete-calculator"
+              to="/contact"
               onClick={() => window.scrollTo(0, 0)} // Scroll to top on click
-              className="bg-yellow-400 w-[270px] hover:bg-yellow-500 text-gray-900 font-bold py-3 px-6 rounded-md transition duration-300 ease-in-out flex items-center space-x-2"
+              className="bg-yellow-400 text-center hover:bg-yellow-500 text-gray-900 font-bold py-3 px-24 rounded-md transition duration-300 ease-in-out flex items-center space-x-2"
             >
-              <span>Try the Concrete Calculator</span>
+              <span>Get In Touch</span>
             </Link>
           </div>
         </div>

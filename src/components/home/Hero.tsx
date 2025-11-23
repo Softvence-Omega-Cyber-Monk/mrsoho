@@ -161,8 +161,10 @@ const Hero = () => {
         <div className="w-full z-10 mx-auto mt-50">
           <div className="bg-white p-8 rounded-lg shadow-xl">
             {isSuccess ? (
-              <div className="text-center ">
+              <div className="text-center">
+                <div className='flex justify-center items-center'>
                 <SuccessCheckmark />
+                </div>
                 <h2 className="text-2xl font-bold text-green-800 mt-4">Thank You!</h2>
                 <p className="text-gray-600">Your message has been sent successfully.</p>
               </div>
