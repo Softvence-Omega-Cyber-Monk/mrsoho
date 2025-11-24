@@ -53,15 +53,9 @@ const FeatureCard: React.FC<Feature> = ({ Icon, title, description }) => (
 
 const BuiltToLast: React.FC = () => {
   return (
-    <div className="max-w-[1440px] mx-auto font-sans bg-white py-12 md:py-24 overflow-hidden">
+    <div className="max-w-[1440px] mx-auto font-sans bg-white">
       <div className="relative px-4 sm:px-6 lg:px-8">
-        <div className="absolute inset-x-0 bottom-0 h-1/2 overflow-hidden">
-          <div 
-            className="absolute -bottom-20 left-0 w-[400px] h-[200px] opacity-10 rounded-3xl transform rotate-12"
-          ></div>
-          <div 
-            className="absolute -bottom-10 right-1/4 w-[500px] h-[150px] opacity-10 rounded-3xl transform -rotate-6"
-          ></div>
+        <div className="absolute inset-x-0 bottom-0 overflow-hidden">
         </div>
         <div className="mx-auto mb-16 text-center md:text-left relative z-10">
           <h1 className="text-4xl md:text-5xl font-semibold text-stone-900 leading-tight">
