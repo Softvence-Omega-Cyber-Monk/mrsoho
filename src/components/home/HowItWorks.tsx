@@ -5,7 +5,7 @@ import dfjvgfrgvcar3 from "../../assets/dfjvgfrgvcar3.jpg";
 import CommonWrapper from "@/common/CommonWrapper";
 const HowItWorks = () => {
   return (
-    <CommonWrapper className="max-w-[1440px] mt-160 mb-20 px-4 sm:px-7 lg:mt-[-18PX]">
+    <CommonWrapper className="max-w-[1440px] mt-190 mb-20 px-4 sm:px-7 lg:mt-[-18PX]">
       <section className="">
         {/* Section Header */}
         <div className=" ">
@@ -19,7 +19,7 @@ const HowItWorks = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-[48px] mt-3 mb-99 translate-y-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-[48px] mt-3 mb-50">
           {/* Card 1: Tell Us About Your Project */}
           <div className="flex flex-col translate-y-0 cursor-pointer">
             <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-200 flex flex-col h-full">
