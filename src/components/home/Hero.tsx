@@ -84,7 +84,7 @@ const Hero = () => {
 
 
           <div className="space-y-4 pl-6 text-sm  md:mb-10 lg:mb-0">
-            <div className="flex items-start sm:mx-auto md:mx-[12px]">
+            <div className="flex items-start sm:mx-auto md:mx-[12px] mb-[0px]">
               <span className="text-yellow-400 mr-3 mt-1">
                 {/* SVG for Batching Software */}
                 <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">

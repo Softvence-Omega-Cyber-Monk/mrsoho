@@ -1,17 +1,18 @@
+
 import dfjvgfrgvlabar from "../../assets/dfjvgfrgvlabar.jpg";
 import dfjvgfrgvsale from "../../assets/dfjvgfrgvsale.jpg";
 import dfjvgfrgvcar3 from "../../assets/dfjvgfrgvcar3.jpg";
 import CommonWrapper from "@/common/CommonWrapper";
 const HowItWorks = () => {
   return (
-    <CommonWrapper className="max-w-[1440px]">  
+    <CommonWrapper className="max-w-[1440px] mt-160 mb-20 px-4 sm:px-6 lg:mt-1">  
     <section className="">
       {/* Section Header */}
-      <div className="mb-4 relative bottom-[111px]">
+      <div className="mb-4 relative">
         <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-3">
           How It Works
         </h2>
-        <p className="text-gray-600 text-sm sm:text-base w-[600px]">
+        <p className="text-gray-600 text-sm sm:text-base w-[500px]">
 Whether you're pouring a small pad, a foundation, or a large industrial slab, we'll help you
  find the right mix, in cost and performance.
         </p>
@@ -71,8 +72,8 @@ Whether you're pouring a small pad, a foundation, or a large industrial slab, we
           Get Concrete Mixed On-Site
         </h3>
         <p className="text-gray-600 text-sm leading-relaxed">
-          Your concrete will be ready to order. Our team will mix and prepare it for delivery for YOU our valued customer!
-        </p>
+          Your concrete will be ready to order. Our team will mix and prepare  it for delivery for YOU our valued customer!
+      </p>
       </div>
     </div>
   </div>

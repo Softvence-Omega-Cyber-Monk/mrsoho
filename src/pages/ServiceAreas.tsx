@@ -52,7 +52,7 @@
 //             src="https://www.google.com/maps?q=26.35,-81.83&z=10&output=embed">
 //           </iframe>.
 //         </div>
-     
+
 //         <div className="w-full max-w-4xl mx-auto mb-16 lg:mb-24 mt-16 lg:mt-24 px-4">
 //           <div className="bg-[#F9FAFB] p-6 lg:p-8 rounded-lg shadow-xl mt-[112px]">
 //             <h2 className="text-green-500 text-sm font-bold mb-2  tracking-wider text-center">
@@ -158,7 +158,7 @@
 //           </div>
 //         </div>
 
-        
+
 
 //         <div>
 //           <CalculatorCta />
@@ -256,7 +256,7 @@ const ServiceAreas: React.FC = () => {
   };
 
 
- const navigate = useNavigate();
+  const navigate = useNavigate();
 
 
 
@@ -278,15 +278,15 @@ const ServiceAreas: React.FC = () => {
             src="https://www.google.com/maps?q=26.35,-81.83&z=10&output=embed">
           </iframe>
         </div>
-     
+
         <div className="w-full max-w-4xl mx-auto mb-16 lg:mb-24 mt-16 lg:mt-24 px-4">
           <div className="bg-[#F9FAFB] p-6 lg:p-8 rounded-lg shadow-xl">
             {/* Success State */}
             {isSuccess ? (
               <div className="text-center py-8">
-               <div className="flex items-center justify-center">
-              <SuccessCheckmark />
-              </div>
+                <div className="flex items-center justify-center">
+                  <SuccessCheckmark />
+                </div>
                 <h2 className="text-2xl font-bold text-green-800 mt-4">Thank You!</h2>
                 <p className="text-gray-600">Your message has been sent successfully.</p>
               </div>
@@ -413,39 +413,39 @@ const ServiceAreas: React.FC = () => {
           {/* <Banner imageUrl={puttk} title='DO YOU NEED A CONCRETE PUMP' /> */}
 
           <section
-        className="relative"
-        style={{
-          backgroundImage: `url("${traktor}")`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
-        <div className="absolute inset-0 bg-black/40 z-0"></div>
+            className="relative"
+            style={{
+              backgroundImage: `url("${traktor}")`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+            }}
+          >
+            <div className="absolute inset-0 bg-black/40 z-0"></div>
 
-        <CommonWrapper className="max-w-[1440px]">
-          <div className="relative w-full h-[640px] overflow-hidden flex items-center">
-            <div className="relative z-10 max-w-3xl p-6 bg-black/40 rounded-lg text-white">
-              <h1 className="text-4xl md:text-5xl font-bold text-[#FEDA42] mb-3 w-[516px]">
-                Do you need a concrete pump ?
-              </h1>
-              <p className="text-base md:text-lg leading-relaxed w-[516px]">
-                Access to state of the art concrete pumping equipment and fully
-                trained operators,
-              </p>
-             <button
-      onClick={() => {
-        window.scrollTo(0, 0);   // Scroll to top
-        navigate("/contact");    // Navigate to /contact
-      }}
-      className="mt-6 px-6 py-3 bg-yellow-400 text-gray-900 font-extrabold rounded-lg shadow-md hover:bg-yellow-500 transition-colors cursor-pointer"
-    >
-      Get In Touch
-    </button>
-            </div>
-          </div>
-        </CommonWrapper>
-      </section>
+            <CommonWrapper className="max-w-[1440px] mx-auto py-10 sm:py-12 md:py-16 lg:py-20">
+              <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[640px] overflow-hidden flex items-center">
+                <div className="relative z-10 py-2 max-w-full w-full px-4 sm:px-6 md:px-8 lg:max-w-3xl lg:p-6 bg-black/40 rounded-lg text-white mx-4 sm:mx-6 md:mx-8 lg:mx-0">
+                  <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#FEDA42] mb-3 w-full max-w-full sm:max-w-md md:max-w-lg lg:w-[516px]">
+                    Do you need a concrete pump ?
+                  </h1>
+                  <p className="text-sm sm:text-base md:text-lg leading-relaxed w-full max-w-full sm:max-w-md md:max-w-lg lg:w-[516px]">
+                    Access to state of the art concrete pumping equipment and fully
+                    trained operators,
+                  </p>
+                  <button
+                    onClick={() => {
+                      window.scrollTo(0, 0);   // Scroll to top
+                      navigate("/contact");    // Navigate to /contact
+                    }}
+                    className="mt-4 sm:mt-5 md:mt-6 px-6 sm:px-7 md:px-8 py-3 sm:py-3 md:py-4 bg-yellow-400 text-gray-900 font-bold sm:font-extrabold rounded-lg shadow-md hover:bg-yellow-500 transition-colors cursor-pointer text-sm sm:text-base"
+                  >
+                    Get In Touch
+                  </button>
+                </div>
+              </div>
+            </CommonWrapper>
+          </section>
         </div>
       </CommonWrapper>
     </>
