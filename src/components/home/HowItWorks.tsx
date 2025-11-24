@@ -5,7 +5,7 @@ import dfjvgfrgvcar3 from "../../assets/dfjvgfrgvcar3.jpg";
 import CommonWrapper from "@/common/CommonWrapper";
 const HowItWorks = () => {
   return (
-    <CommonWrapper className="max-w-[1440px] mt-160 mb-20 px-4 sm:px-6 lg:mt-1">  
+    <CommonWrapper className="max-w-[1440px] mt-160 mb-20 px-4 sm:px-6 lg:mt-[-18PX]">  
     <section className="">
       {/* Section Header */}
       <div className="mb-4 relative">

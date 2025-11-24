@@ -416,7 +416,7 @@ const ServiceAreas: React.FC = () => {
             className="relative"
             style={{
               backgroundImage: `url("${traktor}")`,
-              backgroundSize: "cover",
+              backgroundSize: "cover" ,
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
             }}
