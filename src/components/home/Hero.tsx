@@ -268,12 +268,7 @@ const Hero = () => {
                   ></textarea>
 
                   {/* --- Success & Cloudflare --- */}
-                  <div className="flex items-center justify-between py-2">
 
-                    <div className="flex items-center space-x-1">
-                      {/* <ContactForm /> */}
-                    </div>
-                  </div>
 
                   {/* How did you hear about us? */}
                   <label htmlFor="howDidYouHearAboutUs" className="sr-only">How did you hear about us?</label>
