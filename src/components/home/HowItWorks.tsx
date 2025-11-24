@@ -4,18 +4,18 @@ import dfjvgfrgvcar3 from "../../assets/dfjvgfrgvcar3.jpg";
 import CommonWrapper from "@/common/CommonWrapper";
 const HowItWorks = () => {
   return (
-    <CommonWrapper className="max-w-[1440px] md:mt-[190px] mb-2 px-4 sm:px-7 lg:mt-[-18PX]">
+    <CommonWrapper className="max-w-[1440px] mt-[600px] md:mt-[180px] mb-2 px-4 sm:px-7 lg:mt-[-100px]   ">
       <section className="">
         <div className=" ">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-800">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 pb-4 sm:pb-9 md:pb-8">
             How It Works
           </h2>
-          <p className="text-gray-600 text-sm sm:text-base max-w-[500px] w-full">
+          <p className="text-gray-600 text-sm sm:text-base max-w-[500px] w-full pb-8 sm:pb-16 md:pb-30">
             Whether you're pouring a small pad, a foundation, or a large industrial slab,
             we'll help you find the right mix, in cost and performance.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 md:gap-[48px] mt-3 mb-50">
+        <div className="grid grid-cols-1 md:grid-cols-3 md:gap-[48px] mb-50">
           <div className="flex flex-col translate-y-0 cursor-pointer">
             <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-200 flex flex-col h-full">
               <img

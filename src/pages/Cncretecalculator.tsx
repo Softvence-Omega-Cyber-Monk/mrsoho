@@ -224,95 +224,118 @@ export default function Home() {
 
   return (
 
-<main className="min-h-screen">
-  <section
-    className="relative w-full mb-6 md:mb-8 lg:mb-10"
-    style={{
-      backgroundImage: `url(${calculatorcalulateions})`,
-      backgroundSize: "cover",
-      backgroundPosition: "center",
-      backgroundRepeat: "no-repeat",
-    }}
-  >
-    <div className="absolute inset-0 bg-black/20 z-0"></div>
+    <main className="min-h-screen">
+      <section
+        className="relative w-full mb-6 md:mb-8 lg:mb-10"
+        style={{
+          backgroundImage: `url(${calculatorcalulateions})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <div className="absolute inset-0 bg-black/20 z-0"></div>
 
-    <CommonWrapper className="px-4 sm:px-6 lg:px-8">
-      <div className="relative w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] xl:h-[640px] overflow-hidden flex items-center justify-start">
-  <div className="relative z-10 w-full max-w-5xl p-4 sm:p-6 bg-black/40 rounded-lg text-white text-left ml-30 sm:ml-6 md:ml-10 lg:ml-60">
-    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#FEDA42] mb-2 sm:mb-3">
-      Concrete Calculator
-    </h1>
-    <p className="text-sm sm:text-base md:text-lg">
-      A powerful tool to help you get an accurate estimate of the volume and cost of concrete needed for your next project.
-    </p>
-  </div>
-</div>
+        <CommonWrapper className="px-4 sm:px-6 lg:px-8">
+          <div className="relative w-full 
+      h-[180px]    
+      sm:h-[240px] 
+      md:h-[320px] 
+      lg:h-[500px] 
+      xl:h-[640px] 
+      overflow-hidden flex items-center justify-start">
 
-    </CommonWrapper>
-  </section>
+            <div
+              className="
+        relative z-10 w-full max-w-5xl
+        p-3 sm:p-5 md:p-6      
+        bg-black/40 rounded-lg text-white text-left
+        
+        ml-2 sm:ml-4 md:ml-8     
+        lg:ml-60                
+      "
+            >
+              <h1 className="
+          text-xl sm:text-2xl md:text-3xl  
+          lg:text-5xl                     
+          font-bold text-[#FEDA42] 
+          mb-1 sm:mb-2 md:mb-3
+        "
+              >
+                Concrete Calculator
+              </h1>
 
-  <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-    {/* GRID LAYOUT */}
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
-      {/* LEFT SIDE (Inputs) */}
-      <div className="lg:col-span-2 space-y-4 sm:space-y-6">
-        {/* 1. Shape Selector */}
-        <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm border border-gray-200">
-          <h2 className="text-base sm:text-lg md:text-xl font-semibold text-slate-900 mb-3 sm:mb-4">
-            1. Select Shape
-          </h2>
-          <ShapeSelector selectedShape={selectedShape} onShapeChange={setSelectedShape} />
-        </div>
+              <p className="text-xs sm:text-sm md:text-base lg:text-lg">
+                A powerful tool to help you get an accurate estimate of the volume and cost of concrete needed for your next project.
+              </p>
+            </div>
+          </div>
+        </CommonWrapper>
 
-        {/* 2. Dimension Input */}
-        <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm border border-gray-200">
-          <h2 className="text-base sm:text-lg md:text-xl font-semibold text-slate-900 mb-3 sm:mb-4">
-            2. Enter Dimensions
-          </h2>
-          <DimensionInput
-            dimensions={dimensions || { length: "", width: "", depth: "", quantity: 1, rise: "", run: "", height: "", curbDepth: "" }}
-            onDimensionsChange={(dims) => setDimensions(dims)}
-            shape={selectedShape}
-          />
-        </div>
+      </section>
 
-        {/* 3. Concrete Mix Selector */}
-        <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm border border-gray-200">
-          <h2 className="text-base sm:text-lg md:text-xl font-semibold text-slate-900 mb-3 sm:mb-4">
-            3. Select a Concrete Mix (Optional)
-          </h2>
-          <ConcreteMixSelector mixes={CONCRETE_MIXES} selectedMix={selectedMix} onSelectMix={setSelectedMix} />
-        </div>
-      </div>
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+        {/* GRID LAYOUT */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+          {/* LEFT SIDE (Inputs) */}
+          <div className="lg:col-span-2 space-y-4 sm:space-y-6">
+            {/* 1. Shape Selector */}
+            <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm border border-gray-200">
+              <h2 className="text-base sm:text-lg md:text-xl font-semibold text-slate-900 mb-3 sm:mb-4">
+                1. Select Shape
+              </h2>
+              <ShapeSelector selectedShape={selectedShape} onShapeChange={setSelectedShape} />
+            </div>
 
-      {/* RIGHT SIDE (Preview & Results) */}
-      <div className="space-y-4 sm:space-y-6">
-        {/* Shape Preview */}
-        <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm border border-gray-200">
-          <h2 className="text-base sm:text-lg md:text-xl font-semibold text-slate-900 mb-3 sm:mb-4 hidden lg:block">
-            Preview
-          </h2>
-          <div className="flex justify-center lg:block">
-            <ShapePreview shape={selectedShape} />
+            {/* 2. Dimension Input */}
+            <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm border border-gray-200">
+              <h2 className="text-base sm:text-lg md:text-xl font-semibold text-slate-900 mb-3 sm:mb-4">
+                2. Enter Dimensions
+              </h2>
+              <DimensionInput
+                dimensions={dimensions || { length: "", width: "", depth: "", quantity: 1, rise: "", run: "", height: "", curbDepth: "" }}
+                onDimensionsChange={(dims) => setDimensions(dims)}
+                shape={selectedShape}
+              />
+            </div>
+
+            {/* 3. Concrete Mix Selector */}
+            <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm border border-gray-200">
+              <h2 className="text-base sm:text-lg md:text-xl font-semibold text-slate-900 mb-3 sm:mb-4">
+                3. Select a Concrete Mix (Optional)
+              </h2>
+              <ConcreteMixSelector mixes={CONCRETE_MIXES} selectedMix={selectedMix} onSelectMix={setSelectedMix} />
+            </div>
+          </div>
+
+          {/* RIGHT SIDE (Preview & Results) */}
+          <div className="space-y-4 sm:space-y-6">
+            {/* Shape Preview */}
+            <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm border border-gray-200">
+              <h2 className="text-base sm:text-lg md:text-xl font-semibold text-slate-900 mb-3 sm:mb-4 hidden lg:block">
+                Preview
+              </h2>
+              <div className="flex justify-center lg:block">
+                <ShapePreview shape={selectedShape} />
+              </div>
+            </div>
+
+            {/* Results Panel */}
+            <div className="sticky top-4 bg-white p-4 sm:p-6 rounded-lg shadow-sm border border-gray-200">
+              <ResultsPanel
+                volume={volume}
+                pricePerYard={pricePerYard}
+                materialCost={materialCost}
+                deliverySurcharge={deliverySurcharge}
+                totalCost={totalCost}
+                onClearAll={handleClearAll}
+                selectedMix={selectedMix}
+              />
+            </div>
           </div>
         </div>
-
-        {/* Results Panel */}
-        <div className="sticky top-4 bg-white p-4 sm:p-6 rounded-lg shadow-sm border border-gray-200">
-          <ResultsPanel
-            volume={volume}
-            pricePerYard={pricePerYard}
-            materialCost={materialCost}
-            deliverySurcharge={deliverySurcharge}
-            totalCost={totalCost}
-            onClearAll={handleClearAll}
-            selectedMix={selectedMix}
-          />
-        </div>
       </div>
-    </div>
-  </div>
-</main>
+    </main>
 
   );
 }

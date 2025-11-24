@@ -57,7 +57,7 @@ const FeatureCard: React.FC<Feature> = ({ Icon, title, description }) => (
 
 const BuiltToLast: React.FC = () => {
   return (
-    <div className="max-w-[1440px] mx-auto font-sans bg-white py-8 sm:py-12 md:py-16 lg:py-24 overflow-hidden">
+    <div className="max-w-[1440px] mx-auto font-sans bg-white  sm:py-12 md:py-16 lg:py-24 overflow-hidden">
       <div className="relative px-4 sm:px-6 lg:px-8">
         
         {/* Header Section */}
