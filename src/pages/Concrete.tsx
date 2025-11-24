@@ -20,45 +20,44 @@ const CONCRETE = () => {
         />
         <BuiltToLast />
         <ConcreteVsCement />
-        <ConcreteMixDesign /> 
+        <ConcreteMixDesign />
         <PerfectConcreteMix />
         <Cta />
         <CalculatorCta />
         {/* <Banner imageUrl={traktor} title='DO YOU NEED A CONCRETE PUMP' subtitle="The easy-to-use Concrete Calculator tells you the type and volume of concrete you need for your project, and how much it will cost." /> */}
         <section
-        className="relative"
-        style={{
-          backgroundImage: `url("${traktor}")`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
-        <div className="absolute inset-0 bg-black/40 z-0"></div>
+          className="relative"
+          style={{
+            backgroundImage: `url("${traktor}")`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          <div className="absolute inset-0 bg-black/40 z-0"></div>
 
-        <CommonWrapper className="max-w-[1440px]">
-          <div className="relative w-full h-[640px] overflow-hidden flex items-center">
-            <div className="relative z-10 max-w-3xl p-6 bg-black/40 rounded-lg text-white">
-              <h1 className="text-4xl md:text-5xl font-bold text-[#FEDA42] mb-3 w-[516px]">
-                Do you need a concrete pump ?
-              </h1>
-              <p className="text-base md:text-lg leading-relaxed w-[516px]">
-                Access to state of the art concrete pumping equipment and fully
-                trained operators,
-              </p>
-              <Link to="/contact">
-  <button
-    onClick={() => window.scrollTo(0, 0)} // Scroll to top
-    className="mt-6 px-6 py-3 bg-yellow-400 text-gray-900 font-extrabold rounded-lg shadow-md hover:bg-yellow-500 transition-colors cursor-pointer"
-  >
-    Get In Touch
-  </button>
-</Link>
-
+          <CommonWrapper className="max-w-[1440px] mx-auto py-10 sm:py-12 md:py-16 lg:py-20">
+            <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[640px] overflow-hidden flex items-center">
+              <div className="relative z-10 max-w-full w-full px-5 py-2 sm:px-6 md:px-8 lg:max-w-3xl lg:px-8 lg:py-10 bg-black/40 rounded-lg text-white mx-4 sm:mx-6 md:mx-8 lg:mx-0">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#FEDA42] mb-3 w-full max-w-full sm:max-w-md md:max-w-lg lg:w-[516px]">
+                  Do you need a concrete pump ?
+                </h1>
+                <p className="text-sm sm:text-base md:text-lg leading-relaxed w-full max-w-full sm:max-w-md md:max-w-lg lg:w-[516px]">
+                  Access to state of the art concrete pumping equipment and fully
+                  trained operators,
+                </p>
+                <Link to="/contact">
+                  <button
+                    onClick={() => window.scrollTo(0, 0)} // Scroll to top
+                    className="mt-4 sm:mt-5 md:mt-6 px-6 sm:px-7 md:px-8 py-3 sm:py-3 md:py-4 bg-yellow-400 text-gray-900 font-bold sm:font-extrabold rounded-lg shadow-md hover:bg-yellow-500 transition-colors cursor-pointer text-sm sm:text-base"
+                  >
+                    Get In Touch
+                  </button>
+                </Link>
+              </div>
             </div>
-          </div>
-        </CommonWrapper>
-      </section>
+          </CommonWrapper>
+        </section>
       </CommonWrapper>
     </>
   )

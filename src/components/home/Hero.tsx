@@ -49,22 +49,25 @@ const Hero = () => {
 
   return (
     <div className="relative min-h-screen   flex items-center justify-center">
-      <div
-        className="
+<div
+  className="
     absolute inset-0 
     bg-cover bg-center rounded-md 
-    w-full h-[600px] 
-    sm:h-[400px] 
-    md:h-[500px] 
-    lg:h-[600px] 
-    xl:h-[700px] 
+    w-full 
+    h-[450px]        
+    sm:h-[800px]  
+    md:h-[750px]    
+    lg:h-[700px]   
+    xl:h-[700px]   
     mx-auto
   "
-        style={{ backgroundImage: `url(${pillerlighthousecar})` }}
-      >
-
-        <div className="absolute inset-50 opacity-100"></div>
-      </div>
+  style={{ 
+    backgroundImage: `url(${pillerlighthousecar})`,
+    filter: 'brightness(0.7) contrast(1.1)'
+  }}
+>
+  <div className="absolute inset-0 bg-black opacity-30"></div>
+</div>
 
       <div className="relative max-w-[1440px] h-screen mx-auto flex flex-col lg:flex-row gap-8 mt-9">
         <div className="  z-10">
@@ -84,7 +87,7 @@ const Hero = () => {
 
 
           <div className="space-y-4 pl-6 text-sm  md:mb-10 lg:mb-0">
-            <div className="flex items-start sm:mx-auto md:mx-[12px]">
+            <div className="flex items-start sm:mx-auto md:mx-[12px] mb-[0px]">
               <span className="text-yellow-400 mr-3 mt-1">
                 {/* SVG for Batching Software */}
                 <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -163,7 +166,7 @@ const Hero = () => {
             {isSuccess ? (
               <div className="text-center">
                 <div className='flex justify-center items-center'>
-                <SuccessCheckmark />
+                  <SuccessCheckmark />
                 </div>
                 <h2 className="text-2xl font-bold text-green-800 mt-4">Thank You!</h2>
                 <p className="text-gray-600">Your message has been sent successfully.</p>

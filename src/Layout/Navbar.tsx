@@ -1,181 +1,3 @@
-// import React, { useState } from 'react';
-// import { Link, useLocation, useNavigate } from 'react-router-dom';
-// import logo from '@/assets/logo.png';
-// import CommonWrapper from '@/common/CommonWrapper';
-
-// interface NavItem {
-//   label: string;
-//   href: string;
-// }
-
-// const navItems: NavItem[] = [
-//   { label: 'HOW IT WORKS', href: '/' },
-//   { label: 'CONCRETE', href: '/concrete' },
-//   { label: 'SERVICE AREAS', href: '/service-areas' }, // Fixed: Added missing {
-// ];
-
-// const Navbar: React.FC = () => {
-//   const [isMenuOpen, setIsMenuOpen] = useState(false);
-//   const location = useLocation(); // current path
-//   const navigate = useNavigate(); // for programmatic navigation
-
-//   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-
-//   // ⬇️ UPDATED TO MAKE "HOW IT WORKS" ACTIVE ON "/" PAGE
-//   const isActive = (path: string) => {
-//     if (path === '/' && location.pathname === '/') {
-//       return true;
-//     }
-//     return location.pathname === path;
-//   };
-
-//   // Function to handle navigation and scroll to top
-//   const handleNavigation = (path: string) => {
-//     // Close mobile menu if open
-//     setIsMenuOpen(false);
-    
-//     // If we're already on the target page, scroll to top
-//     if (location.pathname === path) {
-//       window.scrollTo({ top: 0, behavior: 'smooth' });
-//     } else {
-//       // Navigate to the new page - it will automatically load at the top
-//       navigate(path);
-//     }
-//   };
-
-//   return (
-//     <div className="sticky top-0 z-50 w-full bg-[#212121]">
-//       <CommonWrapper className="max-w-[1440px]">
-//         <nav className="flex items-center justify-between p-4 h-16 md:h-20 lg:h-24 relative">
-//           {/* ✅ Responsive Logo - Clicking logo goes to landing page and scrolls to top */}
-//           <div 
-//             className="flex-shrink-0 cursor-pointer"
-//             onClick={() => handleNavigation('/landingpages')}
-//           >
-//             <div className="flex items-center">
-//               <img
-//                 src={logo}
-//                 alt="logo"
-//                 className="
-//                   h-10
-//                   sm:h-14
-//                   md:h-18
-//                   lg:h-19
-//                   w-auto
-//                 "
-//               />
-//             </div>
-//           </div>
-
-//           {/* Mobile Menu Button */}
-//           <button
-//             className="md:hidden p-2 rounded-md text-gray-300 hover:text-[#FEDA42] hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-[#FEDA42]"
-//             onClick={toggleMenu}
-//             aria-label="Toggle menu"
-//           >
-//             <svg
-//               className="w-6 h-6"
-//               fill="none"
-//               strokeLinecap="round"
-//               strokeLinejoin="round"
-//               strokeWidth="2"
-//               viewBox="0 0 24 24"
-//               stroke="currentColor"
-//             >
-//               {isMenuOpen ? (
-//                 <path d="M6 18L18 6M6 6l12 12" />
-//               ) : (
-//                 <path d="M4 6h16M4 12h16M4 18h16" />
-//               )}
-//             </svg>
-//           </button>
-
-//           {/* Desktop Menu */}
-//           <div className="hidden md:flex items-center space-x-4 lg:space-x-8">
-//             {navItems.map((item) => (
-//               <div
-//                 key={item.label}
-//                 onClick={() => handleNavigation(item.href)}
-//                 className={`text-xs lg:text-sm font-medium transition-colors duration-300 whitespace-nowrap cursor-pointer
-//                   ${isActive(item.href)
-//                     ? 'text-[#FEDA42]'
-//                     : 'text-white hover:text-[#FEDA42]'}`}
-//               >
-//                 {item.label}
-//               </div>
-//             ))}
-
-//             {/* CONTACT link */}
-//             <div
-//               onClick={() => handleNavigation('/contact')}
-//               className={`text-xs lg:text-sm font-medium transition-colors duration-300 whitespace-nowrap cursor-pointer
-//                 ${isActive('/contact')
-//                   ? 'text-[#FEDA42]'
-//                   : 'text-white hover:text-[#FEDA42]'}`}
-//             >
-//               CONTACT
-//             </div>
-
-//             {/* CONCRETE CALCULATOR Button */}
-//             <div onClick={() => handleNavigation('/concrete-calculator')}>
-//               <button className="px-4 py-2 lg:px-6 lg:py-3 bg-[#FEDA42] cursor-pointer text-gray-900 font-bold uppercase text-xs lg:text-sm rounded-lg shadow-md outline-none hover:bg-[#fed130] transition-colors whitespace-nowrap">
-//                 CONCRETE CALCULATOR
-//               </button>
-//             </div>
-//           </div>
-
-//           {/* Mobile Menu */}
-//           {isMenuOpen && (
-//             <div className="absolute top-full left-0 right-0 bg-white shadow-lg border-t border-gray-200 md:hidden z-50">
-//               <div className="px-4 py-6 space-y-4">
-//                 {navItems.map((item) => (
-//                   <div
-//                     key={item.label}
-//                     onClick={() => handleNavigation(item.href)}
-//                     className={`block text-base font-medium transition-colors py-2 cursor-pointer
-//                       ${isActive(item.href)
-//                         ? 'text-[#FEDA42]'
-//                         : 'text-gray-700 hover:text-[#FEDA42]'}`}
-//                   >
-//                     {item.label}
-//                   </div>
-//                 ))}
-
-//                 {/* CONTACT link */}
-//                 <div
-//                   onClick={() => handleNavigation('/contact')}
-//                   className={`block text-base font-bold transition-colors py-2 cursor-pointer
-//                     ${isActive('/contact')
-//                       ? 'text-[#FEDA42]'
-//                       : 'text-gray-700 hover:text-[#FEDA42]'}`}
-//                 >
-//                   CONTACT
-//                 </div>
-
-//                 <div onClick={() => handleNavigation('/concrete-calculator')}>
-//                   <button className="w-full cursor-pointer px-6 py-3 bg-[#FEDA42] text-gray-900 font-bold uppercase text-sm rounded-lg shadow-md outline-none hover:bg-[#fed130] transition-colors mt-4">
-//                     CONCRETE CALCULATOR
-//                   </button>
-//                 </div>
-//               </div>
-//             </div>
-//           )}
-//         </nav>
-//       </CommonWrapper>
-//     </div>
-//   );
-// };
-
-// export default Navbar;
-
-
-
-
-
-
-
-
-
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import logo from '@/assets/logo.png';
@@ -194,13 +16,14 @@ const navItems: NavItem[] = [
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const location = useLocation(); // current path
+  const location = useLocation();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
-  // ⬇️ UPDATED TO MAKE "HOW IT WORKS" ACTIVE ON "/" PAGE
+  const scrollToTop = () => window.scrollTo(0, 0);
+
   const isActive = (path: string) => {
-    if (path === '/HOW-IT-WORKS' && location.pathname === '/') {
+    if (path === '/' && location.pathname === '/') {
       return true;
     }
     return location.pathname === path;
@@ -210,19 +33,18 @@ const Navbar: React.FC = () => {
     <div className="sticky top-0 z-50 w-full bg-[#212121]">
       <CommonWrapper className="max-w-[1440px]">
         <nav className="flex items-center justify-between p-4 h-16 md:h-20 lg:h-24 relative">
-          {/* ✅ Responsive Logo */}
-          <Link to="/landingpages" className="flex-shrink-0">
+          
+          {/* Logo */}
+          <Link
+            to="/landingpages"
+            className="flex-shrink-0"
+            onClick={scrollToTop}
+          >
             <div className="flex items-center">
               <img
                 src={logo}
                 alt="logo"
-                className="
-                  h-10
-                  sm:h-14
-                  md:h-18
-                  lg:h-19
-                  w-auto
-                "
+                className="h-8 sm:h-10 md:h-12 lg:h-14 w-auto"
               />
             </div>
           </Link>
@@ -250,12 +72,13 @@ const Navbar: React.FC = () => {
             </svg>
           </button>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-4 lg:space-x-8">
+          {/* Desktop & Tablet Menu */}
+          <div className="hidden md:flex items-center space-x-3 lg:space-x-6 xl:space-x-8">
             {navItems.map((item) => (
               <Link
                 key={item.label}
                 to={item.href}
+                onClick={scrollToTop}
                 className={`text-xs lg:text-sm font-medium transition-colors duration-300 whitespace-nowrap 
                   ${isActive(item.href)
                     ? 'text-[#FEDA42]'
@@ -265,9 +88,10 @@ const Navbar: React.FC = () => {
               </Link>
             ))}
 
-            {/* CONTACT link */}
+            {/* CONTACT */}
             <Link
               to="/contact"
+              onClick={scrollToTop}
               className={`text-xs lg:text-sm font-medium transition-colors duration-300 whitespace-nowrap 
                 ${isActive('/contact')
                   ? 'text-[#FEDA42]'
@@ -276,9 +100,29 @@ const Navbar: React.FC = () => {
               CONTACT
             </Link>
 
-            {/* CONCRETE CALCULATOR Button */}
-            <Link to="/concrete-calculator">
-              <button className="px-4 py-2 lg:px-6 lg:py-3 bg-[#FEDA42] cursor-pointer text-gray-900 font-bold uppercase text-xs lg:text-sm rounded-lg shadow-md outline-none hover:bg-[#fed130] transition-colors whitespace-nowrap">
+            {/* CONCRETE CALCULATOR */}
+            <Link to="/concrete-calculator" onClick={scrollToTop} className="flex-shrink-0">
+              <button className="
+                px-3 py-2 
+                md:px-4 md:py-2 
+                lg:px-5 lg:py-2.5 
+                xl:px-6 xl:py-3 
+                bg-[#FEDA42] 
+                cursor-pointer 
+                text-gray-900 
+                font-bold 
+                uppercase 
+                text-xs 
+                lg:text-sm 
+                rounded-lg 
+                shadow-md 
+                outline-none 
+                hover:bg-[#fed130] 
+                transition-colors 
+                whitespace-nowrap
+                flex-shrink-0
+                min-w-0
+              ">
                 CONCRETE CALCULATOR
               </button>
             </Link>
@@ -296,27 +140,37 @@ const Navbar: React.FC = () => {
                       ${isActive(item.href)
                         ? 'text-[#FEDA42]'
                         : 'text-gray-700 hover:text-[#FEDA42]'}`}
-                    onClick={() => setIsMenuOpen(false)}
+                    onClick={() => {
+                      scrollToTop();
+                      setIsMenuOpen(false);
+                    }}
                   >
                     {item.label}
                   </Link>
                 ))}
 
-                {/* CONTACT link */}
+                {/* CONTACT */}
                 <Link
                   to="/contact"
                   className={`block text-base font-bold transition-colors py-2 
                     ${isActive('/contact')
                       ? 'text-[#FEDA42]'
                       : 'text-gray-700 hover:text-[#FEDA42]'}`}
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={() => {
+                    scrollToTop();
+                    setIsMenuOpen(false);
+                  }}
                 >
                   CONTACT
                 </Link>
 
+                {/* CALCULATOR BUTTON */}
                 <Link
                   to="/concrete-calculator"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={() => {
+                    scrollToTop();
+                    setIsMenuOpen(false);
+                  }}
                 >
                   <button className="w-full cursor-pointer px-6 py-3 bg-[#FEDA42] text-gray-900 font-bold uppercase text-sm rounded-lg shadow-md outline-none hover:bg-[#fed130] transition-colors mt-4">
                     CONCRETE CALCULATOR
