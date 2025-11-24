@@ -226,7 +226,7 @@ const Landingpages = () => {
           <div className="relative w-full h-[640px] overflow-hidden flex items-center">
             <div className="relative z-10 max-w-3xl p-6 bg-black/40 rounded-lg text-white">
               <h1 className="text-4xl md:text-5xl font-bold text-[#FEDA42] mb-3 w-[516px]">
-                DO YOU NEED A CONCRETE PUMP
+                Do you need a concrete pump ?
               </h1>
               <p className="text-base md:text-lg leading-relaxed w-[516px]">
                 Access to state of the art concrete pumping equipment and fully
