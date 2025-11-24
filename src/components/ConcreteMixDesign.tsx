@@ -142,12 +142,6 @@ const ConcreteMixDesign: React.FC = () => {
             <ComparisonCard key={item.title} item={item} />
           ))}
         </section>
-
-
-        {/* Simple footer for visual separation */}
-        <footer className="mt-20 pt-8 border-t border-gray-100">
-          <div className="h-4"></div>
-        </footer>
       </div>
     </div>
   );

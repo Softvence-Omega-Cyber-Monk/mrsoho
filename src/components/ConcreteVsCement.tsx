@@ -46,9 +46,8 @@ const contentData: ContentItem[] = [
 // --- Card Component ---
 const ComparisonCard: React.FC<{ item: ContentItem }> = ({ item }) => {
   return (
-    <div className={`flex-1 min-w-full md:min-w-0 bg-black p-6 rounded-xl shadow-lg transition duration-300 hover:shadow-2xl hover:scale-[1.01] relative ${
-      item.title === 'Concrete' ? 'md:top-5' : 'bottom-5'
-    }`}>
+    <div className={`flex-1 min-w-full md:min-w-0 bg-black p-6 rounded-xl shadow-lg transition duration-300 hover:shadow-2xl hover:scale-[1.01] relative ${item.title === 'Concrete' ? 'md:top-5' : 'bottom-5'
+      }`}>
       <div className="flex items-center space-x-3 mb-2">
         <item.Icon className="w-8 h-8" />
         <h2 className="text-2xl font-bold text-yellow-500">{item.title}</h2>
@@ -63,28 +62,25 @@ const ComparisonCard: React.FC<{ item: ContentItem }> = ({ item }) => {
 const ConcreteVsCement: React.FC = () => {
   return (
     <div className="max-w-[1440px] mx-auto bg-white font-sans antialiased pt-8 pb-4 px-4 sm:px-6 lg:px-8">
-  <div className="max-w-6xl">
-    {/* Header Section */}
-    <header className="mb-6">
-      <h1 className="text-4xl font-semibold text-gray-900 mb-2">
-        Concrete vs. Cement
-      </h1>
-      <p className="text-base font-semibold text-gray-400 max-w-2xl">
-        It's a common misconception to use these terms interchangeably. Understanding the difference is key to understanding the final product.
-      </p>
-    </header>
+      <div className="max-w-6xl">
+        {/* Header Section */}
+        <header className="mb-6">
+          <h1 className="text-4xl font-semibold text-gray-900 mb-2">
+            Concrete vs. Cement
+          </h1>
+          <p className="text-base font-semibold text-gray-400 max-w-2xl pb-5">
+            It's a common misconception to use these terms interchangeably. Understanding the difference is key to understanding the final product.
+          </p>
+        </header>
 
-    {/* Comparison Cards Section */}
-    <section className="flex flex-col md:flex-row gap-6">
-      {contentData.map((item) => (
-        <ComparisonCard key={item.title} item={item} />
-      ))}
-    </section>
-
-    {/* Footer */}
-    <footer className="mt-6 pt-2 border-t border-gray-100"></footer>
-  </div>
-</div>
+        {/* Comparison Cards Section */}
+        <section className="flex flex-col md:flex-row gap-6 lg:pb-25">
+          {contentData.map((item) => (
+            <ComparisonCard key={item.title} item={item} />
+          ))}
+        </section>
+      </div>
+    </div>
 
   );
 };
