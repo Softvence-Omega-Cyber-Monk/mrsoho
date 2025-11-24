@@ -161,7 +161,7 @@ const Hero = () => {
         </div>
 
         {/* Right Content (Form) */}
-        <div className="w-full z-10 mx-auto mt-10">
+        <div className="w-full z-10 mx-auto mt-12 sm:mt-16 md:mt-20 lg:mt-24 xl:mt-28">
           <div className="bg-white p-8 rounded-lg shadow-xl">
             {isSuccess ? (
               <div className="text-center">
