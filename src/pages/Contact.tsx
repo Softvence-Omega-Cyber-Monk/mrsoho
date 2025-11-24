@@ -68,7 +68,7 @@ const Contact = () => {
 
   return (
     <>
-      <img src={contact} alt="contact" className="w-[100%] md:w-[100%] sm:h-[150px] " />
+      <img src={contact} alt="contact" className="w-[100%] " />
  
       <CommonWrapper className="w-full max-w-4xl mx-auto mb-16 lg:mb-24 mt-16 lg:mt-24 px-4">
         <div className="bg-[#F9FAFB] p-6 lg:p-8 rounded-lg shadow-xl mt-[112px]">
