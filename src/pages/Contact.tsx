@@ -49,7 +49,7 @@ const Contact = () => {
         subject: `${formData.subject ? `${formData.subject}` : ""}`,
       };
       await saveAndSendContact(payload).unwrap();
-      
+
       // Reset form after successful submission
       setFormData({
         name: "",
@@ -69,16 +69,16 @@ const Contact = () => {
   return (
     <>
       <img src={contact} alt="contact" className="w-[100%] " />
- 
+
       <CommonWrapper className="w-full max-w-4xl mx-auto mb-16 lg:mb-24 mt-16 lg:mt-24 px-4">
         <div className="bg-[#F9FAFB] p-6 lg:p-8 rounded-lg shadow-xl mt-[112px]">
           {/* Success State */}
           {isSuccess ? (
             <div className="text-center py-8">
               <div className="item-center justify-center flex">
-          <div className="flex items-center justify-center">
-              <SuccessCheckmark />
-              </div>
+                <div className="flex items-center justify-center">
+                  <SuccessCheckmark />
+                </div>
               </div>
               <h2 className="text-2xl font-bold text-green-800 mt-4">Thank You!</h2>
               <p className="text-gray-600">Your message has been sent successfully.</p>
@@ -200,40 +200,42 @@ const Contact = () => {
       </CommonWrapper>
 
       <div>
-<section
-        className="relative"
-        style={{
-          backgroundImage: `url("${traktor}")`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
-        <div className="absolute inset-0 bg-black/40 z-0"></div>
+        <section
+          className="relative"
+          style={{
+            backgroundImage: `url("${traktor}")`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          <div className="absolute inset-0 bg-black/40 z-0"></div>
 
-        <CommonWrapper className="max-w-[1440px]">
-          <div className="relative w-full h-[640px] overflow-hidden flex items-center">
-            <div className="relative z-10 max-w-3xl p-6 bg-black/40 rounded-lg text-white">
-              <h1 className="text-4xl md:text-5xl font-bold text-[#FEDA42] mb-3 w-[516px]">
-                Do you need a concrete pump ?
-              </h1>
-              <p className="text-base md:text-lg leading-relaxed w-[516px]">
-                Access to state of the art concrete pumping equipment and fully
-                trained operators,
-              </p>
-               <button
+          <CommonWrapper className="max-w-[1440px]">
+            <div className="relative w-full h-[500px] sm:h-[550px] md:h-[600px] lg:h-[640px] overflow-hidden flex items-center justify-center lg:justify-start px-4">
+  <div className="relative z-10 max-w-xl sm:max-w-2xl md:max-w-3xl p-4 sm:p-6 bg-black/40 rounded-lg text-white">
+    <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#FEDA42] mb-3 leading-tight">
+      Do you need a concrete pump?
+    </h1>
+
+    <p className="text-sm sm:text-base md:text-lg leading-relaxed max-w-md sm:max-w-lg md:max-w-xl">
+      Access to state of the art concrete pumping equipment and fully trained operators.
+    </p>
+
+    <button
       onClick={() => {
-        window.scrollTo(0, 0);       // Scroll to top
-        navigate("/contact");        // Navigate
+        window.scrollTo(0, 0);
+        navigate("/contact");
       }}
       className="mt-6 px-6 py-3 bg-yellow-400 text-gray-900 font-extrabold rounded-lg shadow-md hover:bg-yellow-500 transition-colors cursor-pointer"
     >
       Get In Touch
     </button>
-            </div>
-          </div>
-        </CommonWrapper>
-      </section>
+  </div>
+</div>
+
+          </CommonWrapper>
+        </section>
 
       </div>
       <div>
