@@ -62,31 +62,30 @@ const ComparisonCard: React.FC<{ item: ContentItem }> = ({ item }) => {
 // --- Main Component ---
 const ConcreteVsCement: React.FC = () => {
   return (
-    <div className="max-w-[1440px] mx-auto bg-white font-sans antialiased py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl">
-        {/* Header Section */}
-        <header className="mb-12">
-          <h1 className="text-5xl font-semibold text-gray-900 mb-4">
-            Concrete vs. Cement
-          </h1>
-          <p className="text-lg font-semibold text-gray-400 max-w-2xl">
-            It's a common misconception to use these terms interchangeably. Understanding the difference is key to understanding the final product.
-          </p>
-        </header>
+    <div className="max-w-[1440px] mx-auto bg-white font-sans antialiased pt-8 pb-4 px-4 sm:px-6 lg:px-8">
+  <div className="max-w-6xl">
+    {/* Header Section */}
+    <header className="mb-6">
+      <h1 className="text-4xl font-semibold text-gray-900 mb-2">
+        Concrete vs. Cement
+      </h1>
+      <p className="text-base font-semibold text-gray-400 max-w-2xl">
+        It's a common misconception to use these terms interchangeably. Understanding the difference is key to understanding the final product.
+      </p>
+    </header>
 
-        {/* Comparison Cards Section */}
-        <section className="flex flex-col md:flex-row gap-8">
-          {contentData.map((item) => (
-            <ComparisonCard key={item.title} item={item} />
-          ))}
-        </section>
+    {/* Comparison Cards Section */}
+    <section className="flex flex-col md:flex-row gap-6">
+      {contentData.map((item) => (
+        <ComparisonCard key={item.title} item={item} />
+      ))}
+    </section>
 
-        {/* Footer for visual separation */}
-        <footer className="mt-20 pt-8 border-t border-gray-100">
-          <div className="h-4"></div>
-        </footer>
-      </div>
-    </div>
+    {/* Footer */}
+    <footer className="mt-6 pt-2 border-t border-gray-100"></footer>
+  </div>
+</div>
+
   );
 };
 
