@@ -49,8 +49,8 @@ const Hero = () => {
 
   return (
     <div className="relative min-h-screen   flex items-center justify-center">
-<div
-  className="
+      <div
+        className="
     absolute inset-0 
     bg-cover bg-center rounded-md 
     w-full 
@@ -61,13 +61,13 @@ const Hero = () => {
     xl:h-[700px]   
     mx-auto
   "
-  style={{ 
-    backgroundImage: `url(${pillerlighthousecar})`,
-    filter: 'brightness(0.7) contrast(1.1)'
-  }}
->
-  <div className="absolute inset-0 bg-black opacity-30"></div>
-</div>
+        style={{
+          backgroundImage: `url(${pillerlighthousecar})`,
+          filter: 'brightness(0.6) contrast(1.1)'
+        }}
+      >
+        <div className="absolute inset-0 bg-black opacity-40"></div>
+      </div>
 
       <div className="relative max-w-[1440px] h-screen mx-auto flex flex-col lg:flex-row gap-8 mt-9">
         <div className="  z-10">
@@ -161,7 +161,7 @@ const Hero = () => {
         </div>
 
         {/* Right Content (Form) */}
-        <div className="w-full z-10 mx-auto mt-50">
+        <div className="w-full z-10 mx-auto mt-10">
           <div className="bg-white p-8 rounded-lg shadow-xl">
             {isSuccess ? (
               <div className="text-center">
