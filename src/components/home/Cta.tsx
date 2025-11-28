@@ -70,7 +70,7 @@ const Cta = () => {
   "
           >
             {/* <Calculator className="w-5 h-5 sm:w-6 sm:h-6" /> */}
-            <span>Get In Touch</span>
+            <span>Concrete calculator</span>
           </button>
 
         </div>
