@@ -58,7 +58,7 @@ const Cta = () => {
           <button
             onClick={() => {
               window.scrollTo(0, 0);           // Scroll to top
-              navigate("/contact"); // Then navigate
+              navigate("/concrete-calculator"); // Then navigate
             }}
             className="
     inline-flex items-center cursor-pointer justify-center gap-2
