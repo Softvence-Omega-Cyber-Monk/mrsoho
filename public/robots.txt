@@ -1,0 +1,12 @@
+# Allow all search engines to crawl the site
+User-agent: *
+Allow: /
+
+# Block admin, login, and form pages from being indexed
+Disallow: /admin
+Disallow: /login
+Disallow: /signup
+Disallow: /form
+
+# Sitemap location
+Sitemap: https://gatormix.com/sitemap.xml
