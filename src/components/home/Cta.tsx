@@ -36,14 +36,14 @@ const Cta = () => {
             md:-ml-[164px]
           "
         >
-          <h1
+          <h2
             className="
               text-2xl sm:text-3xl md:text-5xl 
               font-bold text-[#FEDA42] mb-4 leading-tight
             "
           >
             How Much Concrete Do You Need?
-          </h1>
+          </h2>
 
           <p
             className="

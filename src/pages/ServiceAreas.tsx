@@ -426,9 +426,9 @@ const ServiceAreas: React.FC = () => {
             <CommonWrapper className="max-w-[1440px] mx-auto py-10 sm:py-12 md:py-16 lg:py-20">
               <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[640px] overflow-hidden flex items-center">
                 <div className="relative z-10 py-2 max-w-full w-full px-4 sm:px-6 md:px-8 lg:max-w-3xl lg:p-6 bg-black/40 rounded-lg text-white mx-4 sm:mx-6 md:mx-8 lg:mx-0">
-                  <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#FEDA42] mb-3 w-full max-w-full sm:max-w-md md:max-w-lg lg:w-[516px]">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#FEDA42] mb-3 w-full max-w-full sm:max-w-md md:max-w-lg lg:w-[516px]">
                     Do you need a concrete pump ?
-                  </h1>
+                  </h2>
                   <p className="text-sm sm:text-base md:text-lg leading-relaxed w-full max-w-full sm:max-w-md md:max-w-lg lg:w-[516px]">
                     Access to state of the art concrete pumping equipment and fully
                     trained operators,

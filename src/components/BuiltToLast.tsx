@@ -62,9 +62,9 @@ const BuiltToLast: React.FC = () => {
         
         {/* Header Section */}
         <div className="mx-auto mb-8 sm:mb-12 md:mb-16 text-center lg:text-left relative z-10">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-stone-900 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-stone-900 leading-tight">
             Built to Last
-          </h1>
+          </h2>
           <p className="mt-3 sm:mt-4 text-base sm:text-lg text-gray-600 max-w-2xl mx-auto lg:mx-0">
             Our concrete provides the essential qualities every successful project demands:
             versatility, durability, and low maintenance.

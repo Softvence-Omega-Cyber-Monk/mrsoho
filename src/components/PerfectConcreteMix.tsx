@@ -88,9 +88,9 @@ const PerfectConcreteMix: React.FC = () => {
         {/* Header Section */}
         <header className="mb-12">
           {/* Header text color changed to dark green for contrast */}
-          <h1 className="text-3xl font-bold mb-3">
+          <h2 className="text-3xl font-bold mb-3">
             Find the Perfect Concrete Mix
-          </h1>
+          </h2>
           {/* Paragraph text color adjusted */}
           <p className="text-base max-w-4xl">
             Each project has unique requirements. We provide a range of concrete strengths to ensure you get the optimal performance and durability for your specific application.

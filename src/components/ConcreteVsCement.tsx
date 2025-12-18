@@ -65,9 +65,9 @@ const ConcreteVsCement: React.FC = () => {
       <div className="max-w-6xl">
         {/* Header Section */}
         <header className="mb-6">
-          <h1 className="text-4xl font-semibold text-gray-900 mb-2">
+          <h2 className="text-4xl font-semibold text-gray-900 mb-2">
             Concrete vs. Cement
-          </h1>
+          </h2>
           <p className="text-base font-semibold text-gray-400 max-w-2xl pb-5">
             It's a common misconception to use these terms interchangeably. Understanding the difference is key to understanding the final product.
           </p>
