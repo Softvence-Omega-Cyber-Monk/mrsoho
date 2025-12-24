@@ -262,6 +262,15 @@ const ServiceAreas: React.FC = () => {
 
   return (
     <>
+      <head>
+        <title>Gatormix Concrete Services - South West Florida</title>
+        <meta 
+          name="description" 
+          content="Expert concrete services across South West Florida. On-site mixing & delivery for Fort Myers, Naples, Lehigh Acres, Estero, Immokalee & all nearby areas."
+        />
+        <link rel="canonical" href="https://gatormix.com/service-areas" />
+        <meta name="robots" content="index, follow"></meta>
+      </head>
       <CommonWrapper>
         <Banner
           imageUrl={servicesanalysers}
