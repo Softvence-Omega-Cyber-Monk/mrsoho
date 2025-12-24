@@ -223,6 +223,17 @@ export default function Home() {
   };
 
   return (
+    <>
+    <head>
+        
+        <title>Gatormix Concrete Services - South West Florida</title>
+        <meta 
+          name="description" 
+          content="Expert concrete services across South West Florida. On-site mixing & delivery for Fort Myers, Naples, Lehigh Acres, Estero, Immokalee & all nearby areas."
+        />
+        <link rel="canonical" href="https://gatormix.com/concrete-calculator" />
+        <meta name="robots" content="index, follow"></meta>
+      </head>
 
     <main className="min-h-screen">
       <section
@@ -336,6 +347,6 @@ export default function Home() {
         </div>
       </div>
     </main>
-
+  </>
   );
 }

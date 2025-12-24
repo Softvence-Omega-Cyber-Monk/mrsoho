@@ -94,9 +94,9 @@ const Faq = () => {
       <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8">
         {/* Left column */}
         <div className="flex-1 text-center md:text-left">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-yellow-500 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-yellow-500 tracking-tight">
             FAQs
-          </h1>
+          </h2>
           <p className="text-gray-400 mt-3 text-sm sm:text-base md:max-w-md">
             Find answers to the most commonly asked questions about our services
             and concrete solutions.

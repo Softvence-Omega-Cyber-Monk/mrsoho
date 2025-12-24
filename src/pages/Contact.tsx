@@ -68,6 +68,16 @@ const Contact = () => {
 
   return (
     <>
+      <head>
+        <title>Contact Gatormix For Your Concrete Solutions | South-West Florida</title>
+        <meta 
+          name="description" 
+          content="Need concrete delivered by Gatormix in South-West Florida? Schedule expert concrete delivery and pumping services today. Call (239) 309-7779 for a quote."
+        />
+        <link rel="canonical" href="https://gatormix.com/contact" />
+        <meta name="robots" content="index, follow"></meta>
+      </head>
+
       <img src={contact} alt="contact" className="w-[100%] " />
 
       <CommonWrapper className="w-full max-w-4xl mx-auto mb-16 lg:mb-24 mt-16 lg:mt-24 px-4">

@@ -128,9 +128,9 @@ const ConcreteMixDesign: React.FC = () => {
     <div className="bg-gray-50 antialiased py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-[1440px] mx-auto">
         <header className="mb-12">
-          <h1 className="text-4xl sm:text-5xl font-samibold text-gray-900 mb-4">
+          <h2 className="text-4xl sm:text-5xl font-samibold text-gray-900 mb-4">
             Concrete Mix Design
-          </h1>
+          </h2>
           <p className="text-lg text-gray-600 max-w-[710px]">
             The strength and quality of concrete depend on the precise ratio of its core components. We expertly combine these elements to meet your project's specific needs.
           </p>

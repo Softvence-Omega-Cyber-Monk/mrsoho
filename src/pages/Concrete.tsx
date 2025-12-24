@@ -1,6 +1,6 @@
 import CommonWrapper from "@/common/CommonWrapper"
 import traktor from '@/assets/traktor.jpg';
-import ALIGNMENT from '@/assets/ALIGNMENT.jpg';
+import ALIGNMENT from '../assets/ALIGNMENT.jpg';
 // import Banner from "@/components/ui/Banner";
 import BuiltToLast from "@/components/BuiltToLast";
 import ConcreteVsCement from "@/components/ConcreteVsCement";
@@ -9,15 +9,43 @@ import PerfectConcreteMix from "@/components/PerfectConcreteMix";
 import CalculatorCta from "@/components/CalculatorCta";
 import Cta from "@/components/home/Cta";
 import { Link } from "react-router-dom";
+
+
 const CONCRETE = () => {
   return (
     <>
-      <CommonWrapper>
-        <img
-          src={ALIGNMENT}
-          alt="Concrete Bag"
-          className="w-full h-[317px] sm:h-[400px] md:h-[500px] lg:h-[600px] xl:h-[771px] mb-8 rounded-lg shadow-lg object-cover"
+
+      <head>
+        <title>Your Go-to Concrete Contractor in South-West Florida</title>
+        <meta 
+          name="description" 
+          content="Premier concrete contractor services in South-West Florida, USA. We provide versatile solutions for your residential and commercial concrete needs."
         />
+        <link rel="canonical" href="https://gatormix.com/concrete" />
+        <meta name="robots" content="index, follow"></meta>
+      </head>
+
+      <CommonWrapper>
+      <div className="relative w-full h-[317px] sm:h-[400px] md:h-[500px] lg:h-[600px] xl:h-[771px]">
+        
+          <img
+            src={ALIGNMENT}
+            alt="Concrete Bag"
+            className="w-full h-[317px] sm:h-[400px] md:h-[500px] lg:h-[600px] xl:h-[771px] mb-8 rounded-lg shadow-lg object-cover"
+          />
+
+        <div className="absolute inset-0 flex items-center justify-center px-4 sm:px-6 md:px-8">
+          <div className="bg-black/60 rounded-lg px-6 py-8 sm:px-8 sm:py-10 md:px-10 md:py-12 lg:px-12 lg:py-14 w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl text-center">
+            <h1 className="text-yellow-400 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-3 sm:mb-4">
+              Premium Ready Mix Concrete
+            </h1>
+            <p className="text-white text-sm sm:text-base md:text-lg opacity-90 leading-relaxed">
+              Delivering quality concrete solutions for your residential and commercial projects
+            </p>
+          </div>
+        </div>
+      </div>
+
         <BuiltToLast />
         <ConcreteVsCement />
         <ConcreteMixDesign />
@@ -39,9 +67,9 @@ const CONCRETE = () => {
           <CommonWrapper className="max-w-[1440px] mx-auto py-10 sm:py-12 md:py-16 lg:py-20">
             <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[640px] overflow-hidden flex items-center">
               <div className="relative z-10 max-w-full w-full px-5 py-2 sm:px-6 md:px-8 lg:max-w-3xl lg:px-8 lg:py-10 bg-black/40 rounded-lg text-white mx-4 sm:mx-6 md:mx-8 lg:mx-0">
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#FEDA42] mb-3 w-full max-w-full sm:max-w-md md:max-w-lg lg:w-[516px]">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#FEDA42] mb-3 w-full max-w-full sm:max-w-md md:max-w-lg lg:w-[516px]">
                   Do you need a concrete pump ?
-                </h1>
+                </h2>
                 <p className="text-sm sm:text-base md:text-lg leading-relaxed w-full max-w-full sm:max-w-md md:max-w-lg lg:w-[516px]">
                   Access to state of the art concrete pumping equipment and fully
                   trained operators,
@@ -59,6 +87,7 @@ const CONCRETE = () => {
           </CommonWrapper>
         </section>
       </CommonWrapper>
+      
     </>
   )
 }
